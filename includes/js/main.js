@@ -7,8 +7,8 @@ var svg = d3.select("svg"),
 
 var parseDate = d3.timeParse("%b %Y");
 
-var x = d3.scaleTime().range([0, width]),
-    x2 = d3.scaleTime().range([0, width]),
+var x = d3.scaleLinear().range([0, width]),
+    x2 = d3.scaleLinear().range([0, width]),
     y = d3.scaleLinear().range([height, 0]),
     y2 = d3.scaleLinear().range([height2, 0]);
 
@@ -28,13 +28,13 @@ var zoom = d3.zoom()
 
 var area = d3.area()
     .curve(d3.curveMonotoneX)
-    .x(function(d) { return x(d.date); })
+    .x(function(d) { return x(d.base); })
     .y0(height)
     .y1(function(d) { return y(d.price); });
 
 var area2 = d3.area()
     .curve(d3.curveMonotoneX)
-    .x(function(d) { return x2(d.date); })
+    .x(function(d) { return x2(d.base); })
     .y0(height2)
     .y1(function(d) { return y2(d.price); });
 
@@ -55,7 +55,7 @@ var context = svg.append("g")
 d3.csv("includes/data/data.csv", type, function(error, data) {
   if (error) throw error;
 
-  x.domain(d3.extent(data, function(d) { return d.date; }));
+  x.domain(d3.extent(data, function(d) { return d.base; }));
   y.domain([0, d3.max(data, function(d) { return d.price; })]);
   x2.domain(x.domain());
   y2.domain(y.domain());
@@ -118,7 +118,7 @@ function zoomed() {
 }
 
 function type(d) {
-  d.date = parseDate(d.date);
+  d.base = d.base
   d.price = +d.price;
   return d;
 }
