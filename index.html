@@ -14,7 +14,7 @@
   <body>
     <div id="chart"></div>
     <script>
-      var ex_chart = nanoporegraph().zoom(true);
+      var ex_chart = nanoporegraph();
 
       var data = [];
       for (var i = 0; i < 100; i++) {
@@ -40,13 +40,8 @@
         var yscale = d3.scale.linear();
         var zoomable = true;
 
-
-      
         var xzoom = d3.behavior.zoom()
           .x(xscale)
-          .on("zoom", zoomable ? draw : null);
-        var yzoom = d3.behavior.zoom()
-          .y(yscale)
           .on("zoom", zoomable ? draw : null);
 
         function chart(selection) {
@@ -78,36 +73,21 @@
               .attr("class", "scatter")
               .attr("clip-path", "url(#clip)");
 
-            g
-              .append("svg:rect")
-              .attr("class", "zoom xy box")
-              .attr("width", width - margin.left - margin.right)
-              .attr("height", height - margin.top - margin.bottom)
-              .style("visibility", "hidden")
-              .attr("pointer-events", "all")
-              // .call(xyzoom);
 
             g
               .append("svg:rect")
               .attr("class", "zoom x box")
               .attr("width", width - margin.left - margin.right)
               .attr("height", height - margin.top - margin.bottom)
-              .attr("transform", "translate(" + 0 + "," + (height - margin.top - margin.bottom) + ")")
+              .attr("transform", "translate(" + 0 + "," + 0 + ")")
               .style("visibility", "hidden")
               .attr("pointer-events", "all")
-              .call(xzoom);
-
-            g
-              .append("svg:rect")
-              .attr("class", "zoom y box")
-              .attr("width", margin.left)
-              .attr("height", height - margin.top - margin.bottom)
-              .attr("transform", "translate(" + -margin.left + "," + 0 + ")")
-              .style("visibility", "hidden")
-              .attr("pointer-events", "all")
-              .call(yzoom);
+              // .call( d3.behavior.zoom().on("zoom", function(){
+              //     g.attr("transform", "translate(" + d3.event.translate + ") scale(1)")
+              // }) ).append("g");
 
             // Update the x-axis
+
             xscale.domain(d3.extent(data, function(d) {
               return d[0];
             }))
@@ -167,25 +147,18 @@
         }
 
         function zoom_update() {
-          xyzoom = d3.behavior.zoom()
-            .x(xscale)
-            .y(yscale)
-            .on("zoom", zoomable ? draw : null);
+
           xzoom = d3.behavior.zoom()
             .x(xscale)
             .on("zoom", zoomable ? draw : null);
-          yzoom = d3.behavior.zoom()
-            .y(yscale)
-            .on("zoom", zoomable ? draw : null);
 
-          // svg.select('rect.zoom.xy.box').call(xyzoom);
           svg.select('rect.zoom.x.box').call(xzoom);
-          svg.select('rect.zoom.y.box').call(yzoom);
+
         }
 
         function draw() {
           svg.select('g.x.axis').call(xaxis);
-          svg.select('g.y.axis').call(yaxis);
+          //svg.select('g.y.axis').call(yaxis);
 
           update();
           zoom_update();
@@ -203,11 +176,11 @@
           return yscale(d[1]);
         }
 
-        chart.zoom = function (_){
-          if (!arguments.length) return zoomable;
-          zoomable = _;
-          return chart;
-        }
+        // chart.zoom = function (_){
+        //   if (!arguments.length) return zoomable;
+        //   zoomable = _;
+        //   return chart;
+        // }
 
         return chart;
       }
