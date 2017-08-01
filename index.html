@@ -40,8 +40,11 @@
         var yscale = d3.scale.linear();
         var zoomable = true;
 
+        var panExtent = {x: [0,width], y: [-100,400] };
+
         var xzoom = d3.behavior.zoom()
           .x(xscale)
+          .scaleExtent([0,10])
           .on("zoom", zoomable ? draw : null);
 
         function chart(selection) {
@@ -117,6 +120,34 @@
           return chart;
         }
 
+        function panLimit() {
+        	/*
+
+        	include boolean to work out the panExtent and return to zoom.translate()
+
+        	*/
+
+        	var divisor = {h: height / ((y.domain()[1]-y.domain()[0])*zoom.scale()), w: width / ((x.domain()[1]-x.domain()[0])*zoom.scale())},
+        		minX = -(((x.domain()[0]-x.domain()[1])*zoom.scale())+(panExtent.x[1]-(panExtent.x[1]-(width/divisor.w)))),
+        		minY = -(((y.domain()[0]-y.domain()[1])*zoom.scale())+(panExtent.y[1]-(panExtent.y[1]-(height*(zoom.scale())/divisor.h))))*divisor.h,
+        		maxX = -(((x.domain()[0]-x.domain()[1]))+(panExtent.x[1]-panExtent.x[0]))*divisor.w*zoom.scale(),
+        		maxY = (((y.domain()[0]-y.domain()[1])*zoom.scale())+(panExtent.y[1]-panExtent.y[0]))*divisor.h*zoom.scale(),
+
+        		tx = x.domain()[0] < panExtent.x[0] ?
+        				minX :
+        				x.domain()[1] > panExtent.x[1] ?
+        					maxX :
+        					zoom.translate()[0],
+        		ty = y.domain()[0]  < panExtent.y[0]?
+        				minY :
+        				y.domain()[1] > panExtent.y[1] ?
+        					maxY :
+        					zoom.translate()[1];
+
+        	return [tx,ty];
+
+        }
+
         function update() {
           var gs = svg.select("g.scatter");
 
@@ -150,9 +181,14 @@
 
           xzoom = d3.behavior.zoom()
             .x(xscale)
+            .scaleExtent([0,10])
             .on("zoom", zoomable ? draw : null);
 
           svg.select('rect.zoom.x.box').call(xzoom);
+
+          xzoom.translate(panLimit());
+
+          console.log("X-Scale (0) -> ", xscale(0));
 
         }
 
