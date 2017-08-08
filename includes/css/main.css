@@ -1,10 +1,13 @@
-.area {
-  fill: steelblue;
-  clip-path: url(#clip);
+svg {
+  font: 10px sans-serif;
+  shape-rendering: crispEdges;
 }
 
-.zoom {
-  cursor: move;
+rect {
+  fill: #ddd;
+}
+
+.axis path, .axis line {
   fill: none;
-  pointer-events: all;
+  stroke: #fff;
 }
