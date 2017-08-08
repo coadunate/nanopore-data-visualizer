@@ -47,8 +47,8 @@ var yAxis = d3.svg.axis()
 
 var zoom = d3.behavior.zoom()
     .x(x)
-    .xExtent([-1,0])
-    .scaleExtent([0.1, 10])
+    .xExtent([-500,500])
+    .scaleExtent([1, 700])
 
     .on("zoom", zoomed);
 
