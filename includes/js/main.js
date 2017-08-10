@@ -1,10 +1,11 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
+    width = 900 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
     .domain([-width / 2, width / 2])
     .range([0, width]);
+
 
 var y = d3.scale.linear()
     .domain([-height / 2, height / 2])
@@ -25,7 +26,6 @@ var zoom = d3.behavior.zoom()
     .x(x)
     .xExtent([-500,500])
     .scaleExtent([1, 700])
-
     .on("zoom", zoomed);
 
 var svg = d3.select("body").append("svg")
@@ -41,7 +41,7 @@ svg.append("rect")
 
 svg.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0," + height+ ")")
     .call(xAxis);
 
 svg.append("g")
@@ -52,3 +52,5 @@ function zoomed() {
   svg.select(".x.axis").call(xAxis);
   svg.select(".y.axis").call(yAxis);
 }
+
+svg.append("circle").attr("cx",100).attr("cy",100).attr("r",100);
