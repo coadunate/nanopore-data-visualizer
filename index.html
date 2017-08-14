@@ -39,10 +39,9 @@
 
           var zoom = d3.behavior.zoom()
               .x(x)
-              .y(y)
               .xExtent([0,d3.max(data,function(d){ return d.time; })]) // this means that the x-axis can go at most from 0 to 500.
               .yExtent([d3.min(data,function(d){ return d.signal}) ,d3.max(data,function(d){ return d.signal; })])
-              .scaleExtent([1, 300]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
+              .scaleExtent([1, 1000]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
               .on("zoom", zoomed);
 
           var svg = d3.select("body").append("svg")
@@ -51,6 +50,7 @@
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
               .call(zoom);
+
           svg.append("rect")
               .attr("width", width)
               .attr("height", height);
@@ -90,7 +90,7 @@
                .attr("d", lineFunction(data));
           }
 
-          // Adding data points for events
+
           svg.selectAll("circle")
              .data(data)
              .enter()
