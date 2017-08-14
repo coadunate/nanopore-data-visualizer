@@ -40,7 +40,6 @@
           var zoom = d3.behavior.zoom()
               .x(x)
               .xExtent([0,d3.max(data,function(d){ return d.time; })]) // this means that the x-axis can go at most from 0 to 500.
-              .yExtent([d3.min(data,function(d){ return d.signal}) ,d3.max(data,function(d){ return d.signal; })])
               .scaleExtent([1, 1000]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
               .on("zoom", zoomed);
 
