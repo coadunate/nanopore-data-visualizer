@@ -10,8 +10,8 @@
 
   // margins
   var margin = {top: 20, right: 20, bottom: 40, left: 50},
-      width = 900 - margin.left - margin.right,  // 900 - 40 - 20 = 840
-      height = 500 - margin.top - margin.bottom; // 500 - 20 - 30 = 450
+      width = window.innerWidth - margin.left - margin.right,  // 900 - 40 - 20 = 840
+      height = window.innerHeight - margin.top - margin.bottom; // 500 - 20 - 30 = 450
 
   var x = d3.scale.linear().range([0, width]);
 
@@ -41,6 +41,7 @@
               .x(x)
               .y(y)
               .xExtent([0,d3.max(data,function(d){ return d.time; })]) // this means that the x-axis can go at most from 0 to 500.
+              .yExtent([d3.min(data,function(d){ return d.signal}) ,d3.max(data,function(d){ return d.signal; })])
               .scaleExtent([1, 300]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
               .on("zoom", zoomed);
 
