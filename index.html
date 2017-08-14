@@ -7,108 +7,116 @@
 </head>
 <body>
   <script type="text/javascript">
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
+
+  // margins
+  var margin = {top: 20, right: 20, bottom: 40, left: 50},
       width = 900 - margin.left - margin.right,  // 900 - 40 - 20 = 840
       height = 500 - margin.top - margin.bottom; // 500 - 20 - 30 = 450
 
-  var data = [
-    { time: 0, signal: 40 },
-    { time: 2, signal: 50 },
-    { time: 5, signal: 32.4 },
-    { time: 7, signal: 39 },
-    { time: 10, signal: 38 },
-    { time: 12, signal: 60 },
-    { time: 13.5, signal: 50 },
-    { time: 17, signal: 50 },
-    { time: 21, signal: 35 },
-    { time: 24, signal: 50 },
-    { time: 39, signal: 51 },
-    { time: 45, signal: 62 },
-    { time: 46, signal: 55 },
-    { time: 48.5, signal: 58 },
-    { time: 50, signal: 55 },
-    { time: 52.5, signal: 58 },
-    { time: 54, signal: 55 },
-    { time: 58, signal: 70 },
-    { time: 60, signal: 30 },
-  ];
+  var x = d3.scale.linear().range([0, width]);
 
-  // var x = d3.scale.linear()
-  //     .domain([-width / 2, width / 2])
-  //     .range([0, width]);
-  var x = d3.scale.linear()
-      .domain([ d3.min(data, function(d){ return d.time; }) , d3.max(data,function(d){ return d.time; }) ])
-      .range([0, width]);
-  // var y = d3.scale.linear()
-  //     .domain([0, height / 2])
-  //     .range([height, 0]);
-
-  var y = d3.scale.linear()
-      .domain([ d3.min(data, function(d){ return d.signal; } )  , d3.max(data, function(d){ return d.signal; }) ])
-      .range([height, 0]);
-  var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickSize(-height);
-  var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left")
-      .ticks(5)
-      .tickSize(-width);
-  var zoom = d3.behavior.zoom()
-      .x(x)
-      .y(y)
-      .xExtent([0,500]) // this means that the x-axis can go at most from 0 to 500.
-      .scaleExtent([1, 300]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
-      .on("zoom", zoomed);
-  var svg = d3.select("body").append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      .call(zoom);
-  svg.append("rect")
-      .attr("width", width)
-      .attr("height", height);
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height+ ")")
-      .call(xAxis);
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
-  function zoomed() {
-    svg.select(".x.axis").call(xAxis);
-    svg.select(".y.axis").call(yAxis);
-    svg.selectAll(".dot")
-       .attr("cx", function(d){ return x(d.time); })
-       .attr("cy", function(d){ return y(d.signal); });
-
-    svg.selectAll(".squiggle")
-       .attr("d", lineFunction(data));
-  }
-  svg.selectAll("circle")
-     .data(data)
-     .enter()
-     .append("circle")
-      .attr("cx", function(d){ return x(d.time);})
-      .attr("cy", function(d){ return y(d.signal);})
-      .attr("class","dot")
-      .attr("r",5);
+  var y = d3.scale.linear().range([height, 0]);
 
 
-      // This is the accessor function we talked about above
-  var lineFunction = d3.svg.line()
-    .x(function(d) { return x(d.time); })
-    .y(function(d) { return y(d.signal); })
-    .interpolate('linear');
+  d3.csv('sample_data.csv', function(error, data) {
+      data.forEach(function(d) {
+        d.time = +d.time;
+        d.signal = +d.signal;
+      });
 
-    //The line SVG Path we draw
-  var lineGraph = svg.append("path")
-    .attr("d", lineFunction(data))
-    .attr("class","squiggle")
-    .attr("stroke", "blue")
-    .attr("stroke-width", 2)
-    .attr("fill", "none");
+      x.domain([ d3.min(data, function(d){ return d.time; }) , d3.max(data,function(d){ return d.time; }) ]);
+      y.domain([ d3.min(data, function(d){ return d.signal; } )  , d3.max(data, function(d){ return d.signal; }) ]);
+
+      var xAxis = d3.svg.axis()
+          .scale(x)
+          .orient("bottom")
+          .tickSize(-height);
+      var yAxis = d3.svg.axis()
+          .scale(y)
+          .orient("left")
+          .ticks(5)
+          .tickSize(-width);
+
+          var zoom = d3.behavior.zoom()
+              .x(x)
+              .y(y)
+              .xExtent([0,500]) // this means that the x-axis can go at most from 0 to 500.
+              .scaleExtent([1, 300]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
+              .on("zoom", zoomed);
+
+          var svg = d3.select("body").append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+              .call(zoom);
+          svg.append("rect")
+              .attr("width", width)
+              .attr("height", height);
+          svg.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + height+ ")")
+              .call(xAxis);
+          svg.append("g")
+              .attr("class", "y axis")
+              .call(yAxis);
+
+          // Add axis labels
+          svg.append("text")
+             .attr("transform","translate(" + width/2 + ", " + (height+10) + ")")
+             .attr("dy","1em")
+             .style("text-anchor","middle")
+             .style("font-size","20px")
+             .text("Time, s");
+
+          svg.append("text")
+             .attr("transform", "rotate(-90) translate(" + 0 + "," + (margin.left-20) + ")")
+             .attr("y", 0 - margin.left)
+             .attr("x",0 - (height / 2))
+             .style("font-size","20px")
+             .style("text-anchor", "middle")
+             .text("Signal Value, pA");
+
+
+          function zoomed() {
+            svg.select(".x.axis").call(xAxis);
+            svg.select(".y.axis").call(yAxis);
+            svg.selectAll(".dot")
+               .attr("cx", function(d){ return x(d.time); })
+               .attr("cy", function(d){ return y(d.signal); });
+
+            svg.selectAll(".squiggle")
+               .attr("d", lineFunction(data));
+          }
+
+          // Adding data points for events
+          svg.selectAll("circle")
+             .data(data)
+             .enter()
+             .append("circle")
+              .attr("cx", function(d){ return x(d.time);})
+              .attr("cy", function(d){ return y(d.signal);})
+              .attr("class","dot")
+              .attr("r",5);
+
+
+          var lineFunction = d3.svg.line()
+            .x(function(d) { return x(d.time); })
+            .y(function(d) { return y(d.signal); })
+            .interpolate('linear');
+
+          var lineGraph = svg.append("path")
+            .attr("d", lineFunction(data))
+            .attr("class","squiggle")
+            .attr("stroke", "blue")
+            .attr("stroke-width", 2)
+            .attr("fill", "none");
+
+
+
+  });
+
+
+
   </script>
 </body>
