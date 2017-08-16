@@ -18,13 +18,16 @@
   var y = d3.scale.linear().range([height, 0]);
 
 
-  d3.csv('includes/data/fast5_data.csv', function(error, data) {
+  d3.csv('includes/data/entire_data.csv', function(error, data) {
       data.forEach(function(d) {
-        d.time = +d.time;
+        d.index = +d.index;
         d.signal = +d.signal;
+        d.time = +d.time;
+        d.length = +d.length;
+        d.stdv = +d.stdv;
       });
 
-      x.domain([ d3.min(data, function(d){ return d.time; }) , d3.max(data,function(d){ return d.time; }) ]);
+      x.domain([ d3.min(data, function(d){ return d.index; }) , d3.max(data,function(d){ return d.index; }) ]);
       y.domain([ d3.min(data, function(d){ return d.signal; } )  , d3.max(data, function(d){ return d.signal; }) ]);
 
       var xAxis = d3.svg.axis()
@@ -39,10 +42,10 @@
 
           var zoom = d3.behavior.zoom()
               .x(x)
-              .xExtent([0,d3.max(data,function(d){ return d.time; })]) // this means that the x-axis can go at most from 0 to 500.
+              .xExtent([0,d3.max(data,function(d){ return d.index; })]) // this tells how much the x-axis can go at most
               .scaleExtent([1, 1000]) // this tells the scale how deep should it go (for example [1,100] only goes until nearest unit)
               .on("zoom", zoomed)
-              .scale(8,1);
+              .scale(d3.max(data,function(d){ return d.index; }) /100 ,1);
 
           var svg = d3.select("body").append("svg")
               .attr("width", width + margin.left + margin.right)
@@ -69,7 +72,7 @@
              .attr("dy","1em")
              .style("text-anchor","middle")
              .style("font-size","20px")
-             .text("Time, s");
+             .text("Events");
 
           svg.append("text")
              .attr("transform", "rotate(-90) translate(" + 0 + "," + (margin.left-20) + ")")
@@ -84,7 +87,7 @@
             svg.select(".x.axis").call(xAxis);
             svg.select(".y.axis").call(yAxis);
             svg.selectAll(".dot")
-               .attr("cx", function(d){ return x(d.time); })
+               .attr("cx", function(d){ return x(d.index); })
                .attr("cy", function(d){ return y(d.signal); });
 
             svg.selectAll(".squiggle")
@@ -100,7 +103,7 @@
              .data(data)
              .enter()
              .append("circle")
-              .attr("cx", function(d){ return x(d.time);})
+              .attr("cx", function(d){ return x(d.index);})
               .attr("cy", function(d){ return y(d.signal);})
               .attr("class","dot")
               .attr("r",5)
@@ -109,9 +112,17 @@
                      .duration(200)
                      .style("opacity", 0.9)
                      .style("text-align","left");
-                  div.html("<b>Signal Value:</b> " + d.signal + "<br />" + "<b>5mer:</b> ATGCA" + "<br />" + "<b>BP Added:</b> A" + "<br />" + "<b>Sequence:</b> xyzseq" )
-                     .style("left", (d3.event.pageX) + "px")
-                     .style("top", (d3.event.pageY - 28) + "px");
+                     //index,signal,time,model,length,stdv
+                  div.html(
+                    "<b>Event #:</b> " + (d.index-1) + "<br />" +
+                    "<b>Signal:</b> " + d.signal + "<br />" +
+                    "<b>Time:</b> " + d.time + "<br />" +
+                    "<b>Model:</b> " + d.model + "<br />" +
+                    "<b>Length:</b> " + d.length + "<br />" +
+                    "<b>Std. Dev:</b>" + d.stdv + "<br/>"
+                  )
+                   .style("left", (d3.event.pageX) + "px")
+                   .style("top", (d3.event.pageY - 28) + "px");
               })
               .on("mouseout", function(d) {
                 div.transition()
@@ -121,7 +132,7 @@
 
 
           var lineFunction = d3.svg.line()
-            .x(function(d) { return x(d.time); })
+            .x(function(d) { return x(d.index); })
             .y(function(d) { return y(d.signal); })
             .interpolate('linear');
 
