@@ -90,6 +90,10 @@
                .attr("d", lineFunction(data));
           }
 
+          var div = d3.select("body").append("div")
+                    .attr("class", "tooltip")
+                    .style("opacity", 0);
+
 
           svg.selectAll("circle")
              .data(data)
@@ -98,7 +102,21 @@
               .attr("cx", function(d){ return x(d.time);})
               .attr("cy", function(d){ return y(d.signal);})
               .attr("class","dot")
-              .attr("r",5);
+              .attr("r",5)
+              .on("mouseover", function(d){
+                  div.transition()
+                     .duration(200)
+                     .style("opacity", 0.9)
+                     .style("text-align","left");
+                  div.html("<b>Signal Value:</b> " + d.signal + "<br />" + "<b>Kmer:</b> ATGCA" + "<br />" + "<b>Sequence:</b> xyzseq" )
+                     .style("left", (d3.event.pageX) + "px")
+                     .style("top", (d3.event.pageY - 28) + "px");
+              })
+              .on("mouseout", function(d) {
+                div.transition()
+                .duration(500)
+                .style("opacity", 0);
+              });
 
 
           var lineFunction = d3.svg.line()
