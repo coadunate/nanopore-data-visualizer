@@ -3,9 +3,6 @@ svg {
   shape-rendering: crispEdges;
 }
 
-rect {
-  fill: #ddd;
-}
 
 .axis path, .axis line {
   fill: none;
@@ -23,4 +20,10 @@ div.tooltip {
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
+}
+
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
 }
