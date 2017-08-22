@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html>
 <meta charset="utf-8">
 <head>
   <title>Zoom + Pan within limits</title>
-  <link rel="stylesheet" type="text/css" href="./includes/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <script src="https://bl.ocks.org/mhsmith/raw/5732011/d3-zoom-pan-extent.js"></script>
 </head>
 <body>
@@ -21,7 +22,7 @@
   var y = d3.scale.linear().range([height, 0]);
 
 
-  d3.csv('includes/data/entire_data.csv', function(error, data) {
+  d3.csv('/data/entire_data.csv', function(error, data) {
       data.forEach(function(d) {
         d.index = +d.index;
         d.signal = +d.signal;
@@ -153,3 +154,4 @@
 
   </script>
 </body>
+</html>
