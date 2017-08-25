@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <head>
     <title>NDV - Nanopore Data Visualizer</title>
-    <link rel="stylesheet" type="text/css" href="./includes/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <script src="https://d3js.org/d3.v4.min.js"></script>
   </head>
   <body>
@@ -41,7 +41,7 @@
           .attr("class", "context")
           .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-      d3.csv("./includes/data/part_data.csv", type, function(error, data) {
+      d3.csv("/data/part_data.csv", type, function(error, data) {
         if (error) throw error;
 
         x.domain([ d3.min(data, function(d){ return d.index; }) , d3.max(data,function(d){ return d.index; }) ]);
@@ -55,7 +55,7 @@
             .on("brush end", brushed);
 
         var zoom = d3.zoom()
-            .scaleExtent([1, 1000])
+            .scaleExtent([1, 900])
             .translateExtent([[0, 0], [width, height]])
             .extent([[0, 0], [width, height]])
             .on("zoom", zoomed);
@@ -83,6 +83,38 @@
         var div = d3.select("body").append("div")
                   .attr("class", "tooltip")
                   .style("opacity", 0);
+
+        focus.append("svg").attr("width",width).attr("height",height).selectAll("rect")
+             .data(data)
+             .enter()
+             .append("rect")
+             .attr("x", function(d){ return x(d.index); })
+             .attr("y", y(90))
+             .attr("width",5005)
+             .attr("height",15)
+             .attr("class","basepair")
+             .attr("fill", function(d){
+
+                lastBP = d.model[Math.floor(Math.random() * 5) + 0];
+                color = "orange"
+                switch(lastBP){
+                  case 'A':
+                    color = "yellow";
+                    break;
+                  case 'T':
+                    color = "green";
+                    break;
+                  case 'G':
+                    color = "red";
+                    break;
+                  case 'C':
+                    color: "blue";
+                    break;
+                  default:
+                    color: "black";
+                }
+                return color;
+             });
 
         focus.append("svg").attr("width",width).attr("height",height).selectAll("circle")
            .data(data)
@@ -178,6 +210,9 @@
           svg.selectAll(".dot")
                .attr("cx", function(d){ return x(d.index); })
                .attr("cy", function(d){ return y(d.signal); });
+
+          svg.selectAll(".basepair")
+               .attr("x", function(d){ return x(d.index); });
         }
       });
 
