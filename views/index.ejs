@@ -4,7 +4,7 @@
   <head>
     <title>NDV - Nanopore Data Visualizer</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/d3/d3.min.js"></script>
   </head>
   <body>
       <script type="text/javascript">
@@ -67,18 +67,30 @@
 
         var focus = svg.append("g")
             .attr("class", "focus")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-            .call(zoom);
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+        var rect = svg.append("rect")
+                      .attr("width",width)
+                      .attr("height",height)
+                      .style("fill", "none")
+                      .style("pointer-events", "all").call(zoom);
 
-        focus.append("g")
+        var container = focus.append("g").attr("class","container");
+
+        container.append("g")
             .attr("class", "axis axis--x")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis);
 
-        focus.append("g")
+        container.append("g")
             .attr("class", "axis axis--y")
             .call(yAxis);
+
+        focus.append("text")
+             .style("text-anchor","middle")
+             .style("font-size","15px")
+             .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
+             .text("Signal Value (pA)");
 
         var div = d3.select("body").append("div")
                   .attr("class", "tooltip")
