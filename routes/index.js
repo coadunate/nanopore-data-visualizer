@@ -3,6 +3,10 @@ var express = require('express');
 // var h5lt = require('hdf5').h5lt;
 var router = express.Router();
 
+
+var d3 = require('d3');
+
+
 // var Access = require('hdf5/lib/globals').Access;
 //
 // var directory = __dirname + '/../includes/data/fast5/' // directory where fast5
@@ -20,7 +24,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: "Express" });
 });
 
 module.exports = router;

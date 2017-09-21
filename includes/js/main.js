@@ -11,7 +11,7 @@ var
 // The svg contians everthing inside the graph.
 var svg = d3.select(".app").append("svg")
     .attr("width", width + marginFocus.left + marginFocus.right)
-    .attr("height", height + marginFocus.top + marginFocus.bottom + 100);
+    .attr("height", height + marginFocus.top + marginFocus.bottom + 100 + 500);
 
 
 // Creating scales for the graph.
@@ -31,6 +31,7 @@ var lineFunction2 = d3.line()
     .y(function(d) { return y2(d.signal); })
 
 
+
 // This represents the strip below showing the mini version of the graph.
 var context = svg.append("g")
     .attr("class", "context")
@@ -39,7 +40,7 @@ var context = svg.append("g")
 d3.csv("/data/part_data.csv", type, function(error, data) {
     if (error) throw error;
 
-    x.domain([ d3.min(data, function(d){ return d.index; }) , d3.max(data,function(d){ return d.index; }) ]);
+    x.domain([ d3.min(data, function(d){ return d.index; })-50 , d3.max(data,function(d){ return d.index; }) + 150 ]);
     y.domain([ d3.min(data, function(d){ return d.signal; }), d3.max(data, function(d){ return d.signal; }) ]);
     x2.domain(x.domain());
     y2.domain(y.domain());
@@ -63,14 +64,16 @@ d3.csv("/data/part_data.csv", type, function(error, data) {
     // This is the main graph.
     var focus = svg.append("g")
         .attr("class", "focus")
-        .attr("transform", "translate(" + marginFocus.left + "," + marginFocus.top + ")");
+        .attr("transform", "translate(" + marginFocus.left + "," + marginFocus.top + ")")
+        .call(zoom)
 
-    var rect = svg.append("rect")
-        .attr("width",width)
-        .attr("transform","translate(50,0)")
-        .attr("height",height)
-        .style("fill", "none")
-        .style("pointer-events", "all").call(zoom);
+
+    // var rect = svg.append("rect")
+    //     .attr("width",width)
+    //     .attr("transform","translate(50,0)")
+    //     .attr("height",height)
+    //     .style("fill", "none")
+    //     .style("pointer-events", "all").call(zoom);
 
     var container = focus.append("g").attr("class","container");
 
@@ -173,6 +176,7 @@ d3.csv("/data/part_data.csv", type, function(error, data) {
         .attr("stroke-width",2)
         .attr("fill","none");
 
+
     context.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height2 + ")")
@@ -183,6 +187,27 @@ d3.csv("/data/part_data.csv", type, function(error, data) {
         .call(brush)
         .call(brush.move, x.range());
 
+    var reads = svg.append("g")
+        .attr("class","reads")
+        .attr("width",width)
+        .attr("height",height)
+        .attr("transform","translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")")
+        .call(zoom);
+
+    reads.append("g")
+         .attr("class","axis axis--x")
+         .attr("transform","translate(0," + height  +  ")")
+         .call(xAxis);
+
+    reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", function(d){ return x(d.index); })
+        .attr("width",function(d){ return x(d.length); })
+        .attr("height",50)
+        .attr("class","basepair")
+        .attr("fill", "red");
 
 
     function brushed() {
@@ -191,9 +216,13 @@ d3.csv("/data/part_data.csv", type, function(error, data) {
         x.domain(s.map(x2.invert, x2));
         focus.select(".squiggle").attr("d", lineFunction);
         focus.select(".axis--x").call(xAxis);
+        //reads.select(".axis--x").call(xAxis);
         svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
             .scale(width / (s[1] - s[0]))
             .translate(-s[0], 0));
+
+        // reads.selectAll("rect")
+        //     .attr("x", function(d){ return x(d.signal);});
 
         focus.selectAll("circle")
             .attr("cx", function(d){ return x(d.index); })
@@ -206,6 +235,7 @@ d3.csv("/data/part_data.csv", type, function(error, data) {
         x.domain(t.rescaleX(x2).domain());
         focus.select(".squiggle").attr("d", lineFunction);
         focus.select(".axis--x").call(xAxis);
+        reads.select(".axis--x").call(xAxis);
         context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
 
         svg.selectAll(".dot")

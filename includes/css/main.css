@@ -27,3 +27,7 @@ div.tooltip {
   fill: none;
   pointer-events: all;
 }
+
+.reads{
+  fill: #000;
+}
