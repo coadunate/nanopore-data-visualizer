@@ -37,8 +37,17 @@ var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + marginContext.left + "," + marginContext.top + ")");
 
-d3.csv("/data/part_data.csv", type, function(error, data) {
+d3.json("/data/part_data.json", function(error, data) {
     if (error) throw error;
+
+    data.forEach(function(d){
+      d.index = +d.index;
+      d.signal = +d.signal;
+      d.model = d.model;
+      d.time = +d.time;
+      d.length = +d.length;
+      d.stdv = +d.stdv;
+    });
 
     x.domain([ d3.min(data, function(d){ return d.index; })-50 , d3.max(data,function(d){ return d.index; }) + 150 ]);
     y.domain([ d3.min(data, function(d){ return d.signal; }), d3.max(data, function(d){ return d.signal; }) ]);
@@ -247,11 +256,11 @@ d3.csv("/data/part_data.csv", type, function(error, data) {
     }
 });
 
-function type(d) {
-    d.index = +d.index;
-    d.signal = +d.signal;
-    d.time = +d.time;
-    d.length = +d.length;
-    d.stdv = +d.stdv;
-    return d;
-}
+// function type(d) {
+//     d.index = d.index;
+//     d.signal = +d.signal;
+//     d.time = +d.time;
+//     d.length = +d.length;
+//     d.stdv = +d.stdv;
+//     return d;
+// }
