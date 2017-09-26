@@ -49,6 +49,8 @@ d3.json("/data/part_data.json", function(error, data) {
       d.stdv = +d.stdv;
     });
 
+
+
     x.domain([ d3.min(data, function(d){ return d.index; })-50 , d3.max(data,function(d){ return d.index; }) + 150 ]);
     y.domain([ d3.min(data, function(d){ return d.signal; }), d3.max(data, function(d){ return d.signal; }) ]);
     x2.domain(x.domain());
@@ -69,6 +71,59 @@ d3.json("/data/part_data.json", function(error, data) {
     var xAxis = d3.axisBottom(x).tickSize(-height),
         xAxis2 = d3.axisBottom(x2),
         yAxis = d3.axisLeft(y).ticks(5).tickSize(-width);
+
+    var reads = svg.append("g")
+        .attr("class","reads")
+        .attr("transform","translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")")
+        .call(zoom);
+
+    var read_container = reads.append("g").attr("class","container");
+
+    read_container.append("g")
+         .attr("class","axis axis--x")
+         .attr("transform","translate(0," + height  +  ")")
+         .call(xAxis);
+
+
+    reads.append("text")
+       .style("text-anchor","middle")
+       .style("font-size","15px")
+       .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
+       .text("# Reads");
+
+    reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
+       .data(data)
+       .enter()
+       .append("rect")
+       .attr("x", function(d){ return x(d.index); })
+       .attr("y", y(140))
+       .attr("width", function(d){ return x(d.index + 100)})
+       .attr("height",50)
+       .attr("class","read-rect")
+       .attr("fill", function(d){
+
+           lastBP = d.model[Math.floor(Math.random() * 5) + 0];
+           color = "orange";
+           switch(lastBP){
+               case 'A':
+                   color = "yellow";
+                   break;
+               case 'T':
+                   color = "green";
+                   break;
+               case 'G':
+                   color = "red";
+                   break;
+               case 'C':
+                   color: "blue";
+                   break;
+               default:
+                   color: "black";
+           }
+           return color;
+       });
+
+    svg.selectAll(".read-rect").filter(":nth-last-child(1)").attr("fill","black");
 
     // This is the main graph.
     var focus = svg.append("g")
@@ -105,38 +160,6 @@ d3.json("/data/part_data.json", function(error, data) {
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-    focus.append("svg").attr("width",width).attr("height",height).selectAll("rect")
-        .data(data)
-        .enter()
-        .append("rect")
-        .attr("x", function(d){ return x(d.index); })
-        .attr("y", y(90))
-        .attr("width",5005)
-        .attr("height",15)
-        .attr("class","basepair")
-        .attr("fill", function(d){
-
-            lastBP = d.model[Math.floor(Math.random() * 5) + 0];
-            color = "orange";
-            switch(lastBP){
-                case 'A':
-                    color = "yellow";
-                    break;
-                case 'T':
-                    color = "green";
-                    break;
-                case 'G':
-                    color = "red";
-                    break;
-                case 'C':
-                    color: "blue";
-                    break;
-                default:
-                    color: "black";
-            }
-            return color;
-        });
-
     focus.append("svg").attr("width",width).attr("height",height).selectAll("circle")
         .data(data)
         .enter()
@@ -153,7 +176,7 @@ d3.json("/data/part_data.json", function(error, data) {
                 .style("text-align","left");
             //index,signal,time,model,length,stdv
             div.html(
-                "<b>Event #:</b> " + (d.index-1) + "<br />" +
+                "<b>Event #:</b> " + (d.index) + "<br />" +
                 "<b>Signal:</b> " + d.signal + "<br />" +
                 "<b>Time:</b> " + d.time + "<br />" +
                 "<b>Model:</b> " + d.model + "<br />" +
@@ -196,46 +219,24 @@ d3.json("/data/part_data.json", function(error, data) {
         .call(brush)
         .call(brush.move, x.range());
 
-    var reads = svg.append("g")
-        .attr("class","reads")
-        .attr("width",width)
-        .attr("height",height)
-        .attr("transform","translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")")
-        .call(zoom);
-
-    reads.append("g")
-         .attr("class","axis axis--x")
-         .attr("transform","translate(0," + height  +  ")")
-         .call(xAxis);
-
-    reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
-        .data(data)
-        .enter()
-        .append("rect")
-        .attr("x", function(d){ return x(d.index); })
-        .attr("width",function(d){ return x(d.length); })
-        .attr("height",50)
-        .attr("class","basepair")
-        .attr("fill", "red");
-
 
     function brushed() {
+
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
         var s = d3.event.selection || x2.range();
         x.domain(s.map(x2.invert, x2));
         focus.select(".squiggle").attr("d", lineFunction);
         focus.select(".axis--x").call(xAxis);
-        //reads.select(".axis--x").call(xAxis);
+        reads.select(".axis--x").call(xAxis);
         svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
             .scale(width / (s[1] - s[0]))
             .translate(-s[0], 0));
 
-        // reads.selectAll("rect")
-        //     .attr("x", function(d){ return x(d.signal);});
 
         focus.selectAll("circle")
             .attr("cx", function(d){ return x(d.index); })
             .attr("cy", function(d){ return y(d.signal); });
+
     }
 
     function zoomed() {
@@ -251,8 +252,10 @@ d3.json("/data/part_data.json", function(error, data) {
             .attr("cx", function(d){ return x(d.index); })
             .attr("cy", function(d){ return y(d.signal); });
 
-        svg.selectAll(".basepair")
-            .attr("x", function(d){ return x(d.index); });
+        svg.selectAll(".read-rect")
+            .attr("x", function(d){ return x(d.index); })
+            .attr("width",function(d){ return x(d.index + 100) > 0 ? x(d.index + 100) : 0; });
+
     }
 });
 

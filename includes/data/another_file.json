@@ -1,0 +1,9000 @@
+[{
+	"index": 1,
+	"signal": 103.09,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.91608
+
+},
+{
+	"index": 2,
+	"signal": 101.457,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.23485
+
+},
+{
+	"index": 3,
+	"signal": 100.273,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.447952
+
+},
+{
+	"index": 4,
+	"signal": 101.007,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 4.19844
+
+},
+{
+	"index": 5,
+	"signal": 126.549,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.0134
+
+},
+{
+	"index": 6,
+	"signal": 107.166,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.2649
+
+},
+{
+	"index": 7,
+	"signal": 108.807,
+	"time": 6692.82,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.99188
+
+},
+{
+	"index": 8,
+	"signal": 106.703,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.35508
+
+},
+{
+	"index": 9,
+	"signal": 129.912,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.68616
+
+},
+{
+	"index": 10,
+	"signal": 130.361,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.82297
+
+},
+{
+	"index": 11,
+	"signal": 115.36,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.60769
+
+},
+{
+	"index": 12,
+	"signal": 114.846,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.814066
+
+},
+{
+	"index": 13,
+	"signal": 108.365,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.693415
+
+},
+{
+	"index": 14,
+	"signal": 110.906,
+	"time": 6692.83,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.51028
+
+},
+{
+	"index": 15,
+	"signal": 122.665,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.656654
+
+},
+{
+	"index": 16,
+	"signal": 124.023,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.87012
+
+},
+{
+	"index": 17,
+	"signal": 133.118,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.99294
+
+},
+{
+	"index": 18,
+	"signal": 120.921,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.70656
+
+},
+{
+	"index": 19,
+	"signal": 88.7254,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 0.995832
+
+},
+{
+	"index": 20,
+	"signal": 121.191,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 4.20152
+
+},
+{
+	"index": 21,
+	"signal": 135.036,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.529345
+
+},
+{
+	"index": 22,
+	"signal": 137.05,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.28829
+
+},
+{
+	"index": 23,
+	"signal": 125.821,
+	"time": 6692.84,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.18134
+
+},
+{
+	"index": 24,
+	"signal": 125.177,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.54104
+
+},
+{
+	"index": 25,
+	"signal": 102.611,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.36393
+
+},
+{
+	"index": 26,
+	"signal": 103.775,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.17459
+
+},
+{
+	"index": 27,
+	"signal": 99.2093,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.29327
+
+},
+{
+	"index": 28,
+	"signal": 91.2078,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.93389
+
+},
+{
+	"index": 29,
+	"signal": 125.866,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.56237
+
+},
+{
+	"index": 30,
+	"signal": 122.569,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.955225
+
+},
+{
+	"index": 31,
+	"signal": 127.921,
+	"time": 6692.85,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.57575
+
+},
+{
+	"index": 32,
+	"signal": 118.889,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.66504
+
+},
+{
+	"index": 33,
+	"signal": 118.434,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.222912
+
+},
+{
+	"index": 34,
+	"signal": 117.62,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.23639
+
+},
+{
+	"index": 35,
+	"signal": 118.254,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.943875
+
+},
+{
+	"index": 36,
+	"signal": 117.01,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.84401
+
+},
+{
+	"index": 37,
+	"signal": 124.643,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.967236
+
+},
+{
+	"index": 38,
+	"signal": 120.651,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.36346
+
+},
+{
+	"index": 39,
+	"signal": 107.705,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.45499
+
+},
+{
+	"index": 40,
+	"signal": 133.373,
+	"time": 6692.86,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.38373
+
+},
+{
+	"index": 41,
+	"signal": 107.465,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 5.00319
+
+},
+{
+	"index": 42,
+	"signal": 126.765,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.5258
+
+},
+{
+	"index": 43,
+	"signal": 124.922,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.11752
+
+},
+{
+	"index": 44,
+	"signal": 128.248,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.530439
+
+},
+{
+	"index": 45,
+	"signal": 130.496,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.614715
+
+},
+{
+	"index": 46,
+	"signal": 131.08,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.59184
+
+},
+{
+	"index": 47,
+	"signal": 129.0,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.61609
+
+},
+{
+	"index": 48,
+	"signal": 114.718,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.6545
+
+},
+{
+	"index": 49,
+	"signal": 111.661,
+	"time": 6692.87,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.13271
+
+},
+{
+	"index": 50,
+	"signal": 117.685,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.08348
+
+},
+{
+	"index": 51,
+	"signal": 128.419,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.6014
+
+},
+{
+	"index": 52,
+	"signal": 116.156,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.81423
+
+},
+{
+	"index": 53,
+	"signal": 130.361,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.26546
+
+},
+{
+	"index": 54,
+	"signal": 122.315,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.31449
+
+},
+{
+	"index": 55,
+	"signal": 106.267,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.7588
+
+},
+{
+	"index": 56,
+	"signal": 106.662,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.70424
+
+},
+{
+	"index": 57,
+	"signal": 144.278,
+	"time": 6692.88,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.82118
+
+},
+{
+	"index": 58,
+	"signal": 131.597,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.91495
+
+},
+{
+	"index": 59,
+	"signal": 109.638,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.16825
+
+},
+{
+	"index": 60,
+	"signal": 112.875,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.82405
+
+},
+{
+	"index": 61,
+	"signal": 92.5414,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.83552
+
+},
+{
+	"index": 62,
+	"signal": 92.1817,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 5.32553
+
+},
+{
+	"index": 63,
+	"signal": 129.282,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.56238
+
+},
+{
+	"index": 64,
+	"signal": 127.259,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.32952
+
+},
+{
+	"index": 65,
+	"signal": 130.121,
+	"time": 6692.89,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.471941
+
+},
+{
+	"index": 66,
+	"signal": 117.175,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 7.80502
+
+},
+{
+	"index": 67,
+	"signal": 132.489,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.06464
+
+},
+{
+	"index": 68,
+	"signal": 100.063,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.84444
+
+},
+{
+	"index": 69,
+	"signal": 117.685,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.63757
+
+},
+{
+	"index": 70,
+	"signal": 118.284,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.6848
+
+},
+{
+	"index": 71,
+	"signal": 123.169,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.588052
+
+},
+{
+	"index": 72,
+	"signal": 122.854,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.64519
+
+},
+{
+	"index": 73,
+	"signal": 120.472,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.17263
+
+},
+{
+	"index": 74,
+	"signal": 126.837,
+	"time": 6692.9,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.0086
+
+},
+{
+	"index": 75,
+	"signal": 99.1194,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 5.03199
+
+},
+{
+	"index": 76,
+	"signal": 121.491,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 3.89899
+
+},
+{
+	"index": 77,
+	"signal": 127.244,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.90222
+
+},
+{
+	"index": 78,
+	"signal": 129.372,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.886567
+
+},
+{
+	"index": 79,
+	"signal": 129.582,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.967124
+
+},
+{
+	"index": 80,
+	"signal": 131.44,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.671785
+
+},
+{
+	"index": 81,
+	"signal": 127.844,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.45565
+
+},
+{
+	"index": 82,
+	"signal": 109.743,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.306526
+
+},
+{
+	"index": 83,
+	"signal": 107.84,
+	"time": 6692.91,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.0891
+
+},
+{
+	"index": 84,
+	"signal": 109.791,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.45456
+
+},
+{
+	"index": 85,
+	"signal": 95.2535,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.40664
+
+},
+{
+	"index": 86,
+	"signal": 140.55,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.90424
+
+},
+{
+	"index": 87,
+	"signal": 138.704,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.07606
+
+},
+{
+	"index": 88,
+	"signal": 122.629,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.66699
+
+},
+{
+	"index": 89,
+	"signal": 107.993,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.95143
+
+},
+{
+	"index": 90,
+	"signal": 113.279,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.53779
+
+},
+{
+	"index": 91,
+	"signal": 121.281,
+	"time": 6692.92,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.00232
+
+},
+{
+	"index": 92,
+	"signal": 115.401,
+	"time": 6692.93,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.572828
+
+},
+{
+	"index": 93,
+	"signal": 117.235,
+	"time": 6692.93,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.59132
+
+},
+{
+	"index": 94,
+	"signal": 118.913,
+	"time": 6692.93,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.65676
+
+},
+{
+	"index": 95,
+	"signal": 119.707,
+	"time": 6692.93,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.827929
+
+},
+{
+	"index": 96,
+	"signal": 119.11,
+	"time": 6692.93,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.63348
+
+},
+{
+	"index": 97,
+	"signal": 117.572,
+	"time": 6692.93,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.10656
+
+},
+{
+	"index": 98,
+	"signal": 116.156,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.387668
+
+},
+{
+	"index": 99,
+	"signal": 116.83,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.723435
+
+},
+{
+	"index": 100,
+	"signal": 117.595,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.02769
+
+},
+{
+	"index": 101,
+	"signal": 116.002,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.07175
+
+},
+{
+	"index": 102,
+	"signal": 117.834,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.738941
+
+},
+{
+	"index": 103,
+	"signal": 117.019,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.54867
+
+},
+{
+	"index": 104,
+	"signal": 114.418,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.943875
+
+},
+{
+	"index": 105,
+	"signal": 116.875,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.41809
+
+},
+{
+	"index": 106,
+	"signal": 117.804,
+	"time": 6692.94,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.970459
+
+},
+{
+	"index": 107,
+	"signal": 114.358,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.20196
+
+},
+{
+	"index": 108,
+	"signal": 117.715,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.97433
+
+},
+{
+	"index": 109,
+	"signal": 115.557,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.084763
+
+},
+{
+	"index": 110,
+	"signal": 120.831,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.00275,
+	"stdv": 1.79626
+
+},
+{
+	"index": 111,
+	"signal": 126.585,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.441169
+
+},
+{
+	"index": 112,
+	"signal": 95.5861,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.0334
+
+},
+{
+	"index": 113,
+	"signal": 90.4836,
+	"time": 6692.95,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 0.789406
+
+},
+{
+	"index": 114,
+	"signal": 124.787,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.77273
+
+},
+{
+	"index": 115,
+	"signal": 117.81,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.947179
+
+},
+{
+	"index": 116,
+	"signal": 118.014,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.98062
+
+},
+{
+	"index": 117,
+	"signal": 120.232,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.593335
+
+},
+{
+	"index": 118,
+	"signal": 117.127,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.29974
+
+},
+{
+	"index": 119,
+	"signal": 115.976,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.8927
+
+},
+{
+	"index": 120,
+	"signal": 119.273,
+	"time": 6692.96,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.753384
+
+},
+{
+	"index": 121,
+	"signal": 117.033,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.15472
+
+},
+{
+	"index": 122,
+	"signal": 117.595,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.549868
+
+},
+{
+	"index": 123,
+	"signal": 115.916,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.03118
+
+},
+{
+	"index": 124,
+	"signal": 117.715,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.07677
+
+},
+{
+	"index": 125,
+	"signal": 115.437,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.294623
+
+},
+{
+	"index": 126,
+	"signal": 115.761,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.51916
+
+},
+{
+	"index": 127,
+	"signal": 116.588,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.833
+
+},
+{
+	"index": 128,
+	"signal": 118.17,
+	"time": 6692.97,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.967255
+
+},
+{
+	"index": 129,
+	"signal": 119.977,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.5119
+
+},
+{
+	"index": 130,
+	"signal": 114.898,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.70031
+
+},
+{
+	"index": 131,
+	"signal": 115.819,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.55621
+
+},
+{
+	"index": 132,
+	"signal": 95.5681,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.53891
+
+},
+{
+	"index": 133,
+	"signal": 90.1439,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.08196
+
+},
+{
+	"index": 134,
+	"signal": 88.0462,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.33198
+
+},
+{
+	"index": 135,
+	"signal": 91.972,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.69403
+
+},
+{
+	"index": 136,
+	"signal": 120.831,
+	"time": 6692.98,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 5.29757
+
+},
+{
+	"index": 137,
+	"signal": 119.393,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.03923
+
+},
+{
+	"index": 138,
+	"signal": 114.957,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.1401
+
+},
+{
+	"index": 139,
+	"signal": 116.336,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.910157
+
+},
+{
+	"index": 140,
+	"signal": 117.954,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.492424
+
+},
+{
+	"index": 141,
+	"signal": 116.456,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.370271
+
+},
+{
+	"index": 142,
+	"signal": 114.763,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.797821
+
+},
+{
+	"index": 143,
+	"signal": 117.846,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.02993
+
+},
+{
+	"index": 144,
+	"signal": 113.639,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.762485
+
+},
+{
+	"index": 145,
+	"signal": 118.194,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.834813
+
+},
+{
+	"index": 146,
+	"signal": 117.127,
+	"time": 6692.99,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.57001
+
+},
+{
+	"index": 147,
+	"signal": 124.967,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.14166
+
+},
+{
+	"index": 148,
+	"signal": 114.255,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.37554
+
+},
+{
+	"index": 149,
+	"signal": 114.448,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.72083
+
+},
+{
+	"index": 150,
+	"signal": 119.752,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.673235
+
+},
+{
+	"index": 151,
+	"signal": 111.931,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.27478
+
+},
+{
+	"index": 152,
+	"signal": 109.467,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.926488
+
+},
+{
+	"index": 153,
+	"signal": 127.514,
+	"time": 6693.0,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.06111
+
+},
+{
+	"index": 154,
+	"signal": 126.585,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.40401
+
+},
+{
+	"index": 155,
+	"signal": 132.923,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.16051
+
+},
+{
+	"index": 156,
+	"signal": 128.293,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.17438
+
+},
+{
+	"index": 157,
+	"signal": 133.346,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.40969
+
+},
+{
+	"index": 158,
+	"signal": 130.649,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.6664
+
+},
+{
+	"index": 159,
+	"signal": 108.964,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.9126
+
+},
+{
+	"index": 160,
+	"signal": 111.436,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.74516
+
+},
+{
+	"index": 161,
+	"signal": 119.123,
+	"time": 6693.01,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 5.6449
+
+},
+{
+	"index": 162,
+	"signal": 143.352,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 4.80873
+
+},
+{
+	"index": 163,
+	"signal": 128.435,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.77997
+
+},
+{
+	"index": 164,
+	"signal": 126.405,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.253018
+
+},
+{
+	"index": 165,
+	"signal": 119.537,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.90549
+
+},
+{
+	"index": 166,
+	"signal": 133.238,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.87402
+
+},
+{
+	"index": 167,
+	"signal": 117.199,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.88911
+
+},
+{
+	"index": 168,
+	"signal": 114.178,
+	"time": 6693.02,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.21305
+
+},
+{
+	"index": 169,
+	"signal": 118.853,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.146814
+
+},
+{
+	"index": 170,
+	"signal": 116.216,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.661571
+
+},
+{
+	"index": 171,
+	"signal": 114.118,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.592849
+
+},
+{
+	"index": 172,
+	"signal": 129.894,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.50783
+
+},
+{
+	"index": 173,
+	"signal": 118.913,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.87068
+
+},
+{
+	"index": 174,
+	"signal": 101.277,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 7.35829
+
+},
+{
+	"index": 175,
+	"signal": 120.184,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.07662
+
+},
+{
+	"index": 176,
+	"signal": 123.888,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.962717
+
+},
+{
+	"index": 177,
+	"signal": 124.581,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.70179
+
+},
+{
+	"index": 178,
+	"signal": 119.213,
+	"time": 6693.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.73072
+
+},
+{
+	"index": 179,
+	"signal": 121.491,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.716732
+
+},
+{
+	"index": 180,
+	"signal": 124.113,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.94636
+
+},
+{
+	"index": 181,
+	"signal": 114.106,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.18342
+
+},
+{
+	"index": 182,
+	"signal": 128.143,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.44842
+
+},
+{
+	"index": 183,
+	"signal": 130.421,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.884952
+
+},
+{
+	"index": 184,
+	"signal": 126.297,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.07025
+
+},
+{
+	"index": 185,
+	"signal": 128.293,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.47454
+
+},
+{
+	"index": 186,
+	"signal": 121.55,
+	"time": 6693.04,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.997523
+
+},
+{
+	"index": 187,
+	"signal": 102.041,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.64723
+
+},
+{
+	"index": 188,
+	"signal": 99.6588,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.26121
+
+},
+{
+	"index": 189,
+	"signal": 133.643,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.43566
+
+},
+{
+	"index": 190,
+	"signal": 129.162,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.694755
+
+},
+{
+	"index": 191,
+	"signal": 131.26,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.58331
+
+},
+{
+	"index": 192,
+	"signal": 117.055,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.91971
+
+},
+{
+	"index": 193,
+	"signal": 117.518,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.03439
+
+},
+{
+	"index": 194,
+	"signal": 121.685,
+	"time": 6693.05,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.05134
+
+},
+{
+	"index": 195,
+	"signal": 114.255,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.48221
+
+},
+{
+	"index": 196,
+	"signal": 121.311,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.61717
+
+},
+{
+	"index": 197,
+	"signal": 114.223,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.29912
+
+},
+{
+	"index": 198,
+	"signal": 111.181,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.515587
+
+},
+{
+	"index": 199,
+	"signal": 133.598,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.61367
+
+},
+{
+	"index": 200,
+	"signal": 130.145,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 2.59317
+
+},
+{
+	"index": 201,
+	"signal": 110.642,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.03145
+
+},
+{
+	"index": 202,
+	"signal": 113.324,
+	"time": 6693.06,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 8.29499
+
+},
+{
+	"index": 203,
+	"signal": 148.282,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.02067
+
+},
+{
+	"index": 204,
+	"signal": 127.544,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 5.60165
+
+},
+{
+	"index": 205,
+	"signal": 100.441,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.48538
+
+},
+{
+	"index": 206,
+	"signal": 103.809,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.34123
+
+},
+{
+	"index": 207,
+	"signal": 98.535,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.653737
+
+},
+{
+	"index": 208,
+	"signal": 93.449,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 6.50281
+
+},
+{
+	"index": 209,
+	"signal": 140.97,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.01835
+
+},
+{
+	"index": 210,
+	"signal": 138.452,
+	"time": 6693.07,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.43358
+
+},
+{
+	"index": 211,
+	"signal": 124.832,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.78171
+
+},
+{
+	"index": 212,
+	"signal": 118.674,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.19297
+
+},
+{
+	"index": 213,
+	"signal": 130.481,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.70159
+
+},
+{
+	"index": 214,
+	"signal": 127.964,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.12101
+
+},
+{
+	"index": 215,
+	"signal": 111.706,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 4.61311
+
+},
+{
+	"index": 216,
+	"signal": 95.4782,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.893028
+
+},
+{
+	"index": 217,
+	"signal": 94.4353,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.23241
+
+},
+{
+	"index": 218,
+	"signal": 114.358,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 4.5446
+
+},
+{
+	"index": 219,
+	"signal": 138.033,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.0305
+
+},
+{
+	"index": 220,
+	"signal": 135.695,
+	"time": 6693.08,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.10919
+
+},
+{
+	"index": 221,
+	"signal": 122.449,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.58491
+
+},
+{
+	"index": 222,
+	"signal": 123.199,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 7.52587
+
+},
+{
+	"index": 223,
+	"signal": 102.131,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.77686
+
+},
+{
+	"index": 224,
+	"signal": 98.8227,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.21195
+
+},
+{
+	"index": 225,
+	"signal": 100.378,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.700459
+
+},
+{
+	"index": 226,
+	"signal": 105.753,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.72908
+
+},
+{
+	"index": 227,
+	"signal": 151.866,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.877408
+
+},
+{
+	"index": 228,
+	"signal": 126.465,
+	"time": 6693.09,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.61069
+
+},
+{
+	"index": 229,
+	"signal": 129.147,
+	"time": 6693.1,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 4.11692
+
+},
+{
+	"index": 230,
+	"signal": 99.0744,
+	"time": 6693.1,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.71526
+
+},
+{
+	"index": 231,
+	"signal": 89.5845,
+	"time": 6693.1,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.57369
+
+},
+{
+	"index": 232,
+	"signal": 92.4215,
+	"time": 6693.1,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.984612
+
+},
+{
+	"index": 233,
+	"signal": 131.363,
+	"time": 6693.1,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.25814
+
+},
+{
+	"index": 234,
+	"signal": 131.013,
+	"time": 6693.1,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.30536
+
+},
+{
+	"index": 235,
+	"signal": 129.162,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.594441
+
+},
+{
+	"index": 236,
+	"signal": 117.894,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.0847631
+
+},
+{
+	"index": 237,
+	"signal": 116.096,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.03089
+
+},
+{
+	"index": 238,
+	"signal": 125.266,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.977202
+
+},
+{
+	"index": 239,
+	"signal": 126.585,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.22419
+
+},
+{
+	"index": 240,
+	"signal": 126.9,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.19254
+
+},
+{
+	"index": 241,
+	"signal": 130.316,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.601422
+
+},
+{
+	"index": 242,
+	"signal": 138.902,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.00621
+
+},
+{
+	"index": 243,
+	"signal": 120.343,
+	"time": 6693.11,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.20979
+
+},
+{
+	"index": 244,
+	"signal": 116.624,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.62664
+
+},
+{
+	"index": 245,
+	"signal": 104.693,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.827414
+
+},
+{
+	"index": 246,
+	"signal": 112.704,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.869249
+
+},
+{
+	"index": 247,
+	"signal": 126.303,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.96379
+
+},
+{
+	"index": 248,
+	"signal": 122.689,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.003,
+	"stdv": 2.66525
+
+},
+{
+	"index": 249,
+	"signal": 135.036,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.14724
+
+},
+{
+	"index": 250,
+	"signal": 132.519,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.777726
+
+},
+{
+	"index": 251,
+	"signal": 107.48,
+	"time": 6693.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.588175
+
+},
+{
+	"index": 252,
+	"signal": 106.267,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.871188
+
+},
+{
+	"index": 253,
+	"signal": 106.267,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 5.43609
+
+},
+{
+	"index": 254,
+	"signal": 135.971,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.81851
+
+},
+{
+	"index": 255,
+	"signal": 132.519,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.88563
+
+},
+{
+	"index": 256,
+	"signal": 107.885,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.993026
+
+},
+{
+	"index": 257,
+	"signal": 111.481,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.508017
+
+},
+{
+	"index": 258,
+	"signal": 109.683,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.54483
+
+},
+{
+	"index": 259,
+	"signal": 130.104,
+	"time": 6693.13,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.38122
+
+},
+{
+	"index": 260,
+	"signal": 118.554,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.11192
+
+},
+{
+	"index": 261,
+	"signal": 123.349,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.80407
+
+},
+{
+	"index": 262,
+	"signal": 138.838,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.23391
+
+},
+{
+	"index": 263,
+	"signal": 119.632,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.95567
+
+},
+{
+	"index": 264,
+	"signal": 115.976,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.1745
+
+},
+{
+	"index": 265,
+	"signal": 112.38,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 4.17579
+
+},
+{
+	"index": 266,
+	"signal": 85.9034,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.47374
+
+},
+{
+	"index": 267,
+	"signal": 88.3458,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.04179
+
+},
+{
+	"index": 268,
+	"signal": 122.375,
+	"time": 6693.14,
+	"model": "CTGTT",
+	"length": 0.003,
+	"stdv": 3.44504
+
+},
+{
+	"index": 269,
+	"signal": 125.461,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.499501
+
+},
+{
+	"index": 270,
+	"signal": 128.143,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.977192
+
+},
+{
+	"index": 271,
+	"signal": 97.3213,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.07103
+
+},
+{
+	"index": 272,
+	"signal": 121.91,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.83973
+
+},
+{
+	"index": 273,
+	"signal": 123.349,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 0.871924
+
+},
+{
+	"index": 274,
+	"signal": 135.036,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.945414
+
+},
+{
+	"index": 275,
+	"signal": 132.294,
+	"time": 6693.15,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.69363
+
+},
+{
+	"index": 276,
+	"signal": 122.09,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.07755
+
+},
+{
+	"index": 277,
+	"signal": 131.949,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.69803
+
+},
+{
+	"index": 278,
+	"signal": 112.74,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.89844
+
+},
+{
+	"index": 279,
+	"signal": 109.443,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.753014
+
+},
+{
+	"index": 280,
+	"signal": 147.659,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.46254
+
+},
+{
+	"index": 281,
+	"signal": 130.241,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.58226
+
+},
+{
+	"index": 282,
+	"signal": 105.296,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.16095
+
+},
+{
+	"index": 283,
+	"signal": 103.408,
+	"time": 6693.16,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.40066
+
+},
+{
+	"index": 284,
+	"signal": 135.18,
+	"time": 6693.17,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.84847
+
+},
+{
+	"index": 285,
+	"signal": 131.5,
+	"time": 6693.17,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.307791
+
+},
+{
+	"index": 286,
+	"signal": 109.443,
+	"time": 6693.17,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 2.76372
+
+},
+{
+	"index": 287,
+	"signal": 107.885,
+	"time": 6693.17,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.03437
+
+},
+{
+	"index": 288,
+	"signal": 103.33,
+	"time": 6693.17,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.28072
+
+},
+{
+	"index": 289,
+	"signal": 148.582,
+	"time": 6693.17,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 2.4986
+
+},
+{
+	"index": 290,
+	"signal": 126.873,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.00821
+
+},
+{
+	"index": 291,
+	"signal": 101.361,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.86847
+
+},
+{
+	"index": 292,
+	"signal": 106.806,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.94201
+
+},
+{
+	"index": 293,
+	"signal": 127.334,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.44841
+
+},
+{
+	"index": 294,
+	"signal": 114.763,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.817566
+
+},
+{
+	"index": 295,
+	"signal": 132.141,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.58461
+
+},
+{
+	"index": 296,
+	"signal": 133.717,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.227268
+
+},
+{
+	"index": 297,
+	"signal": 132.159,
+	"time": 6693.18,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.422878
+
+},
+{
+	"index": 298,
+	"signal": 131.35,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.88432
+
+},
+{
+	"index": 299,
+	"signal": 110.762,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 6.87992
+
+},
+{
+	"index": 300,
+	"signal": 126.555,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.60264
+
+},
+{
+	"index": 301,
+	"signal": 136.043,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.89771
+
+},
+{
+	"index": 302,
+	"signal": 123.986,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.00275,
+	"stdv": 1.64689
+
+},
+{
+	"index": 303,
+	"signal": 124.273,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.919297
+
+},
+{
+	"index": 304,
+	"signal": 124.992,
+	"time": 6693.19,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.47545
+
+},
+{
+	"index": 305,
+	"signal": 140.225,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.70444
+
+},
+{
+	"index": 306,
+	"signal": 137.553,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.26062
+
+},
+{
+	"index": 307,
+	"signal": 108.784,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.30512
+
+},
+{
+	"index": 308,
+	"signal": 104.693,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.777295
+
+},
+{
+	"index": 309,
+	"signal": 95.658,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.728368
+
+},
+{
+	"index": 310,
+	"signal": 133.598,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.16192
+
+},
+{
+	"index": 311,
+	"signal": 137.374,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.79792
+
+},
+{
+	"index": 312,
+	"signal": 139.675,
+	"time": 6693.2,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.36212
+
+},
+{
+	"index": 313,
+	"signal": 138.992,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.336393
+
+},
+{
+	"index": 314,
+	"signal": 137.733,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.421691
+
+},
+{
+	"index": 315,
+	"signal": 120.759,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.46443
+
+},
+{
+	"index": 316,
+	"signal": 105.008,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.14583
+
+},
+{
+	"index": 317,
+	"signal": 106.087,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.486091
+
+},
+{
+	"index": 318,
+	"signal": 105.799,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.96502
+
+},
+{
+	"index": 319,
+	"signal": 141.581,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.00463
+
+},
+{
+	"index": 320,
+	"signal": 138.003,
+	"time": 6693.21,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.6112
+
+},
+{
+	"index": 321,
+	"signal": 121.491,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.41051
+
+},
+{
+	"index": 322,
+	"signal": 116.732,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.32788
+
+},
+{
+	"index": 323,
+	"signal": 101.463,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.54675
+
+},
+{
+	"index": 324,
+	"signal": 108.155,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.20937
+
+},
+{
+	"index": 325,
+	"signal": 110.223,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.833484
+
+},
+{
+	"index": 326,
+	"signal": 133.103,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 4.15187
+
+},
+{
+	"index": 327,
+	"signal": 116.408,
+	"time": 6693.22,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 4.32669
+
+},
+{
+	"index": 328,
+	"signal": 100.153,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.21287
+
+},
+{
+	"index": 329,
+	"signal": 96.7818,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.652966
+
+},
+{
+	"index": 330,
+	"signal": 100.992,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.51017
+
+},
+{
+	"index": 331,
+	"signal": 146.694,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 5.2795
+
+},
+{
+	"index": 332,
+	"signal": 146.292,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.58696
+
+},
+{
+	"index": 333,
+	"signal": 144.926,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 4.22586
+
+},
+{
+	"index": 334,
+	"signal": 126.765,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.88987
+
+},
+{
+	"index": 335,
+	"signal": 127.439,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.06626
+
+},
+{
+	"index": 336,
+	"signal": 114.227,
+	"time": 6693.23,
+	"model": "CTGTT",
+	"length": 0.00275,
+	"stdv": 2.27065
+
+},
+{
+	"index": 337,
+	"signal": 132.77,
+	"time": 6693.24,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.33813
+
+},
+{
+	"index": 338,
+	"signal": 131.08,
+	"time": 6693.24,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.24511
+
+},
+{
+	"index": 339,
+	"signal": 133.897,
+	"time": 6693.24,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.19515
+
+},
+{
+	"index": 340,
+	"signal": 132.129,
+	"time": 6693.24,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.948145
+
+},
+{
+	"index": 341,
+	"signal": 128.623,
+	"time": 6693.24,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.72417
+
+},
+{
+	"index": 342,
+	"signal": 105.975,
+	"time": 6693.24,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.93928
+
+},
+{
+	"index": 343,
+	"signal": 129.282,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.483291
+
+},
+{
+	"index": 344,
+	"signal": 115.504,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.3183
+
+},
+{
+	"index": 345,
+	"signal": 112.98,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.977822
+
+},
+{
+	"index": 346,
+	"signal": 101.007,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.24184
+
+},
+{
+	"index": 347,
+	"signal": 102.491,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.00898
+
+},
+{
+	"index": 348,
+	"signal": 97.3063,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.91665
+
+},
+{
+	"index": 349,
+	"signal": 84.1503,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.640278
+
+},
+{
+	"index": 350,
+	"signal": 87.1711,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.09499
+
+},
+{
+	"index": 351,
+	"signal": 101.277,
+	"time": 6693.25,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.15151
+
+},
+{
+	"index": 352,
+	"signal": 106.051,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.23218
+
+},
+{
+	"index": 353,
+	"signal": 110.822,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.338216
+
+},
+{
+	"index": 354,
+	"signal": 110.762,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.75421
+
+},
+{
+	"index": 355,
+	"signal": 126.091,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.16681
+
+},
+{
+	"index": 356,
+	"signal": 125.003,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.72252
+
+},
+{
+	"index": 357,
+	"signal": 128.068,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.588241
+
+},
+{
+	"index": 358,
+	"signal": 126.549,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.79952
+
+},
+{
+	"index": 359,
+	"signal": 95.4383,
+	"time": 6693.26,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 4.32848
+
+},
+{
+	"index": 360,
+	"signal": 96.3773,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.10126
+
+},
+{
+	"index": 361,
+	"signal": 95.7479,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.57017
+
+},
+{
+	"index": 362,
+	"signal": 117.127,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.10184
+
+},
+{
+	"index": 363,
+	"signal": 116.444,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.935005
+
+},
+{
+	"index": 364,
+	"signal": 121.505,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.22822
+
+},
+{
+	"index": 365,
+	"signal": 121.294,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.31702
+
+},
+{
+	"index": 366,
+	"signal": 134.736,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.27848
+
+},
+{
+	"index": 367,
+	"signal": 123.438,
+	"time": 6693.27,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.22283
+
+},
+{
+	"index": 368,
+	"signal": 120.591,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.19546
+
+},
+{
+	"index": 369,
+	"signal": 135.105,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.00325,
+	"stdv": 2.4039
+
+},
+{
+	"index": 370,
+	"signal": 135.486,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.1017
+
+},
+{
+	"index": 371,
+	"signal": 136.295,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.9227
+
+},
+{
+	"index": 372,
+	"signal": 134.047,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.05327
+
+},
+{
+	"index": 373,
+	"signal": 137.697,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.526072
+
+},
+{
+	"index": 374,
+	"signal": 130.613,
+	"time": 6693.28,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.9522
+
+},
+{
+	"index": 375,
+	"signal": 136.055,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.62425
+
+},
+{
+	"index": 376,
+	"signal": 122.064,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.31044
+
+},
+{
+	"index": 377,
+	"signal": 139.292,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.0614
+
+},
+{
+	"index": 378,
+	"signal": 137.913,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.777762
+
+},
+{
+	"index": 379,
+	"signal": 141.449,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.914493
+
+},
+{
+	"index": 380,
+	"signal": 138.838,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.20899
+
+},
+{
+	"index": 381,
+	"signal": 141.293,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.31815
+
+},
+{
+	"index": 382,
+	"signal": 136.894,
+	"time": 6693.29,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.555828
+
+},
+{
+	"index": 383,
+	"signal": 122.09,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.29468
+
+},
+{
+	"index": 384,
+	"signal": 115.377,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.91549
+
+},
+{
+	"index": 385,
+	"signal": 110.537,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.587107
+
+},
+{
+	"index": 386,
+	"signal": 94.8617,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.34167
+
+},
+{
+	"index": 387,
+	"signal": 99.1343,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.169526
+
+},
+{
+	"index": 388,
+	"signal": 100.273,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.447952
+
+},
+{
+	"index": 389,
+	"signal": 138.992,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.53323
+
+},
+{
+	"index": 390,
+	"signal": 134.497,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.28189
+
+},
+{
+	"index": 391,
+	"signal": 136.519,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.59533
+
+},
+{
+	"index": 392,
+	"signal": 118.566,
+	"time": 6693.3,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.8
+
+},
+{
+	"index": 393,
+	"signal": 122.0,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.86765
+
+},
+{
+	"index": 394,
+	"signal": 108.559,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.97731
+
+},
+{
+	"index": 395,
+	"signal": 138.123,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.30457
+
+},
+{
+	"index": 396,
+	"signal": 134.017,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.91644
+
+},
+{
+	"index": 397,
+	"signal": 137.661,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.14165
+
+},
+{
+	"index": 398,
+	"signal": 132.159,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.963414
+
+},
+{
+	"index": 399,
+	"signal": 96.2574,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.2825
+
+},
+{
+	"index": 400,
+	"signal": 98.2353,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.04134
+
+},
+{
+	"index": 401,
+	"signal": 98.1754,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.2279
+
+},
+{
+	"index": 402,
+	"signal": 116.786,
+	"time": 6693.31,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.09112
+
+},
+{
+	"index": 403,
+	"signal": 122.929,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.66944
+
+},
+{
+	"index": 404,
+	"signal": 134.452,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.11776
+
+},
+{
+	"index": 405,
+	"signal": 135.935,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.658006
+
+},
+{
+	"index": 406,
+	"signal": 134.137,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.509911
+
+},
+{
+	"index": 407,
+	"signal": 135.71,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.664451
+
+},
+{
+	"index": 408,
+	"signal": 114.238,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.57001
+
+},
+{
+	"index": 409,
+	"signal": 108.712,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.16838
+
+},
+{
+	"index": 410,
+	"signal": 128.653,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.37323
+
+},
+{
+	"index": 411,
+	"signal": 127.005,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.169526
+
+},
+{
+	"index": 412,
+	"signal": 129.539,
+	"time": 6693.32,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.05169
+
+},
+{
+	"index": 413,
+	"signal": 124.667,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.03118
+
+},
+{
+	"index": 414,
+	"signal": 115.857,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.95567
+
+},
+{
+	"index": 415,
+	"signal": 108.424,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.16506
+
+},
+{
+	"index": 416,
+	"signal": 106.312,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.482478
+
+},
+{
+	"index": 417,
+	"signal": 105.952,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.49915
+
+},
+{
+	"index": 418,
+	"signal": 97.576,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.18688
+
+},
+{
+	"index": 419,
+	"signal": 96.1975,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.30396
+
+},
+{
+	"index": 420,
+	"signal": 123.349,
+	"time": 6693.33,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.78176
+
+},
+{
+	"index": 421,
+	"signal": 129.327,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.43563
+
+},
+{
+	"index": 422,
+	"signal": 131.575,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.93842
+
+},
+{
+	"index": 423,
+	"signal": 115.347,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.17527
+
+},
+{
+	"index": 424,
+	"signal": 118.793,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.26553
+
+},
+{
+	"index": 425,
+	"signal": 127.484,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.87151
+
+},
+{
+	"index": 426,
+	"signal": 108.02,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 5.23822
+
+},
+{
+	"index": 427,
+	"signal": 124.008,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.70141
+
+},
+{
+	"index": 428,
+	"signal": 127.318,
+	"time": 6693.34,
+	"model": "CTGTT",
+	"length": 0.00325,
+	"stdv": 1.8095
+
+},
+{
+	"index": 429,
+	"signal": 122.39,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.70159
+
+},
+{
+	"index": 430,
+	"signal": 131.395,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.95839
+
+},
+{
+	"index": 431,
+	"signal": 110.322,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 4.01987
+
+},
+{
+	"index": 432,
+	"signal": 111.221,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.46124
+
+},
+{
+	"index": 433,
+	"signal": 112.875,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.74487
+
+},
+{
+	"index": 434,
+	"signal": 127.184,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 7.1327
+
+},
+{
+	"index": 435,
+	"signal": 111.265,
+	"time": 6693.35,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.00082
+
+},
+{
+	"index": 436,
+	"signal": 123.349,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.15313
+
+},
+{
+	"index": 437,
+	"signal": 126.465,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.59388
+
+},
+{
+	"index": 438,
+	"signal": 119.093,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.17756
+
+},
+{
+	"index": 439,
+	"signal": 121.431,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.662014
+
+},
+{
+	"index": 440,
+	"signal": 118.224,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.82108
+
+},
+{
+	"index": 441,
+	"signal": 121.101,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.725151
+
+},
+{
+	"index": 442,
+	"signal": 125.466,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.96753
+
+},
+{
+	"index": 443,
+	"signal": 130.406,
+	"time": 6693.36,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 3.04983
+
+},
+{
+	"index": 444,
+	"signal": 116.192,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.2239
+
+},
+{
+	"index": 445,
+	"signal": 111.661,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.30468
+
+},
+{
+	"index": 446,
+	"signal": 103.534,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.11946
+
+},
+{
+	"index": 447,
+	"signal": 91.6723,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.35943
+
+},
+{
+	"index": 448,
+	"signal": 98.5093,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 8.31379
+
+},
+{
+	"index": 449,
+	"signal": 143.247,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.47057
+
+},
+{
+	"index": 450,
+	"signal": 125.986,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.37715
+
+},
+{
+	"index": 451,
+	"signal": 111.147,
+	"time": 6693.37,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.02313
+
+},
+{
+	"index": 452,
+	"signal": 110.043,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.35
+
+},
+{
+	"index": 453,
+	"signal": 121.281,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.69393
+
+},
+{
+	"index": 454,
+	"signal": 119.078,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.265942
+
+},
+{
+	"index": 455,
+	"signal": 119.483,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.781655
+
+},
+{
+	"index": 456,
+	"signal": 127.202,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.89305
+
+},
+{
+	"index": 457,
+	"signal": 126.945,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.254289
+
+},
+{
+	"index": 458,
+	"signal": 131.665,
+	"time": 6693.38,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.4106
+
+},
+{
+	"index": 459,
+	"signal": 123.468,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 3.10166
+
+},
+{
+	"index": 460,
+	"signal": 107.84,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.41725
+
+},
+{
+	"index": 461,
+	"signal": 133.418,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.964532
+
+},
+{
+	"index": 462,
+	"signal": 136.043,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.870062
+
+},
+{
+	"index": 463,
+	"signal": 133.166,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.69272
+
+},
+{
+	"index": 464,
+	"signal": 113.594,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.50625
+
+},
+{
+	"index": 465,
+	"signal": 118.206,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.800905
+
+},
+{
+	"index": 466,
+	"signal": 124.104,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.9446
+
+},
+{
+	"index": 467,
+	"signal": 126.909,
+	"time": 6693.39,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.46399
+
+},
+{
+	"index": 468,
+	"signal": 105.607,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.67293
+
+},
+{
+	"index": 469,
+	"signal": 94.5021,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.59076
+
+},
+{
+	"index": 470,
+	"signal": 133.395,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.11848
+
+},
+{
+	"index": 471,
+	"signal": 102.356,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.76636
+
+},
+{
+	"index": 472,
+	"signal": 103.719,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 4.34823
+
+},
+{
+	"index": 473,
+	"signal": 125.266,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.932728
+
+},
+{
+	"index": 474,
+	"signal": 129.642,
+	"time": 6693.4,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.7093
+
+},
+{
+	"index": 475,
+	"signal": 126.825,
+	"time": 6693.41,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.83574
+
+},
+{
+	"index": 476,
+	"signal": 112.785,
+	"time": 6693.41,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 5.33145
+
+},
+{
+	"index": 477,
+	"signal": 147.962,
+	"time": 6693.41,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.42417
+
+},
+{
+	"index": 478,
+	"signal": 123.918,
+	"time": 6693.41,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.26006
+
+},
+{
+	"index": 479,
+	"signal": 94.8189,
+	"time": 6693.41,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.91621
+
+},
+{
+	"index": 480,
+	"signal": 93.0508,
+	"time": 6693.41,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.96363
+
+},
+{
+	"index": 481,
+	"signal": 117.205,
+	"time": 6693.42,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.37266
+
+},
+{
+	"index": 482,
+	"signal": 119.521,
+	"time": 6693.42,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.28845
+
+},
+{
+	"index": 483,
+	"signal": 116.995,
+	"time": 6693.42,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.471941
+
+},
+{
+	"index": 484,
+	"signal": 119.624,
+	"time": 6693.42,
+	"model": "CTGTT",
+	"length": 0.0035,
+	"stdv": 1.12402
+
+},
+{
+	"index": 485,
+	"signal": 133.562,
+	"time": 6693.42,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.3481
+
+},
+{
+	"index": 486,
+	"signal": 135.396,
+	"time": 6693.42,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.42463
+
+},
+{
+	"index": 487,
+	"signal": 122.674,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.40075
+
+},
+{
+	"index": 488,
+	"signal": 124.517,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.51692
+
+},
+{
+	"index": 489,
+	"signal": 121.97,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.10163
+
+},
+{
+	"index": 490,
+	"signal": 124.008,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.932724
+
+},
+{
+	"index": 491,
+	"signal": 135.261,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.14632
+
+},
+{
+	"index": 492,
+	"signal": 108.754,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.78256
+
+},
+{
+	"index": 493,
+	"signal": 112.344,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.70446
+
+},
+{
+	"index": 494,
+	"signal": 110.282,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.853795
+
+},
+{
+	"index": 495,
+	"signal": 115.916,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.955225
+
+},
+{
+	"index": 496,
+	"signal": 118.434,
+	"time": 6693.43,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.39515
+
+},
+{
+	"index": 497,
+	"signal": 116.516,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.971996
+
+},
+{
+	"index": 498,
+	"signal": 127.412,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.575048
+
+},
+{
+	"index": 499,
+	"signal": 126.945,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.220221
+
+},
+{
+	"index": 500,
+	"signal": 123.828,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.47036
+
+},
+{
+	"index": 501,
+	"signal": 127.334,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.94045
+
+},
+{
+	"index": 502,
+	"signal": 101.772,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 3.15912
+
+},
+{
+	"index": 503,
+	"signal": 97.0965,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.928791
+
+},
+{
+	"index": 504,
+	"signal": 104.253,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.25751
+
+},
+{
+	"index": 505,
+	"signal": 140.171,
+	"time": 6693.44,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.72517
+
+},
+{
+	"index": 506,
+	"signal": 141.914,
+	"time": 6693.45,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.78172
+
+},
+{
+	"index": 507,
+	"signal": 137.763,
+	"time": 6693.45,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 4.56698
+
+},
+{
+	"index": 508,
+	"signal": 111.07,
+	"time": 6693.45,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.29175
+
+},
+{
+	"index": 509,
+	"signal": 112.83,
+	"time": 6693.45,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 2.62148
+
+},
+{
+	"index": 510,
+	"signal": 111.892,
+	"time": 6693.45,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.5587
+
+},
+{
+	"index": 511,
+	"signal": 94.4194,
+	"time": 6693.46,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.67911
+
+},
+{
+	"index": 512,
+	"signal": 92.7451,
+	"time": 6693.46,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.86158
+
+},
+{
+	"index": 513,
+	"signal": 93.6802,
+	"time": 6693.46,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.7368
+
+},
+{
+	"index": 514,
+	"signal": 95.1636,
+	"time": 6693.46,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.920344
+
+},
+{
+	"index": 515,
+	"signal": 106.686,
+	"time": 6693.46,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.80613
+
+},
+{
+	"index": 516,
+	"signal": 107.012,
+	"time": 6693.46,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.07189
+
+},
+{
+	"index": 517,
+	"signal": 132.663,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.50769
+
+},
+{
+	"index": 518,
+	"signal": 134.002,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.98783
+
+},
+{
+	"index": 519,
+	"signal": 132.758,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.369474
+
+},
+{
+	"index": 520,
+	"signal": 136.43,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.27884
+
+},
+{
+	"index": 521,
+	"signal": 131.919,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.371279
+
+},
+{
+	"index": 522,
+	"signal": 130.649,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.650536
+
+},
+{
+	"index": 523,
+	"signal": 126.525,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.64996
+
+},
+{
+	"index": 524,
+	"signal": 111.985,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 4.02606
+
+},
+{
+	"index": 525,
+	"signal": 113.414,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 7.15445
+
+},
+{
+	"index": 526,
+	"signal": 149.652,
+	"time": 6693.47,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.40223
+
+},
+{
+	"index": 527,
+	"signal": 145.968,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.79977
+
+},
+{
+	"index": 528,
+	"signal": 121.191,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.02529
+
+},
+{
+	"index": 529,
+	"signal": 145.675,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.10102
+
+},
+{
+	"index": 530,
+	"signal": 124.355,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.54947
+
+},
+{
+	"index": 531,
+	"signal": 122.539,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.12689
+
+},
+{
+	"index": 532,
+	"signal": 133.732,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.46643
+
+},
+{
+	"index": 533,
+	"signal": 111.05,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.61457
+
+},
+{
+	"index": 534,
+	"signal": 111.014,
+	"time": 6693.48,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.62936
+
+},
+{
+	"index": 535,
+	"signal": 131.35,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.22921
+
+},
+{
+	"index": 536,
+	"signal": 109.0,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.2
+
+},
+{
+	"index": 537,
+	"signal": 106.027,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.999065
+
+},
+{
+	"index": 538,
+	"signal": 103.45,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.4447
+
+},
+{
+	"index": 539,
+	"signal": 124.742,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.46284
+
+},
+{
+	"index": 540,
+	"signal": 129.402,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 3.74998
+
+},
+{
+	"index": 541,
+	"signal": 116.576,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.897042
+
+},
+{
+	"index": 542,
+	"signal": 93.2082,
+	"time": 6693.49,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 3.59157
+
+},
+{
+	"index": 543,
+	"signal": 97.6359,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.02769
+
+},
+{
+	"index": 544,
+	"signal": 106.147,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.42574
+
+},
+{
+	"index": 545,
+	"signal": 139.756,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 6.18489
+
+},
+{
+	"index": 546,
+	"signal": 134.047,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 5.42055
+
+},
+{
+	"index": 547,
+	"signal": 110.582,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.10056
+
+},
+{
+	"index": 548,
+	"signal": 102.054,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.936433
+
+},
+{
+	"index": 549,
+	"signal": 135.635,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 6.26549
+
+},
+{
+	"index": 550,
+	"signal": 119.553,
+	"time": 6693.5,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 2.29703
+
+},
+{
+	"index": 551,
+	"signal": 103.18,
+	"time": 6693.51,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.626677
+
+},
+{
+	"index": 552,
+	"signal": 107.346,
+	"time": 6693.51,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.389132
+
+},
+{
+	"index": 553,
+	"signal": 106.247,
+	"time": 6693.51,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.18484
+
+},
+{
+	"index": 554,
+	"signal": 136.355,
+	"time": 6693.51,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 4.67017
+
+},
+{
+	"index": 555,
+	"signal": 118.211,
+	"time": 6693.51,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.38261
+
+},
+{
+	"index": 556,
+	"signal": 141.689,
+	"time": 6693.51,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 3.90651
+
+},
+{
+	"index": 557,
+	"signal": 113.04,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 3.01006
+
+},
+{
+	"index": 558,
+	"signal": 107.211,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.14314
+
+},
+{
+	"index": 559,
+	"signal": 134.776,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 5.06947
+
+},
+{
+	"index": 560,
+	"signal": 112.226,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.26721
+
+},
+{
+	"index": 561,
+	"signal": 110.726,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.02585
+
+},
+{
+	"index": 562,
+	"signal": 112.86,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.955225
+
+},
+{
+	"index": 563,
+	"signal": 109.359,
+	"time": 6693.52,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.03255
+
+},
+{
+	"index": 564,
+	"signal": 111.715,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.50013
+
+},
+{
+	"index": 565,
+	"signal": 134.569,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.913573
+
+},
+{
+	"index": 566,
+	"signal": 132.039,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.944585
+
+},
+{
+	"index": 567,
+	"signal": 112.32,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 4.44417
+
+},
+{
+	"index": 568,
+	"signal": 100.453,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.63688
+
+},
+{
+	"index": 569,
+	"signal": 102.805,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.14728
+
+},
+{
+	"index": 570,
+	"signal": 90.8931,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.87366
+
+},
+{
+	"index": 571,
+	"signal": 110.33,
+	"time": 6693.53,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.668421
+
+},
+{
+	"index": 572,
+	"signal": 114.118,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.18692
+
+},
+{
+	"index": 573,
+	"signal": 128.683,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.738054
+
+},
+{
+	"index": 574,
+	"signal": 131.8,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.729005
+
+},
+{
+	"index": 575,
+	"signal": 128.663,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 3.19729
+
+},
+{
+	"index": 576,
+	"signal": 93.2666,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.52182
+
+},
+{
+	"index": 577,
+	"signal": 123.214,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 4.19272
+
+},
+{
+	"index": 578,
+	"signal": 126.315,
+	"time": 6693.54,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.22765
+
+},
+{
+	"index": 579,
+	"signal": 128.473,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.76782
+
+},
+{
+	"index": 580,
+	"signal": 130.361,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.11568
+
+},
+{
+	"index": 581,
+	"signal": 132.159,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.58802
+
+},
+{
+	"index": 582,
+	"signal": 128.743,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.586133
+
+},
+{
+	"index": 583,
+	"signal": 129.327,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.94699
+
+},
+{
+	"index": 584,
+	"signal": 107.84,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.71691
+
+},
+{
+	"index": 585,
+	"signal": 126.513,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.47749
+
+},
+{
+	"index": 586,
+	"signal": 126.868,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.56399
+
+},
+{
+	"index": 587,
+	"signal": 103.053,
+	"time": 6693.55,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 3.36446
+
+},
+{
+	"index": 588,
+	"signal": 108.784,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.734063
+
+},
+{
+	"index": 589,
+	"signal": 122.749,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.88099
+
+},
+{
+	"index": 590,
+	"signal": 92.6013,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.672517
+
+},
+{
+	"index": 591,
+	"signal": 118.206,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.12324
+
+},
+{
+	"index": 592,
+	"signal": 118.16,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.54182
+
+},
+{
+	"index": 593,
+	"signal": 121.011,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.962717
+
+},
+{
+	"index": 594,
+	"signal": 118.988,
+	"time": 6693.56,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.07517
+
+},
+{
+	"index": 595,
+	"signal": 124.319,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.73043
+
+},
+{
+	"index": 596,
+	"signal": 125.806,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.611755
+
+},
+{
+	"index": 597,
+	"signal": 128.518,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.464991
+
+},
+{
+	"index": 598,
+	"signal": 126.277,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.03414
+
+},
+{
+	"index": 599,
+	"signal": 131.38,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.931669
+
+},
+{
+	"index": 600,
+	"signal": 130.1,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.00275,
+	"stdv": 3.04022
+
+},
+{
+	"index": 601,
+	"signal": 100.603,
+	"time": 6693.57,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 9.58556
+
+},
+{
+	"index": 602,
+	"signal": 125.326,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.30466
+
+},
+{
+	"index": 603,
+	"signal": 122.719,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.81878
+
+},
+{
+	"index": 604,
+	"signal": 135.036,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.63484
+
+},
+{
+	"index": 605,
+	"signal": 128.203,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.08609
+
+},
+{
+	"index": 606,
+	"signal": 116.696,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.42575
+
+},
+{
+	"index": 607,
+	"signal": 107.645,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.08329
+
+},
+{
+	"index": 608,
+	"signal": 102.431,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.447939
+
+},
+{
+	"index": 609,
+	"signal": 97.9956,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.13246
+
+},
+{
+	"index": 610,
+	"signal": 108.424,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.25459
+
+},
+{
+	"index": 611,
+	"signal": 143.127,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.99182
+
+},
+{
+	"index": 612,
+	"signal": 124.727,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.57003
+
+},
+{
+	"index": 613,
+	"signal": 120.723,
+	"time": 6693.58,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.87054
+
+},
+{
+	"index": 614,
+	"signal": 115.662,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.49563
+
+},
+{
+	"index": 615,
+	"signal": 102.414,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.37923
+
+},
+{
+	"index": 616,
+	"signal": 100.213,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.08194
+
+},
+{
+	"index": 617,
+	"signal": 102.738,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.61085
+
+},
+{
+	"index": 618,
+	"signal": 116.306,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.42679
+
+},
+{
+	"index": 619,
+	"signal": 136.834,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.7309
+
+},
+{
+	"index": 620,
+	"signal": 108.964,
+	"time": 6693.59,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 4.0331
+
+},
+{
+	"index": 621,
+	"signal": 94.9838,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.37721
+
+},
+{
+	"index": 622,
+	"signal": 128.968,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.3455
+
+},
+{
+	"index": 623,
+	"signal": 137.158,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.3903
+
+},
+{
+	"index": 624,
+	"signal": 138.947,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.970877
+
+},
+{
+	"index": 625,
+	"signal": 124.838,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.78003
+
+},
+{
+	"index": 626,
+	"signal": 125.362,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.686106
+
+},
+{
+	"index": 627,
+	"signal": 124.427,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.17241
+
+},
+{
+	"index": 628,
+	"signal": 123.933,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.08122
+
+},
+{
+	"index": 629,
+	"signal": 122.449,
+	"time": 6693.6,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.852907
+
+},
+{
+	"index": 630,
+	"signal": 120.651,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.44615
+
+},
+{
+	"index": 631,
+	"signal": 122.779,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.55853
+
+},
+{
+	"index": 632,
+	"signal": 130.9,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.04294
+
+},
+{
+	"index": 633,
+	"signal": 106.244,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.22782
+
+},
+{
+	"index": 634,
+	"signal": 98.6548,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 4.38316
+
+},
+{
+	"index": 635,
+	"signal": 145.681,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.14387
+
+},
+{
+	"index": 636,
+	"signal": 137.733,
+	"time": 6693.61,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.46949
+
+},
+{
+	"index": 637,
+	"signal": 129.894,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.18737
+
+},
+{
+	"index": 638,
+	"signal": 127.16,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 8.33695
+
+},
+{
+	"index": 639,
+	"signal": 101.547,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.78614
+
+},
+{
+	"index": 640,
+	"signal": 149.637,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.37208
+
+},
+{
+	"index": 641,
+	"signal": 147.503,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.36691
+
+},
+{
+	"index": 642,
+	"signal": 115.916,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.18655
+
+},
+{
+	"index": 643,
+	"signal": 113.594,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.48956
+
+},
+{
+	"index": 644,
+	"signal": 123.468,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.6113
+
+},
+{
+	"index": 645,
+	"signal": 117.685,
+	"time": 6693.62,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.989174
+
+},
+{
+	"index": 646,
+	"signal": 114.778,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.91608
+
+},
+{
+	"index": 647,
+	"signal": 121.471,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.0991
+
+},
+{
+	"index": 648,
+	"signal": 126.046,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.62483
+
+},
+{
+	"index": 649,
+	"signal": 125.102,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.615487
+
+},
+{
+	"index": 650,
+	"signal": 135.216,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.659875
+
+},
+{
+	"index": 651,
+	"signal": 122.629,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.08143
+
+},
+{
+	"index": 652,
+	"signal": 119.662,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.808572
+
+},
+{
+	"index": 653,
+	"signal": 122.15,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.171345
+
+},
+{
+	"index": 654,
+	"signal": 116.156,
+	"time": 6693.63,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.66447
+
+},
+{
+	"index": 655,
+	"signal": 118.853,
+	"time": 6693.64,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.441124
+
+},
+{
+	"index": 656,
+	"signal": 115.591,
+	"time": 6693.64,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.30179
+
+},
+{
+	"index": 657,
+	"signal": 113.927,
+	"time": 6693.64,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.27028
+
+},
+{
+	"index": 658,
+	"signal": 134.077,
+	"time": 6693.64,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.19515
+
+},
+{
+	"index": 659,
+	"signal": 132.249,
+	"time": 6693.64,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.3804
+
+},
+{
+	"index": 660,
+	"signal": 131.47,
+	"time": 6693.64,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.12401
+
+},
+{
+	"index": 661,
+	"signal": 128.608,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.35744
+
+},
+{
+	"index": 662,
+	"signal": 100.693,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.16551
+
+},
+{
+	"index": 663,
+	"signal": 94.5239,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.00325,
+	"stdv": 1.69183
+
+},
+{
+	"index": 664,
+	"signal": 147.196,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.90219
+
+},
+{
+	"index": 665,
+	"signal": 129.786,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.47407
+
+},
+{
+	"index": 666,
+	"signal": 107.31,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.5061
+
+},
+{
+	"index": 667,
+	"signal": 95.5232,
+	"time": 6693.65,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.75888
+
+},
+{
+	"index": 668,
+	"signal": 105.068,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.5279
+
+},
+{
+	"index": 669,
+	"signal": 111.122,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.9656
+
+},
+{
+	"index": 670,
+	"signal": 136.69,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 6.98564
+
+},
+{
+	"index": 671,
+	"signal": 104.986,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.57618
+
+},
+{
+	"index": 672,
+	"signal": 101.712,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.89359
+
+},
+{
+	"index": 673,
+	"signal": 104.756,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.42988
+
+},
+{
+	"index": 674,
+	"signal": 123.019,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.17133
+
+},
+{
+	"index": 675,
+	"signal": 120.022,
+	"time": 6693.66,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.57705
+
+},
+{
+	"index": 676,
+	"signal": 123.708,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.07863
+
+},
+{
+	"index": 677,
+	"signal": 122.509,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.662014
+
+},
+{
+	"index": 678,
+	"signal": 124.2,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.00375,
+	"stdv": 1.88275
+
+},
+{
+	"index": 679,
+	"signal": 137.613,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.53115
+
+},
+{
+	"index": 680,
+	"signal": 112.515,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.81257
+
+},
+{
+	"index": 681,
+	"signal": 122.225,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.5064
+
+},
+{
+	"index": 682,
+	"signal": 124.427,
+	"time": 6693.67,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.851232
+
+},
+{
+	"index": 683,
+	"signal": 127.304,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.776442
+
+},
+{
+	"index": 684,
+	"signal": 125.763,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.774556
+
+},
+{
+	"index": 685,
+	"signal": 134.425,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.758384
+
+},
+{
+	"index": 686,
+	"signal": 131.02,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.63663
+
+},
+{
+	"index": 687,
+	"signal": 134.811,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.971954
+
+},
+{
+	"index": 688,
+	"signal": 137.553,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.05802
+
+},
+{
+	"index": 689,
+	"signal": 131.979,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.7309
+
+},
+{
+	"index": 690,
+	"signal": 122.378,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.67753
+
+},
+{
+	"index": 691,
+	"signal": 120.651,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.34533
+
+},
+{
+	"index": 692,
+	"signal": 118.674,
+	"time": 6693.68,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.40691
+
+},
+{
+	"index": 693,
+	"signal": 116.051,
+	"time": 6693.69,
+	"model": "CTGTT",
+	"length": 0.003,
+	"stdv": 1.18898
+
+},
+{
+	"index": 694,
+	"signal": 109.548,
+	"time": 6693.69,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.18882
+
+},
+{
+	"index": 695,
+	"signal": 104.738,
+	"time": 6693.69,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.30578
+
+},
+{
+	"index": 696,
+	"signal": 102.671,
+	"time": 6693.69,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.389101
+
+},
+{
+	"index": 697,
+	"signal": 103.493,
+	"time": 6693.69,
+	"model": "CTGTT",
+	"length": 0.0035,
+	"stdv": 1.44936
+
+},
+{
+	"index": 698,
+	"signal": 108.712,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.767931
+
+},
+{
+	"index": 699,
+	"signal": 105.548,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.254289
+
+},
+{
+	"index": 700,
+	"signal": 106.267,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.804379
+
+},
+{
+	"index": 701,
+	"signal": 107.094,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.67347
+
+},
+{
+	"index": 702,
+	"signal": 135.441,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 5.27426
+
+},
+{
+	"index": 703,
+	"signal": 112.38,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.254289
+
+},
+{
+	"index": 704,
+	"signal": 111.661,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.873116
+
+},
+{
+	"index": 705,
+	"signal": 110.342,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.36871
+
+},
+{
+	"index": 706,
+	"signal": 112.2,
+	"time": 6693.7,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.9614
+
+},
+{
+	"index": 707,
+	"signal": 127.88,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.04799
+
+},
+{
+	"index": 708,
+	"signal": 106.926,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.084763
+
+},
+{
+	"index": 709,
+	"signal": 105.862,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.464554
+
+},
+{
+	"index": 710,
+	"signal": 110.702,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.85586
+
+},
+{
+	"index": 711,
+	"signal": 131.5,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.885701
+
+},
+{
+	"index": 712,
+	"signal": 128.803,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.06299
+
+},
+{
+	"index": 713,
+	"signal": 123.438,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.54953
+
+},
+{
+	"index": 714,
+	"signal": 136.085,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.37916
+
+},
+{
+	"index": 715,
+	"signal": 103.03,
+	"time": 6693.71,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 5.32967
+
+},
+{
+	"index": 716,
+	"signal": 109.863,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.67278
+
+},
+{
+	"index": 717,
+	"signal": 105.787,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.305618
+
+},
+{
+	"index": 718,
+	"signal": 108.664,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.69421
+
+},
+{
+	"index": 719,
+	"signal": 108.155,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.95548
+
+},
+{
+	"index": 720,
+	"signal": 132.77,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.00375,
+	"stdv": 1.53302
+
+},
+{
+	"index": 721,
+	"signal": 122.27,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.13028
+
+},
+{
+	"index": 722,
+	"signal": 120.192,
+	"time": 6693.72,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.60166
+
+},
+{
+	"index": 723,
+	"signal": 105.847,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 5.40689
+
+},
+{
+	"index": 724,
+	"signal": 129.03,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.40926
+
+},
+{
+	"index": 725,
+	"signal": 130.145,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.67313
+
+},
+{
+	"index": 726,
+	"signal": 132.744,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.857043
+
+},
+{
+	"index": 727,
+	"signal": 130.481,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.724216
+
+},
+{
+	"index": 728,
+	"signal": 133.118,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.470497
+
+},
+{
+	"index": 729,
+	"signal": 115.545,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.58242
+
+},
+{
+	"index": 730,
+	"signal": 112.5,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.999336
+
+},
+{
+	"index": 731,
+	"signal": 98.6968,
+	"time": 6693.73,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 2.04464
+
+},
+{
+	"index": 732,
+	"signal": 118.157,
+	"time": 6693.74,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 6.84181
+
+},
+{
+	"index": 733,
+	"signal": 100.535,
+	"time": 6693.74,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.37785
+
+},
+{
+	"index": 734,
+	"signal": 104.708,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.64399
+
+},
+{
+	"index": 735,
+	"signal": 109.863,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.68927
+
+},
+{
+	"index": 736,
+	"signal": 131.305,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.03488
+
+},
+{
+	"index": 737,
+	"signal": 133.675,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.02498
+
+},
+{
+	"index": 738,
+	"signal": 132.159,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.45243
+
+},
+{
+	"index": 739,
+	"signal": 112.236,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.16736
+
+},
+{
+	"index": 740,
+	"signal": 109.791,
+	"time": 6693.82,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.02128
+
+},
+{
+	"index": 741,
+	"signal": 112.416,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.96756
+
+},
+{
+	"index": 742,
+	"signal": 125.926,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.46687
+
+},
+{
+	"index": 743,
+	"signal": 129.687,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.712869
+
+},
+{
+	"index": 744,
+	"signal": 140.475,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.64916
+
+},
+{
+	"index": 745,
+	"signal": 129.082,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 4.77427
+
+},
+{
+	"index": 746,
+	"signal": 110.978,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.656965
+
+},
+{
+	"index": 747,
+	"signal": 114.034,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.82688
+
+},
+{
+	"index": 748,
+	"signal": 135.683,
+	"time": 6693.83,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.42339
+
+},
+{
+	"index": 749,
+	"signal": 137.508,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.44581
+
+},
+{
+	"index": 750,
+	"signal": 110.822,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.28557
+
+},
+{
+	"index": 751,
+	"signal": 107.465,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.977248
+
+},
+{
+	"index": 752,
+	"signal": 108.712,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.768362
+
+},
+{
+	"index": 753,
+	"signal": 110.822,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.897355
+
+},
+{
+	"index": 754,
+	"signal": 109.683,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.708201
+
+},
+{
+	"index": 755,
+	"signal": 134.265,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.890807
+
+},
+{
+	"index": 756,
+	"signal": 101.906,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 4.57775
+
+},
+{
+	"index": 757,
+	"signal": 97.8877,
+	"time": 6693.84,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.17426
+
+},
+{
+	"index": 758,
+	"signal": 100.153,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.44594
+
+},
+{
+	"index": 759,
+	"signal": 101.652,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 4.94676
+
+},
+{
+	"index": 760,
+	"signal": 134.092,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.71261
+
+},
+{
+	"index": 761,
+	"signal": 131.08,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.52175
+
+},
+{
+	"index": 762,
+	"signal": 121.131,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.42981
+
+},
+{
+	"index": 763,
+	"signal": 119.788,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.573454
+
+},
+{
+	"index": 764,
+	"signal": 130.481,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.834418
+
+},
+{
+	"index": 765,
+	"signal": 126.285,
+	"time": 6693.85,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.1864
+
+},
+{
+	"index": 766,
+	"signal": 105.997,
+	"time": 6693.86,
+	"model": "CTGTT",
+	"length": 0.0035,
+	"stdv": 1.90249
+
+},
+{
+	"index": 767,
+	"signal": 94.6391,
+	"time": 6693.86,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.02799
+
+},
+{
+	"index": 768,
+	"signal": 94.723,
+	"time": 6693.86,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.714021
+
+},
+{
+	"index": 769,
+	"signal": 103.785,
+	"time": 6693.86,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.47136
+
+},
+{
+	"index": 770,
+	"signal": 107.885,
+	"time": 6693.86,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.00879
+
+},
+{
+	"index": 771,
+	"signal": 122.779,
+	"time": 6693.86,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.2773
+
+},
+{
+	"index": 772,
+	"signal": 119.123,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.90915
+
+},
+{
+	"index": 773,
+	"signal": 112.56,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.898882
+
+},
+{
+	"index": 774,
+	"signal": 111.866,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.84751
+
+},
+{
+	"index": 775,
+	"signal": 121.775,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.04318
+
+},
+{
+	"index": 776,
+	"signal": 123.109,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.4769
+
+},
+{
+	"index": 777,
+	"signal": 106.566,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.74552
+
+},
+{
+	"index": 778,
+	"signal": 134.736,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 4.04291
+
+},
+{
+	"index": 779,
+	"signal": 109.563,
+	"time": 6693.87,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 4.70216
+
+},
+{
+	"index": 780,
+	"signal": 88.226,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.18995
+
+},
+{
+	"index": 781,
+	"signal": 119.896,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.47445
+
+},
+{
+	"index": 782,
+	"signal": 124.128,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.99965
+
+},
+{
+	"index": 783,
+	"signal": 122.36,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.270575
+
+},
+{
+	"index": 784,
+	"signal": 127.017,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.27479
+
+},
+{
+	"index": 785,
+	"signal": 119.069,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.75945
+
+},
+{
+	"index": 786,
+	"signal": 116.336,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.81706
+
+},
+{
+	"index": 787,
+	"signal": 122.03,
+	"time": 6693.88,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.95482
+
+},
+{
+	"index": 788,
+	"signal": 103.48,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 3.78979
+
+},
+{
+	"index": 789,
+	"signal": 131.35,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.97687
+
+},
+{
+	"index": 790,
+	"signal": 133.238,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.763748
+
+},
+{
+	"index": 791,
+	"signal": 136.609,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.91325
+
+},
+{
+	"index": 792,
+	"signal": 112.2,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.8413
+
+},
+{
+	"index": 793,
+	"signal": 113.309,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.5033
+
+},
+{
+	"index": 794,
+	"signal": 148.881,
+	"time": 6693.89,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.91467
+
+},
+{
+	"index": 795,
+	"signal": 128.419,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 4.66294
+
+},
+{
+	"index": 796,
+	"signal": 126.375,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.30687
+
+},
+{
+	"index": 797,
+	"signal": 95.658,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.80101
+
+},
+{
+	"index": 798,
+	"signal": 118.422,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.900163
+
+},
+{
+	"index": 799,
+	"signal": 122.09,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.963039
+
+},
+{
+	"index": 800,
+	"signal": 118.889,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.31212
+
+},
+{
+	"index": 801,
+	"signal": 121.407,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.71824
+
+},
+{
+	"index": 802,
+	"signal": 116.516,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.1469
+
+},
+{
+	"index": 803,
+	"signal": 118.925,
+	"time": 6693.9,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.08277
+
+},
+{
+	"index": 804,
+	"signal": 122.162,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.20703
+
+},
+{
+	"index": 805,
+	"signal": 127.394,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.66657
+
+},
+{
+	"index": 806,
+	"signal": 111.436,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.15652
+
+},
+{
+	"index": 807,
+	"signal": 146.873,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 7.18729
+
+},
+{
+	"index": 808,
+	"signal": 147.623,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.929877
+
+},
+{
+	"index": 809,
+	"signal": 144.97,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.778004
+
+},
+{
+	"index": 810,
+	"signal": 125.111,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.815542
+
+},
+{
+	"index": 811,
+	"signal": 101.309,
+	"time": 6693.91,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 7.57816
+
+},
+{
+	"index": 812,
+	"signal": 92.6612,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.26596
+
+},
+{
+	"index": 813,
+	"signal": 95.4183,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.724547
+
+},
+{
+	"index": 814,
+	"signal": 90.8632,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.897042
+
+},
+{
+	"index": 815,
+	"signal": 118.237,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.96534
+
+},
+{
+	"index": 816,
+	"signal": 117.235,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.17202
+
+},
+{
+	"index": 817,
+	"signal": 121.67,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.753384
+
+},
+{
+	"index": 818,
+	"signal": 124.679,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.32912
+
+},
+{
+	"index": 819,
+	"signal": 136.618,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.56452
+
+},
+{
+	"index": 820,
+	"signal": 129.462,
+	"time": 6693.92,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.88124
+
+},
+{
+	"index": 821,
+	"signal": 107.48,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 4.20234
+
+},
+{
+	"index": 822,
+	"signal": 103.785,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.00323
+
+},
+{
+	"index": 823,
+	"signal": 89.8442,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.03118
+
+},
+{
+	"index": 824,
+	"signal": 91.8821,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.6016
+
+},
+{
+	"index": 825,
+	"signal": 127.754,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 6.38826
+
+},
+{
+	"index": 826,
+	"signal": 123.124,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.971665
+
+},
+{
+	"index": 827,
+	"signal": 130.145,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.961752
+
+},
+{
+	"index": 828,
+	"signal": 128.803,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.554644
+
+},
+{
+	"index": 829,
+	"signal": 130.841,
+	"time": 6693.93,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.859472
+
+},
+{
+	"index": 830,
+	"signal": 124.367,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 6.13077
+
+},
+{
+	"index": 831,
+	"signal": 98.5709,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.94784
+
+},
+{
+	"index": 832,
+	"signal": 106.626,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.69637
+
+},
+{
+	"index": 833,
+	"signal": 110.522,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.23102
+
+},
+{
+	"index": 834,
+	"signal": 108.919,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.677271
+
+},
+{
+	"index": 835,
+	"signal": 110.402,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.509126
+
+},
+{
+	"index": 836,
+	"signal": 127.784,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.97896
+
+},
+{
+	"index": 837,
+	"signal": 129.147,
+	"time": 6693.94,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.391816
+
+},
+{
+	"index": 838,
+	"signal": 127.169,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.293945
+
+},
+{
+	"index": 839,
+	"signal": 115.557,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 2.00226
+
+},
+{
+	"index": 840,
+	"signal": 144.206,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.587256
+
+},
+{
+	"index": 841,
+	"signal": 145.24,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.79643
+
+},
+{
+	"index": 842,
+	"signal": 144.026,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.14288
+
+},
+{
+	"index": 843,
+	"signal": 146.688,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.845907
+
+},
+{
+	"index": 844,
+	"signal": 143.547,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.662021
+
+},
+{
+	"index": 845,
+	"signal": 147.982,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.963498
+
+},
+{
+	"index": 846,
+	"signal": 145.765,
+	"time": 6693.95,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.33214
+
+},
+{
+	"index": 847,
+	"signal": 146.112,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.43285
+
+},
+{
+	"index": 848,
+	"signal": 138.407,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.27424
+
+},
+{
+	"index": 849,
+	"signal": 141.509,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.06376
+
+},
+{
+	"index": 850,
+	"signal": 127.125,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.40218
+
+},
+{
+	"index": 851,
+	"signal": 112.44,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.69381
+
+},
+{
+	"index": 852,
+	"signal": 113.864,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.22842
+
+},
+{
+	"index": 853,
+	"signal": 128.953,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.97597
+
+},
+{
+	"index": 854,
+	"signal": 125.906,
+	"time": 6693.96,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.11757
+
+},
+{
+	"index": 855,
+	"signal": 105.952,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.3144
+
+},
+{
+	"index": 856,
+	"signal": 106.59,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.59392
+
+},
+{
+	"index": 857,
+	"signal": 132.699,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.19223
+
+},
+{
+	"index": 858,
+	"signal": 134.82,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.61788
+
+},
+{
+	"index": 859,
+	"signal": 98.2053,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.36341
+
+},
+{
+	"index": 860,
+	"signal": 118.224,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.848155
+
+},
+{
+	"index": 861,
+	"signal": 116.336,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.90872
+
+},
+{
+	"index": 862,
+	"signal": 119.513,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.884946
+
+},
+{
+	"index": 863,
+	"signal": 117.715,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.17756
+
+},
+{
+	"index": 864,
+	"signal": 120.232,
+	"time": 6693.97,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.36412
+
+},
+{
+	"index": 865,
+	"signal": 115.916,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.18667
+
+},
+{
+	"index": 866,
+	"signal": 118.458,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.791385
+
+},
+{
+	"index": 867,
+	"signal": 116.696,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.82877
+
+},
+{
+	"index": 868,
+	"signal": 129.252,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.92066
+
+},
+{
+	"index": 869,
+	"signal": 124.188,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.26552
+
+},
+{
+	"index": 870,
+	"signal": 101.547,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 5.07672
+
+},
+{
+	"index": 871,
+	"signal": 123.426,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.92154
+
+},
+{
+	"index": 872,
+	"signal": 125.888,
+	"time": 6693.98,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.55313
+
+},
+{
+	"index": 873,
+	"signal": 126.086,
+	"time": 6693.99,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 2.02683
+
+},
+{
+	"index": 874,
+	"signal": 127.444,
+	"time": 6693.99,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 1.56723
+
+},
+{
+	"index": 875,
+	"signal": 128.671,
+	"time": 6693.99,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.825246
+
+},
+{
+	"index": 876,
+	"signal": 125.566,
+	"time": 6693.99,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.24888
+
+},
+{
+	"index": 877,
+	"signal": 99.0944,
+	"time": 6693.99,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 2.91111
+
+},
+{
+	"index": 878,
+	"signal": 97.591,
+	"time": 6694.0,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.0666
+
+},
+{
+	"index": 879,
+	"signal": 98.7833,
+	"time": 6694.0,
+	"model": "CTGTT",
+	"length": 0.00525,
+	"stdv": 1.5395
+
+},
+{
+	"index": 880,
+	"signal": 133.094,
+	"time": 6694.0,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.59391
+
+},
+{
+	"index": 881,
+	"signal": 130.926,
+	"time": 6694.0,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.86329
+
+},
+{
+	"index": 882,
+	"signal": 101.652,
+	"time": 6694.0,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.63592
+
+},
+{
+	"index": 883,
+	"signal": 89.7244,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.95735
+
+},
+{
+	"index": 884,
+	"signal": 91.5824,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.11186
+
+},
+{
+	"index": 885,
+	"signal": 90.6684,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.05233
+
+},
+{
+	"index": 886,
+	"signal": 124.367,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.977852
+
+},
+{
+	"index": 887,
+	"signal": 125.506,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.962717
+
+},
+{
+	"index": 888,
+	"signal": 122.845,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.73747
+
+},
+{
+	"index": 889,
+	"signal": 124.847,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.897042
+
+},
+{
+	"index": 890,
+	"signal": 123.631,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.23371
+
+},
+{
+	"index": 891,
+	"signal": 126.457,
+	"time": 6694.01,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.68622
+
+},
+{
+	"index": 892,
+	"signal": 112.046,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.64513
+
+},
+{
+	"index": 893,
+	"signal": 132.303,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.45792
+
+},
+{
+	"index": 894,
+	"signal": 108.694,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.3082
+
+},
+{
+	"index": 895,
+	"signal": 104.049,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.47806
+
+},
+{
+	"index": 896,
+	"signal": 141.257,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 3.87775
+
+},
+{
+	"index": 897,
+	"signal": 129.912,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.21898
+
+},
+{
+	"index": 898,
+	"signal": 129.552,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.3943
+
+},
+{
+	"index": 899,
+	"signal": 114.512,
+	"time": 6694.02,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 2.50354
+
+},
+{
+	"index": 900,
+	"signal": 104.325,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.68828
+
+},
+{
+	"index": 901,
+	"signal": 107.226,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.449128
+
+},
+{
+	"index": 902,
+	"signal": 139.891,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 2.22537
+
+},
+{
+	"index": 903,
+	"signal": 115.437,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 6.11882
+
+},
+{
+	"index": 904,
+	"signal": 134.317,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.77575
+
+},
+{
+	"index": 905,
+	"signal": 131.777,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.21979
+
+},
+{
+	"index": 906,
+	"signal": 116.995,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.662014
+
+},
+{
+	"index": 907,
+	"signal": 131.035,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.29856
+
+},
+{
+	"index": 908,
+	"signal": 128.563,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.388433
+
+},
+{
+	"index": 909,
+	"signal": 129.941,
+	"time": 6694.03,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.03118
+
+},
+{
+	"index": 910,
+	"signal": 118.988,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.92572
+
+},
+{
+	"index": 911,
+	"signal": 107.031,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.60498
+
+},
+{
+	"index": 912,
+	"signal": 107.561,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.15063
+
+},
+{
+	"index": 913,
+	"signal": 94.9987,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.999576
+
+},
+{
+	"index": 914,
+	"signal": 96.8139,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.7457
+
+},
+{
+	"index": 915,
+	"signal": 96.3473,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.08263
+
+},
+{
+	"index": 916,
+	"signal": 90.3897,
+	"time": 6694.04,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.79641
+
+},
+{
+	"index": 917,
+	"signal": 92.1967,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.36458
+
+},
+{
+	"index": 918,
+	"signal": 105.548,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.6545
+
+},
+{
+	"index": 919,
+	"signal": 142.348,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 4.9648
+
+},
+{
+	"index": 920,
+	"signal": 104.726,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.86598
+
+},
+{
+	"index": 921,
+	"signal": 101.772,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.148563
+
+},
+{
+	"index": 922,
+	"signal": 119.258,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.68135
+
+},
+{
+	"index": 923,
+	"signal": 118.224,
+	"time": 6694.05,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.28758
+
+},
+{
+	"index": 924,
+	"signal": 116.028,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.945597
+
+},
+{
+	"index": 925,
+	"signal": 121.833,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.66977
+
+},
+{
+	"index": 926,
+	"signal": 134.609,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.35313
+
+},
+{
+	"index": 927,
+	"signal": 123.888,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.2493
+
+},
+{
+	"index": 928,
+	"signal": 115.463,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.883123
+
+},
+{
+	"index": 929,
+	"signal": 112.65,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.531478
+
+},
+{
+	"index": 930,
+	"signal": 113.891,
+	"time": 6694.06,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.29961
+
+},
+{
+	"index": 931,
+	"signal": 135.288,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 0.670159
+
+},
+{
+	"index": 932,
+	"signal": 129.642,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.30777
+
+},
+{
+	"index": 933,
+	"signal": 109.548,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.641122
+
+},
+{
+	"index": 934,
+	"signal": 107.731,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.15894
+
+},
+{
+	"index": 935,
+	"signal": 112.65,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.90064
+
+},
+{
+	"index": 936,
+	"signal": 137.044,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.89861
+
+},
+{
+	"index": 937,
+	"signal": 115.137,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.36391
+
+},
+{
+	"index": 938,
+	"signal": 109.548,
+	"time": 6694.07,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.90048
+
+},
+{
+	"index": 939,
+	"signal": 98.8047,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.11217
+
+},
+{
+	"index": 940,
+	"signal": 128.455,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.59635
+
+},
+{
+	"index": 941,
+	"signal": 104.109,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 3.05416
+
+},
+{
+	"index": 942,
+	"signal": 129.462,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.818225
+
+},
+{
+	"index": 943,
+	"signal": 131.193,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 0.984338
+
+},
+{
+	"index": 944,
+	"signal": 132.573,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.0025,
+	"stdv": 1.09129
+
+},
+{
+	"index": 945,
+	"signal": 132.339,
+	"time": 6694.08,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.421691
+
+},
+{
+	"index": 946,
+	"signal": 110.043,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.65484
+
+},
+{
+	"index": 947,
+	"signal": 103.809,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.368755
+
+},
+{
+	"index": 948,
+	"signal": 89.8442,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 4.11425
+
+},
+{
+	"index": 949,
+	"signal": 85.7012,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 0.690201
+
+},
+{
+	"index": 950,
+	"signal": 121.341,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 7.21586
+
+},
+{
+	"index": 951,
+	"signal": 122.36,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.34479
+
+},
+{
+	"index": 952,
+	"signal": 113.399,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.753384
+
+},
+{
+	"index": 953,
+	"signal": 111.601,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.884946
+
+},
+{
+	"index": 954,
+	"signal": 113.567,
+	"time": 6694.09,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.74172
+
+},
+{
+	"index": 955,
+	"signal": 119.632,
+	"time": 6694.1,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.834448
+
+},
+{
+	"index": 956,
+	"signal": 107.263,
+	"time": 6694.1,
+	"model": "CTGTT",
+	"length": 0.00325,
+	"stdv": 1.47034
+
+},
+{
+	"index": 957,
+	"signal": 129.786,
+	"time": 6694.1,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 5.22404
+
+},
+{
+	"index": 958,
+	"signal": 107.166,
+	"time": 6694.1,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.45572
+
+},
+{
+	"index": 959,
+	"signal": 116.471,
+	"time": 6694.1,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 3.59713
+
+},
+{
+	"index": 960,
+	"signal": 136.066,
+	"time": 6694.1,
+	"model": "CTGTT",
+	"length": 0.00275,
+	"stdv": 1.21187
+
+},
+{
+	"index": 961,
+	"signal": 135.71,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.406992
+
+},
+{
+	"index": 962,
+	"signal": 118.539,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.837634
+
+},
+{
+	"index": 963,
+	"signal": 110.282,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.753384
+
+},
+{
+	"index": 964,
+	"signal": 108.02,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.797821
+
+},
+{
+	"index": 965,
+	"signal": 100.081,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 4.69926
+
+},
+{
+	"index": 966,
+	"signal": 128.653,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 6.45281
+
+},
+{
+	"index": 967,
+	"signal": 115.437,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.389186
+
+},
+{
+	"index": 968,
+	"signal": 115.761,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.66536
+
+},
+{
+	"index": 969,
+	"signal": 118.434,
+	"time": 6694.11,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.808582
+
+},
+{
+	"index": 970,
+	"signal": 125.551,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.83107
+
+},
+{
+	"index": 971,
+	"signal": 103.06,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.61288
+
+},
+{
+	"index": 972,
+	"signal": 91.1179,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 2.83555
+
+},
+{
+	"index": 973,
+	"signal": 138.213,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.00225,
+	"stdv": 3.19214
+
+},
+{
+	"index": 974,
+	"signal": 125.102,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.70745
+
+},
+{
+	"index": 975,
+	"signal": 123.468,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.774546
+
+},
+{
+	"index": 976,
+	"signal": 119.438,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.827656
+
+},
+{
+	"index": 977,
+	"signal": 118.179,
+	"time": 6694.12,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.29878
+
+},
+{
+	"index": 978,
+	"signal": 132.853,
+	"time": 6694.13,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 3.33943
+
+},
+{
+	"index": 979,
+	"signal": 119.153,
+	"time": 6694.13,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 3.22432
+
+},
+{
+	"index": 980,
+	"signal": 122.584,
+	"time": 6694.13,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 1.38907
+
+},
+{
+	"index": 981,
+	"signal": 125.326,
+	"time": 6694.13,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.294708
+
+},
+{
+	"index": 982,
+	"signal": 129.882,
+	"time": 6694.13,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 2.5168
+
+},
+{
+	"index": 983,
+	"signal": 107.93,
+	"time": 6694.13,
+	"model": "CTGTT",
+	"length": 0.003,
+	"stdv": 1.42737
+
+},
+{
+	"index": 984,
+	"signal": 113.767,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 4.31726
+
+},
+{
+	"index": 985,
+	"signal": 97.9356,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.71407
+
+},
+{
+	"index": 986,
+	"signal": 95.2984,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 1.50445
+
+},
+{
+	"index": 987,
+	"signal": 126.9,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.0338
+
+},
+{
+	"index": 988,
+	"signal": 139.471,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.33162
+
+},
+{
+	"index": 989,
+	"signal": 124.787,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 2.54711
+
+},
+{
+	"index": 990,
+	"signal": 118.074,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 1.04158
+
+},
+{
+	"index": 991,
+	"signal": 120.951,
+	"time": 6694.14,
+	"model": "CTGTT",
+	"length": 0.00175,
+	"stdv": 0.555271
+
+},
+{
+	"index": 992,
+	"signal": 101.951,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 5.83758
+
+},
+{
+	"index": 993,
+	"signal": 94.8189,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 1.39519
+
+},
+{
+	"index": 994,
+	"signal": 98.4451,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.736151
+
+},
+{
+	"index": 995,
+	"signal": 104.181,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.00125,
+	"stdv": 1.15203
+
+},
+{
+	"index": 996,
+	"signal": 102.79,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.0015,
+	"stdv": 0.961255
+
+},
+{
+	"index": 997,
+	"signal": 101.682,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.002,
+	"stdv": 2.04435
+
+},
+{
+	"index": 998,
+	"signal": 104.768,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.00075,
+	"stdv": 0.723841
+
+},
+{
+	"index": 999,
+	"signal": 102.176,
+	"time": 6694.15,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 0.937551
+
+},
+{
+	"index": 1000,
+	"signal": 105.682,
+	"time": 6694.16,
+	"model": "CTGTT",
+	"length": 0.001,
+	"stdv": 1.5435
+
+}]
