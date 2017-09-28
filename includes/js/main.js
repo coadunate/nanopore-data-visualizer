@@ -40,6 +40,8 @@ var context = svg.append("g")
 d3.json("/data/part_data.json", function(error, data) {
     if (error) throw error;
 
+    console.log("data" + data.length);
+
     data.forEach(function(d){
       d.index = +d.index;
       d.signal = +d.signal;
