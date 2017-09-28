@@ -37,228 +37,231 @@ var context = svg.append("g")
     .attr("class", "context")
     .attr("transform", "translate(" + marginContext.left + "," + marginContext.top + ")");
 
-d3.json("/data/part_data.json", function(error, data) {
+d3.json("/data/combined.json", function(error, data) {
     if (error) throw error;
 
-    console.log("data" + data.length);
-
-    data.forEach(function(d){
-      d.index = +d.index;
-      d.signal = +d.signal;
-      d.model = d.model;
-      d.time = +d.time;
-      d.length = +d.length;
-      d.stdv = +d.stdv;
-    });
-
+    (function(){
+      data[0].forEach(function(d){
+        d.index = +d.index;
+        d.signal = +d.signal;
+        d.model = d.model;
+        d.time = +d.time;
+        d.length = +d.length;
+        d.stdv = +d.stdv;
+      });
 
 
-    x.domain([ d3.min(data, function(d){ return d.index; })-50 , d3.max(data,function(d){ return d.index; }) + 150 ]);
-    y.domain([ d3.min(data, function(d){ return d.signal; }), d3.max(data, function(d){ return d.signal; }) ]);
-    x2.domain(x.domain());
-    y2.domain(y.domain());
+
+      x.domain([ d3.min(data[0], function(d){ return d.index; })-50 , d3.max(data[0],function(d){ return d.index; }) + 150 ]);
+      y.domain([ d3.min(data[0], function(d){ return d.signal; }), d3.max(data[0], function(d){ return d.signal; }) ]);
+      x2.domain(x.domain());
+      y2.domain(y.domain());
 
 
-    var brush = d3.brushX()
-        .extent([[0, 0], [width, height2]])
-        .on("brush end", brushed);
+      var brush = d3.brushX()
+          .extent([[0, 0], [width, height2]])
+          .on("brush end", brushed);
 
-    var zoom = d3.zoom()
-        .scaleExtent([1, 900])
-        .translateExtent([[0, 0], [width, height]])
-        .extent([[0, 0], [width, height]])
-        .on("zoom", zoomed);
-
-
-    var xAxis = d3.axisBottom(x).tickSize(-height),
-        xAxis2 = d3.axisBottom(x2),
-        yAxis = d3.axisLeft(y).ticks(5).tickSize(-width);
-
-    var reads = svg.append("g")
-        .attr("class","reads")
-        .attr("transform","translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")")
-        .call(zoom);
-
-    var read_container = reads.append("g").attr("class","container");
-
-    read_container.append("g")
-         .attr("class","axis axis--x")
-         .attr("transform","translate(0," + height  +  ")")
-         .call(xAxis);
+      var zoom = d3.zoom()
+          .scaleExtent([1, 900])
+          .translateExtent([[0, 0], [width, height]])
+          .extent([[0, 0], [width, height]])
+          .on("zoom", zoomed);
 
 
-    reads.append("text")
-       .style("text-anchor","middle")
-       .style("font-size","15px")
-       .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
-       .text("# Reads");
+      var xAxis = d3.axisBottom(x).tickSize(-height),
+          xAxis2 = d3.axisBottom(x2),
+          yAxis = d3.axisLeft(y).ticks(5).tickSize(-width);
 
-    reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
-       .data(data)
-       .enter()
-       .append("rect")
-       .attr("x", function(d){ return x(d.index); })
-       .attr("y", y(140))
-       .attr("width", function(d){ return x(d.index + 100)})
-       .attr("height",50)
-       .attr("class","read-rect")
-       .attr("fill", function(d){
+      var reads = svg.append("g")
+          .attr("class","reads")
+          .attr("transform","translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")")
+          .call(zoom);
 
-           lastBP = d.model[Math.floor(Math.random() * 5) + 0];
-           color = "orange";
-           switch(lastBP){
-               case 'A':
-                   color = "yellow";
-                   break;
-               case 'T':
-                   color = "green";
-                   break;
-               case 'G':
-                   color = "red";
-                   break;
-               case 'C':
-                   color: "blue";
-                   break;
-               default:
-                   color: "black";
-           }
-           return color;
-       });
+      var read_container = reads.append("g").attr("class","container");
 
-    svg.selectAll(".read-rect").filter(":nth-last-child(1)").attr("fill","black");
-
-    // This is the main graph.
-    var focus = svg.append("g")
-        .attr("class", "focus")
-        .attr("transform", "translate(" + marginFocus.left + "," + marginFocus.top + ")")
-        .call(zoom)
+      read_container.append("g")
+           .attr("class","axis axis--x")
+           .attr("transform","translate(0," + height  +  ")")
+           .call(xAxis);
 
 
-    // var rect = svg.append("rect")
-    //     .attr("width",width)
-    //     .attr("transform","translate(50,0)")
-    //     .attr("height",height)
-    //     .style("fill", "none")
-    //     .style("pointer-events", "all").call(zoom);
+      reads.append("text")
+         .style("text-anchor","middle")
+         .style("font-size","15px")
+         .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
+         .text("# Reads");
 
-    var container = focus.append("g").attr("class","container");
+      reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
+         .data(data[0])
+         .enter()
+         .append("rect")
+         .attr("x", function(d){ return x(d.index); })
+         .attr("y", y(140))
+         .attr("width", function(d){ return x(d.index + 100)})
+         .attr("height",50)
+         .attr("class","read-rect")
+         .attr("fill", function(d){
 
-    container.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+             lastBP = d.model[Math.floor(Math.random() * 5) + 0];
+             color = "orange";
+             switch(lastBP){
+                 case 'A':
+                     color = "yellow";
+                     break;
+                 case 'T':
+                     color = "green";
+                     break;
+                 case 'G':
+                     color = "red";
+                     break;
+                 case 'C':
+                     color: "blue";
+                     break;
+                 default:
+                     color: "black";
+             }
+             return color;
+         });
 
-    container.append("g")
-        .attr("class", "axis axis--y")
-        .call(yAxis);
+      svg.selectAll(".read-rect").filter(":nth-last-child(1)").attr("fill","black");
 
-    focus.append("text")
-        .style("text-anchor","middle")
-        .style("font-size","15px")
-        .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
-        .text("Signal Value (pA)");
-
-    var div = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
-
-    focus.append("svg").attr("width",width).attr("height",height).selectAll("circle")
-        .data(data)
-        .enter()
-        .append("circle")
-        .on("click",function(d){ console.log("Yo!"); })
-        .attr("cx", function(d){ return x(d.index);})
-        .attr("cy", function(d){ return y(d.signal);})
-        .attr("class","dot")
-        .attr("r",5)
-        .on("mouseover", function(d){
-            div.transition()
-                .duration(200)
-                .style("opacity", 0.9)
-                .style("text-align","left");
-            //index,signal,time,model,length,stdv
-            div.html(
-                "<b>Event #:</b> " + (d.index) + "<br />" +
-                "<b>Signal:</b> " + d.signal + "<br />" +
-                "<b>Time:</b> " + d.time + "<br />" +
-                "<b>Model:</b> " + d.model + "<br />" +
-                "<b>Length:</b> " + d.length + "<br />" +
-                "<b>Std. Dev:</b>" + d.stdv + "<br/>"
-            )
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 8) + "px");
-        })
-        .on("mouseout", function(d) {
-            div.transition()
-                .duration(500)
-                .style("opacity", 0);
-        });
-
-    focus.append("svg").attr("width",width).attr("height",height).append("path")
-        .datum(data)
-        .attr("class", "squiggle")
-        .attr("d", lineFunction)
-        .attr("stroke","blue")
-        .attr("stroke-width",2)
-        .attr("fill","none");
-
-    context.append("path")
-        .datum(data)
-        .attr("class", "squiggle")
-        .attr("d", lineFunction2)
-        .attr("stroke","blue")
-        .attr("stroke-width",2)
-        .attr("fill","none");
+      // This is the main graph.
+      var focus = svg.append("g")
+          .attr("class", "focus")
+          .attr("transform", "translate(" + marginFocus.left + "," + marginFocus.top + ")")
+          .call(zoom)
 
 
-    context.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height2 + ")")
-        .call(xAxis2);
+      // var rect = svg.append("rect")
+      //     .attr("width",width)
+      //     .attr("transform","translate(50,0)")
+      //     .attr("height",height)
+      //     .style("fill", "none")
+      //     .style("pointer-events", "all").call(zoom);
 
-    context.append("g")
-        .attr("class", "brush")
-        .call(brush)
-        .call(brush.move, x.range());
+      var container = focus.append("g").attr("class","container");
+
+      container.append("g")
+          .attr("class", "axis axis--x")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+      container.append("g")
+          .attr("class", "axis axis--y")
+          .call(yAxis);
+
+      focus.append("text")
+          .style("text-anchor","middle")
+          .style("font-size","15px")
+          .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
+          .text("Signal Value (pA)");
+
+      var div = d3.select("body").append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+      focus.append("svg").attr("width",width).attr("height",height).selectAll("circle")
+          .data(data[0])
+          .enter()
+          .append("circle")
+          .on("click",function(d){ console.log("Yo!"); })
+          .attr("cx", function(d){ return x(d.index);})
+          .attr("cy", function(d){ return y(d.signal);})
+          .attr("class","dot")
+          .attr("r",5)
+          .on("mouseover", function(d){
+              div.transition()
+                  .duration(200)
+                  .style("opacity", 0.9)
+                  .style("text-align","left");
+              //index,signal,time,model,length,stdv
+              div.html(
+                  "<b>Event #:</b> " + (d.index) + "<br />" +
+                  "<b>Signal:</b> " + d.signal + "<br />" +
+                  "<b>Time:</b> " + d.time + "<br />" +
+                  "<b>Model:</b> " + d.model + "<br />" +
+                  "<b>Length:</b> " + d.length + "<br />" +
+                  "<b>Std. Dev:</b>" + d.stdv + "<br/>"
+              )
+                  .style("left", (d3.event.pageX) + "px")
+                  .style("top", (d3.event.pageY - 8) + "px");
+          })
+          .on("mouseout", function(d) {
+              div.transition()
+                  .duration(500)
+                  .style("opacity", 0);
+          });
+
+      focus.append("svg").attr("width",width).attr("height",height).append("path")
+          .datum(data[0])
+          .attr("class", "squiggle")
+          .attr("d", lineFunction)
+          .attr("stroke","blue")
+          .attr("stroke-width",2)
+          .attr("fill","none");
+
+      context.append("path")
+          .datum(data[0])
+          .attr("class", "squiggle")
+          .attr("d", lineFunction2)
+          .attr("stroke","blue")
+          .attr("stroke-width",2)
+          .attr("fill","none");
 
 
-    function brushed() {
+      context.append("g")
+          .attr("class", "axis axis--x")
+          .attr("transform", "translate(0," + height2 + ")")
+          .call(xAxis2);
 
-        if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
-        var s = d3.event.selection || x2.range();
-        x.domain(s.map(x2.invert, x2));
-        focus.select(".squiggle").attr("d", lineFunction);
-        focus.select(".axis--x").call(xAxis);
-        reads.select(".axis--x").call(xAxis);
-        svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
-            .scale(width / (s[1] - s[0]))
-            .translate(-s[0], 0));
+      context.append("g")
+          .attr("class", "brush")
+          .call(brush)
+          .call(brush.move, x.range());
 
 
-        focus.selectAll("circle")
-            .attr("cx", function(d){ return x(d.index); })
-            .attr("cy", function(d){ return y(d.signal); });
+      function brushed() {
 
-    }
+          if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
+          var s = d3.event.selection || x2.range();
+          x.domain(s.map(x2.invert, x2));
+          focus.select(".squiggle").attr("d", lineFunction);
+          focus.select(".axis--x").call(xAxis);
+          reads.select(".axis--x").call(xAxis);
+          svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
+              .scale(width / (s[1] - s[0]))
+              .translate(-s[0], 0));
 
-    function zoomed() {
-        if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
-        var t = d3.event.transform;
-        x.domain(t.rescaleX(x2).domain());
-        focus.select(".squiggle").attr("d", lineFunction);
-        focus.select(".axis--x").call(xAxis);
-        reads.select(".axis--x").call(xAxis);
-        context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
 
-        svg.selectAll(".dot")
-            .attr("cx", function(d){ return x(d.index); })
-            .attr("cy", function(d){ return y(d.signal); });
+          focus.selectAll("circle")
+              .attr("cx", function(d){ return x(d.index); })
+              .attr("cy", function(d){ return y(d.signal); });
 
-        svg.selectAll(".read-rect")
-            .attr("x", function(d){ return x(d.index); })
-            .attr("width",function(d){ return x(d.index + 100) > 0 ? x(d.index + 100) : 0; });
+      }
 
-    }
+      function zoomed() {
+          if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+          var t = d3.event.transform;
+          x.domain(t.rescaleX(x2).domain());
+          focus.select(".squiggle").attr("d", lineFunction);
+          focus.select(".axis--x").call(xAxis);
+          reads.select(".axis--x").call(xAxis);
+          context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+
+          svg.selectAll(".dot")
+              .attr("cx", function(d){ return x(d.index); })
+              .attr("cy", function(d){ return y(d.signal); });
+
+          svg.selectAll(".read-rect")
+              .attr("x", function(d){ return x(d.index); })
+              .attr("width",function(d){ return x(d.index + 100) > 0 ? x(d.index + 100) : 0; });
+
+      }
+
+    })();
+
+
 });
 
 // function type(d) {
