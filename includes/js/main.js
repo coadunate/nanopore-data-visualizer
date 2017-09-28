@@ -41,6 +41,8 @@ d3.json("/data/combined.json", function(error, data) {
 
     if (error) throw error;
 
+    console.log("R1-POS: " + JSON.stringify(data[0][1].end) + " <--> " + data[1][1].end);
+
     (function(){
       data[0][0].forEach(function(d){
         d.index = +d.index;
