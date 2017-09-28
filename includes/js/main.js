@@ -38,10 +38,11 @@ var context = svg.append("g")
     .attr("transform", "translate(" + marginContext.left + "," + marginContext.top + ")");
 
 d3.json("/data/combined.json", function(error, data) {
+
     if (error) throw error;
 
     (function(){
-      data[0].forEach(function(d){
+      data[0][0].forEach(function(d){
         d.index = +d.index;
         d.signal = +d.signal;
         d.model = d.model;
@@ -52,8 +53,8 @@ d3.json("/data/combined.json", function(error, data) {
 
 
 
-      x.domain([ d3.min(data[0], function(d){ return d.index; })-50 , d3.max(data[0],function(d){ return d.index; }) + 150 ]);
-      y.domain([ d3.min(data[0], function(d){ return d.signal; }), d3.max(data[0], function(d){ return d.signal; }) ]);
+      x.domain([ d3.min(data[0][0], function(d){ return d.index; })-50 , d3.max(data[0][0],function(d){ return d.index; }) + 150 ]);
+      y.domain([ d3.min(data[0][0], function(d){ return d.signal; }), d3.max(data[0][0], function(d){ return d.signal; }) ]);
       x2.domain(x.domain());
       y2.domain(y.domain());
 
@@ -93,7 +94,7 @@ d3.json("/data/combined.json", function(error, data) {
          .text("# Reads");
 
       reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
-         .data(data[0])
+         .data(data[0][0])
          .enter()
          .append("rect")
          .attr("x", function(d){ return x(d.index); })
@@ -162,7 +163,7 @@ d3.json("/data/combined.json", function(error, data) {
           .style("opacity", 0);
 
       focus.append("svg").attr("width",width).attr("height",height).selectAll("circle")
-          .data(data[0])
+          .data(data[0][0])
           .enter()
           .append("circle")
           .on("click",function(d){ console.log("Yo!"); })
@@ -194,7 +195,7 @@ d3.json("/data/combined.json", function(error, data) {
           });
 
       focus.append("svg").attr("width",width).attr("height",height).append("path")
-          .datum(data[0])
+          .datum(data[0][0])
           .attr("class", "squiggle")
           .attr("d", lineFunction)
           .attr("stroke","blue")
@@ -202,7 +203,7 @@ d3.json("/data/combined.json", function(error, data) {
           .attr("fill","none");
 
       context.append("path")
-          .datum(data[0])
+          .datum(data[0][0])
           .attr("class", "squiggle")
           .attr("d", lineFunction2)
           .attr("stroke","blue")
