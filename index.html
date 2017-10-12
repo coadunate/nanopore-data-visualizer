@@ -30,11 +30,11 @@
 
       var lineFunction = d3.line()
           .x(function(d) { return x(d.index); })
-          .y(function(d) { return y(d.signal); })
+          .y(function(d) { return y(d.signal); });
 
       var lineFunction2 = d3.line()
           .x(function(d) { return x2(d.index); })
-          .y(function(d) { return y2(d.signal); })
+          .y(function(d) { return y2(d.signal); });
 
 
       var context = svg.append("g")
@@ -96,7 +96,7 @@
              .attr("fill", function(d){
 
                 lastBP = d.model[Math.floor(Math.random() * 5) + 0];
-                color = "orange"
+                color = "orange";
                 switch(lastBP){
                   case 'A':
                     color = "yellow";
@@ -108,10 +108,10 @@
                     color = "red";
                     break;
                   case 'C':
-                    color: "blue";
+                    "blue";
                     break;
                   default:
-                    color: "black";
+                    "black";
                 }
                 return color;
              });

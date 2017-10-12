@@ -84,7 +84,7 @@
               .attr("height", height - margin.top - margin.bottom)
               .attr("transform", "translate(" + 0 + "," + 0 + ")")
               .style("visibility", "hidden")
-              .attr("pointer-events", "all")
+              .attr("pointer-events", "all");
               // .call( d3.behavior.zoom().on("zoom", function(){
               //     g.attr("transform", "translate(" + d3.event.translate + ") scale(1)")
               // }) ).append("g");
@@ -198,9 +198,8 @@
 
           update();
           zoom_update();
-        };
-
-        // X value to scale
+        }
+          // X value to scale
 
         function X(d) {
           return xscale(d[0]);

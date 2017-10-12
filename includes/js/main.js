@@ -20,6 +20,8 @@ var x = d3.scaleLinear().range([0 , width]),
     y = d3.scaleLinear().range([height, 0]),
     y2 = d3.scaleLinear().range([height2, 0]);
 
+    //rX = d3.scaleLinear().range([0, width]); // the scales for read alignment view.
+
 
 
 var lineFunction = d3.line()
@@ -30,6 +32,15 @@ var lineFunction2 = d3.line()
     .x(function(d) { return x2(d.index); })
     .y(function(d) { return y2(d.signal); });
 
+var colors = [
+  "teal",
+  "red",
+  "lightblue",
+  "yellow",
+  "pink",
+  "blue"
+];
+
 
 
 // This represents the strip below showing the mini version of the graph.
@@ -38,43 +49,48 @@ var context = svg.append("g")
     .attr("transform", "translate(" + marginContext.left + "," + marginContext.top + ")");
 
 d3.json("/data/combined.json", function(error, data) {
-
+    var dataset_visible = [];
     if (error) throw error;
 
-    data[1][0].forEach(function(d){
-      d.index = +d.index;
-      d.signal = +d.signal;
-      d.model = d.model;
-      d.time = +d.time;
-      d.length = +d.length;
-      d.stdv = +d.stdv;
-    });
+    for(var i = 0; i < data.length-1; i++){
+      dataset_visible[i] = "hidden";
+      data[i][0].forEach(function(d){
+        d.index = +d.index;
+        d.signal = +d.signal;
+        d.model = d.model;
+        d.time = +d.time;
+        d.length = +d.length;
+        d.stdv = +d.stdv;
+      });
+    }
 
-    data[0][0].forEach(function(d){
-      d.index = +d.index;
-      d.signal = +d.signal;
-      d.model = d.model;
-      d.time = +d.time;
-      d.length = +d.length;
-      d.stdv = +d.stdv;
-    });
+    console.log(dataset_visible);
+
     x.domain([0,data[2].ref_length]);
-    y.domain([
-                Math.min( d3.min(data[1][0], function(d){ return d.signal; }),d3.min(data[0][0], function(d){ return d.signal; } )),
-                Math.max( d3.max(data[1][0], function(d){ return d.signal; }),d3.max(data[0][0], function(d){ return d.signal; } ))
-                //d3.min(data[0][0], function(d){ return d.signal; } ),
-                //d3.max(data[0][0], function(d){ return d.signal; })
-              ]);
+
+    var ymin = 9999,ymax = 0;
+    for(var i = 0; i < data.length-1; i++){
+      ymin = Math.min( d3.min(data[i][0], function(d){ return d.signal; }),ymin);
+      ymax = Math.max( d3.max(data[i][0], function(d){ return d.signal; }),ymax);
+    }
+
+    y.domain([ymin,ymax]);
+
     x2.domain(x.domain());
     y2.domain(y.domain());
+
+    //rX .domain([0, data[2].ref_length]);
+
 
 
     var brush = d3.brushX()
         .extent([[0, 0], [width, height2]])
         .on("brush end", brushed);
 
+    maxDataLength = 0;
+    for(var i = 0; i < data.length-1; i++){ maxDataLength = Math.max( data[i][0].length,maxDataLength); }
     var zoom = d3.zoom()
-        .scaleExtent([1, Math.max(data[1][0].length,data[0][0].length) ])
+        .scaleExtent([1, maxDataLength ])
         .translateExtent([[0, 0], [width, height]])
         .extent([[0, 0], [width, height]])
         .on("zoom", zoomed);
@@ -102,20 +118,6 @@ d3.json("/data/combined.json", function(error, data) {
        .style("font-size","15px")
        .attr("transform","rotate(-90) translate(" + -height/2 + ",-30)")
        .text("# Reads");
-
-    for(var i = 0; i < data.length-1; i++){
-      console.log("I: " + i);
-      reads.append("svg").attr("width",width).attr("height",height).selectAll("rect")
-           .data(data[i][0])
-           .enter()
-           .append("rect")
-           .attr("x", function(d){ return x(d.index ); })
-           .attr("y", y(140 - (10*i) ) )
-           .attr("width", function(d){ return x(d.index + 100)})
-           .attr("height",50)
-           .attr("class","read-rect")
-           .attr("fill", i==0 ? "blue" : "red" );
-    }
 
 
     svg.selectAll(".read-rect").filter(":nth-last-child(1)").attr("fill","grey");
@@ -156,13 +158,15 @@ d3.json("/data/combined.json", function(error, data) {
         .style("opacity", 0);
 
     for(var i = 0; i < data.length-1; i++){
-      focus.append("svg").attr("width",width).attr("height",height).selectAll("circle")
+      focus.append("svg").attr("width",width).attr("height",height).attr("class","circ" + i).selectAll("circle")
           .data(data[i][0])
           .enter()
           .append("circle")
           .on("click",function(d){ console.log("Yo!"); })
           .attr("cx", function(d){ return x(d.index);})
           .attr("cy", function(d){ return y(d.signal);})
+          .attr("fill", i == 0 ? "black" : "black")
+          .style("opacity", dataset_visible[i] == "hidden" ? 1 : 1)
           .attr("class","dot")
           .attr("r",5)
           .on("mouseover", function(d){
@@ -191,8 +195,10 @@ d3.json("/data/combined.json", function(error, data) {
       focus.append("svg").attr("width",width).attr("height",height).append("path")
           .datum(data[i][0])
           .attr("class", "squiggle")
+          .attr("id","squigg1")
           .attr("d", lineFunction)
-          .attr("stroke", i==0 ? "blue" : "red")
+          .attr("stroke", colors[i])
+          .style("opacity", dataset_visible[i] == "hidden" ? 1 : 1)
           .attr("stroke-width",2)
           .attr("fill","none");
 
@@ -200,7 +206,8 @@ d3.json("/data/combined.json", function(error, data) {
           .datum(data[i][0])
           .attr("class", "squiggle")
           .attr("d", lineFunction2)
-          .attr("stroke",i==0 ? "blue" : "red")
+          .attr("stroke", colors[i])
+          .style("opacity", dataset_visible[i] == "hidden" ? 1 : 1)
           .attr("stroke-width",2)
           .attr("fill","none");
     }
@@ -215,6 +222,60 @@ d3.json("/data/combined.json", function(error, data) {
         .attr("class", "brush")
         .call(brush)
         .call(brush.move, x.range());
+
+    // reads.append("svg")
+    //         .attr("width",width)
+    //         .attr("height",height)
+    //         .attr("class","read1")
+    //         .selectAll("rect")
+    //           .data(data[0][0])
+    //           .enter()
+    //           .append("circle")
+    //             .attr("cx",x(1000))
+    //             .attr("cy",y(100))
+    //             .attr("r",5);
+
+    for(var i = 0; i < data.length-1; i++){
+      reads.append("svg")
+              .attr("width",width)
+              .attr("height",height)
+              .append("rect")
+              .attr("x",x(0))
+              .attr("y",100 + (i*(25*2)))
+              .attr("class","read1")
+              .attr("width",x(data[i][0].length))
+              .attr("height",25)
+              .attr("fill",colors[i]);
+
+    }
+
+
+    // for(var i = 0; i < data.length-1; i++){
+    //   reads.append("svg")
+    //           .attr("width",width)
+    //           .attr("height",height)
+    //           .attr("class","read" + i)
+    //           .on("click",function(){
+    //             // var active = ("sqigg" + (i-1)).active ? false : true,
+    //             //     newOP = active ? 1 : 0;
+    //             // d3.select("#squigg" + (i-1)).style("opacity",newOP);
+    //
+    //             // console.log("dataset_visible[" + (i-1) + "]");
+    //             // console.log(dataset_visible)
+    //             // dataset_visible[i-1] = "visible";
+    //             // d3.select(".squigg" + i-1).style("opacity",1);
+    //           })
+    //           .selectAll("rect")
+    //        .data(data[i])
+    //        .enter()
+    //        .append("rect")
+    //        .attr("x", function(d){ return x(d.length); })
+    //        .attr("y", y(140 - (10*i) ) )
+    //        .attr("width", x(1000))
+    //        .attr("height",50)
+    //        .attr("class","read-rect")
+    //        .attr("fill", i==0 ? "blue" : "red" );
+    // }
 
 
     function brushed() {
@@ -234,6 +295,7 @@ d3.json("/data/combined.json", function(error, data) {
             .attr("cx", function(d){ return x(d.index); })
             .attr("cy", function(d){ return y(d.signal); });
 
+
     }
 
     function zoomed() {
@@ -249,9 +311,12 @@ d3.json("/data/combined.json", function(error, data) {
             .attr("cx", function(d){ return x(d.index); })
             .attr("cy", function(d){ return y(d.signal); });
 
+        svg.selectAll(".read1")
+            .attr("width",x(data[0][0].length));
         svg.selectAll(".read-rect")
             .attr("x", function(d){ return x(d.index); })
             .attr("width",function(d){ return x(d.index + 100) > 0 ? x(d.index + 100) : 0; });
+
 
     }
 

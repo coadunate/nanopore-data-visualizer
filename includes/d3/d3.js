@@ -12103,7 +12103,7 @@ function newInterval(floori, offseti, count, field) {
     start = interval.ceil(start);
     step = step == null ? 1 : Math.floor(step);
     if (!(start < stop) || !(step > 0)) return range; // also handles Invalid Date
-    do range.push(new Date(+start)); while (offseti(start, step), floori(start), start < stop)
+    do range.push(new Date(+start)); while (offseti(start, step), floori(start), start < stop);
     return range;
   };
 
