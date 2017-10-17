@@ -32,6 +32,8 @@ var lineFunction2 = d3.line()
     .x(function(d) { return x2(d.index); })
     .y(function(d) { return y2(d.signal); });
 
+let tuplify = obj => Object.keys(obj).reduce((m,k) => m.concat([[k, obj[k]]]), []);
+
 var colors = [
   "purple",
   "#DF7401",
@@ -52,9 +54,6 @@ function isLower(character) {
     return (character === character.toLowerCase()) && (character !== character.toUpperCase());
 }
 
-
-
-
 // This represents the strip below showing the mini version of the graph.
 var context = svg.append("g")
     .attr("class", "context")
@@ -65,7 +64,7 @@ d3.json("/data/combined.json", function(error, data) {
     if (error) throw error;
 
 
-    for (var i = 0; i < data.length - 2; i++) {
+    for (var i = 0; i < data.length - 1; i++) {
         dataset_visible[i] = "hidden";
 
         data[i][0].forEach(function (d) {
@@ -78,12 +77,12 @@ d3.json("/data/combined.json", function(error, data) {
         });
     }
 
-    console.log(dataset_visible);
+
 
     x.domain([0, 1000]);
 
     var ymin = 9999, ymax = 0;
-    for (var i = 0; i < data.length - 2; i++) {
+    for (var i = 0; i < data.length - 1; i++) {
         ymin = Math.min(d3.min(data[i][0], function (d) {
             return d.signal;
         }), ymin);
@@ -105,7 +104,7 @@ d3.json("/data/combined.json", function(error, data) {
         .on("brush end", brushed);
 
     maxDataLength = 0;
-    for (var i = 0; i < data.length - 2; i++) {
+    for (var i = 0; i < data.length - 1; i++) {
         maxDataLength = Math.max(data[i][0].length, maxDataLength);
     }
 
@@ -128,8 +127,67 @@ d3.json("/data/combined.json", function(error, data) {
 
     var rXAxis = d3.axisBottom(rX);
 
-    var table = svg.append("table")
-        .attr("transform","translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")");
+    (function(){
+
+
+
+        var sortAscending = true;
+
+        var titles = {
+            "qname": "Read Name",
+            "pos": "Postition",
+            "length": "Nanopore Events",
+            "span": "Reference Span (bp)"
+        };
+
+
+        var table = d3.select('.app').append('table').attr("class","table table-hover");
+
+        var headers = table.append('thead')
+            .append('tr')
+            .selectAll('th')
+            .data(d3.values(titles))
+            .enter()
+            .append('th')
+            .text(function(d) {
+                return d;
+            });
+
+        var rows = table.append('tbody')
+            .selectAll('tr')
+            .data(data.slice(0,3))
+            .enter()
+            .append('tr');
+
+        rows.selectAll('td')
+            .data(function(d) {
+
+               return tuplify(titles).map(function(k) {
+                   k_ty = { };
+                   k_ty["qname"] = 6;
+                   k_ty["pos"] = 5;
+                   k_ty["length"] = 0;
+                   k_ty["span"] = 3;
+
+                    d_tup = tuplify(d[1]);
+                    console.log("K : " + d_tup[k_ty[k[0]]][1]);
+                    return {
+                        'value': "this",
+                        'name': d_tup[k_ty[k[0]]][1]
+                    };
+                });
+            })
+            .enter()
+            .append('td')
+            .attr('data-th', function(d) {
+                return d.value;
+            })
+            .text(function(d) {
+                return d.name;
+            });
+
+    }());
+
 
     var reads = svg.append("g")
         .attr("class", "reads")
@@ -149,9 +207,6 @@ d3.json("/data/combined.json", function(error, data) {
     //     .style("font-size", "15px")
     //     .attr("transform", "rotate(-90) translate(" + -height / 2 + ",-30)")
     //     .text("# Reads");
-
-
-    svg.selectAll(".read-rect").filter(":nth-last-child(1)").attr("fill", "grey");
 
     // This is the main graph.
     var focus = svg.append("g")
@@ -188,7 +243,7 @@ d3.json("/data/combined.json", function(error, data) {
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-    for (var i = 0; i < data.length - 2; i++) {
+    for (var i = 0; i < data.length - 1; i++) {
         focus.append("svg").attr("width", width).attr("height", height).attr("class", "circ" + i).selectAll("circle")
             .data(data[i][0])
             .enter()
@@ -259,7 +314,7 @@ d3.json("/data/combined.json", function(error, data) {
         .call(brush.move, x.range());
 
     // read1
-    for (var j = 0; j < data.length-2; j++){
+    for (var j = 0; j < data.length-1; j++){
         read_svg = reads.append("svg").attr("width", width).attr("height", height).attr("class", "read" + j);
         for (var i = 0; i < data[j][1].span; i++) {
             var query = data[j][1].query[i];
@@ -267,7 +322,7 @@ d3.json("/data/combined.json", function(error, data) {
             //console.log((i+1) + ". QUERY: " + data[j][1].query[i]);
 
             if(query[0] === null){ // insertion
-                console.log("INSERTION");
+                //console.log("INSERTION");
 
                 read_svg.append("rect")
                     .attr("x", rX(i) + 25)
@@ -307,7 +362,7 @@ d3.json("/data/combined.json", function(error, data) {
                             .style("opacity", 0);
                     });
             } else if(query[1] === null){ // deletion
-                console.log("DELETION");
+                //console.log("DELETION");
 
                 read_svg.append("rect")
                     .attr("x", rX(i) + 25)
@@ -402,9 +457,9 @@ d3.json("/data/combined.json", function(error, data) {
 
     // add reference
     var reference = reads.append("svg").attr("width", width).attr("height", height).attr("class", "reference");
-    for(var i = 0; i < data[4].ref.length; i++){
+    for(var i = 0; i < data[3].ref.length; i++){
         base_color = "";
-        switch(data[4].ref[i]){
+        switch(data[3].ref[i]){
             case "A":
                 base_color = base_colors.A;
                 break;
@@ -435,18 +490,12 @@ d3.json("/data/combined.json", function(error, data) {
         reference.append("text")
                   .attr("x",rX(i) +25 + 2)
                   .attr("y",y(62))
-                  .text(data[4].ref[i])
+                  .text(data[3].ref[i])
                   .attr("font-family","sans-serif")
                   .attr("font-size","10px")
                   .attr("fill", "white");
 
     }
-
-
-    table.append("thread").append("tr")
-        .selectAll("th")
-        .append("th")
-        .text("SUP");
 
     // reads.append("svg")
     //     .attr("width",width)
