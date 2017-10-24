@@ -1,7 +1,10 @@
 define(function () {
+
     return {
+
+        x: 3,
         getHello: function () {
-            return 'Hello World';
+            return 'Hello ' + this.x;
         }
     };
 });

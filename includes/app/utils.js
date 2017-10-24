@@ -1,5 +1,12 @@
 define(function () {
+
+    var marginSignalGraph = {top: 30, right: 50, bottom: 90, left: 50};
+
+
     return {
+
+        marginSignalGraph: marginSignalGraph,
+
         /**
          * Function tuplify -- Converts a key value pair into a tuple of values.
          * @params obj -- Represents a dictionary (with key-value paris)

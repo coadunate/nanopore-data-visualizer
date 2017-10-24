@@ -19,11 +19,10 @@ define(function (require) {
     // Importing dependant libraries.
     var messages = require('./messages');
     var utils = require('./utils');
-    
 
 
     // Initializing variables for the graph.
-    // marginSignalGraph -- Represents the main graph of signal traces.
+    // utils.marginSignalGraph -- Represents the main graph of signal traces.
     // marginMiniSignalGraph -- Represents the graph underneath the signal graph showing signal data in minified form.
     // width -- Represents the width for the signal and the mini signal graph.
     // height -- Represents the height of the svg enclosing signal graph, mini signal graph and the read align. viewer.
@@ -32,19 +31,19 @@ define(function (require) {
         marginSignalGraph = {top: 30, right: 50, bottom: 90, left: 50},
         marginMiniSignalGraph = {top: 530, right: 20, bottom: 40, left: 40},
 
-        width = (window.innerWidth) - marginSignalGraph.left - marginSignalGraph.right-20, // width = 900
-        height = 602 - marginSignalGraph.top - marginSignalGraph.bottom, // height = 370
+        width = (window.innerWidth) - utils.marginSignalGraph.left - utils.marginSignalGraph.right-20, // width = 900
+        height = 602 - utils.marginSignalGraph.top - utils.marginSignalGraph.bottom, // height = 370
 
         heightminiSignalGraph = 602 - marginMiniSignalGraph.top - marginMiniSignalGraph.bottom; // heightminiSignalGraph = 40
 
 
-// The svg enclosing signal graph, mini signal graph and the read align. viewer.
+    // The svg enclosing signal graph, mini signal graph and the read align. viewer.
     var svg = d3.select(".app").append("svg")
-        .attr("width", width + marginSignalGraph.left + marginSignalGraph.right)
-        .attr("height", height + marginSignalGraph.top + marginSignalGraph.bottom + 100 + 500);
+        .attr("width", width + utils.marginSignalGraph.left + utils.marginSignalGraph.right)
+        .attr("height", height + utils.marginSignalGraph.top + utils.marginSignalGraph.bottom + 100 + 500);
 
 
-// Creating scales for the graph.
+    // Creating scales for the graph.
     var xSG = d3.scaleLinear().range([0 , width]), // the x-scale for signal graph.
         xmSG = d3.scaleLinear().range([0, width]), // the x-scale for mini signal graph.
         ySG = d3.scaleLinear().range([height, 0]), // the y-scale for signal graph.
@@ -54,18 +53,18 @@ define(function (require) {
 
 
 
-// Line function for the signal graph.
+    // Line function for the signal graph.
     var lineFunctionSG = d3.line()
         .x(function(d) { return xSG(d.index); })
         .y(function(d) { return ySG(d.signal); });
 
-// Line function for mini signal graph.
+    // Line function for mini signal graph.
     var lineFunctionmSG = d3.line()
         .x(function(d) { return xmSG(d.index); })
         .y(function(d) { return ymSG(d.signal); });
 
 
-// colors for the read align. viewer.
+    // colors for the read align. viewer.
     var colors = [
         "purple",
         "#DF7401",
@@ -75,7 +74,7 @@ define(function (require) {
         "red"
     ];
 
-// base_colors -- Represents a dictionary of base_pair (key) and the color associated with it (value)
+    // base_colors -- Represents a dictionary of base_pair (key) and the color associated with it (value)
     var base_colors = {
         "A": "orange", // A
         "T": "red", // T
@@ -84,12 +83,12 @@ define(function (require) {
     };
 
 
-// This represents the strip below showing the mini version of the graph.
+    // This represents the strip below showing the mini version of the graph.
     var mSGGraph = svg.append("g")
         .attr("class", "mSGGraph")
         .attr("transform", "translate(" + marginMiniSignalGraph.left + "," + marginMiniSignalGraph.top + ")");
 
-// Gets the data form the data/combined.json file
+    // Gets the data form the data/combined.json file
     d3.json("/data/combined.json", function(error, data) {
 
         if (error) throw error;
@@ -251,7 +250,7 @@ define(function (require) {
         // create graphic element for the reads alignment viewer.
         var reads = svg.append("g")
             .attr("class", "reads")
-            .attr("transform", "translate(" + marginSignalGraph.left + "," + (marginSignalGraph.top + height + heightminiSignalGraph + 100) + ")")
+            .attr("transform", "translate(" + utils.marginSignalGraph.left + "," + (utils.marginSignalGraph.top + height + heightminiSignalGraph + 100) + ")")
             .call(rXZoom);
 
         // container to contain the read alignment viewer.
@@ -266,7 +265,7 @@ define(function (require) {
         // This is the main graph.
         var SGGraph = svg.append("g")
             .attr("class", "SGGraph")
-            .attr("transform", "translate(" + marginSignalGraph.left + "," + marginSignalGraph.top + ")")
+            .attr("transform", "translate(" + utils.marginSignalGraph.left + "," + utils.marginSignalGraph.top + ")")
             .call(zoom);
 
         // comment this line to get the popup appear.
