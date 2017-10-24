@@ -1,39 +1,80 @@
-// The configuration for the graph.
+/**
+ *
+ * @file main.js -- contains main functionality of the application
+ * @author Coadunate Organization
+ * @version 1.0
+ *
+ */
+
+
+/**
+ * Terminology
+ * SG -- Signal Graph
+ * mSG -- Mini Signal Graph.
+ */
+
+
+/**
+ * Function tuplify -- Converts a key value pair into a tuple of values.
+ * @params obj -- Represents a dictionary (with key-value paris)
+ */
+let tuplify = obj => Object.keys(obj).reduce((m,k) => m.concat([[k, obj[k]]]), []);
+
+
+/**
+ * isLower -- Checks whether or not a char provided in args is lowercase or not.
+ * @param character -- Represents a character to check for
+ * @returns {boolean} -- true if lower, false otherwise.
+ */
+function isLower(character) {
+    return (character === character.toLowerCase()) && (character !== character.toUpperCase());
+}
+
+
+// Initializing variables for the graph.
+    // marginSignalGraph -- Represents the main graph of signal traces.
+    // marginMiniSignalGraph -- Represents the graph underneath the signal graph showing signal data in minified form.
+    // width -- Represents the width for the signal and the mini signal graph.
+    // height -- Represents the height of the svg enclosing signal graph, mini signal graph and the read align. viewer.
+    // heightMiniSignalGraph -- Represents the height of the mini signal graph.
 var
-    marginFocus = {top: 30, right: 50, bottom: 90, left: 50},
-    marginContext = {top: 530, right: 20, bottom: 40, left: 40},
+    marginSignalGraph = {top: 30, right: 50, bottom: 90, left: 50},
+    marginMiniSignalGraph = {top: 530, right: 20, bottom: 40, left: 40},
 
-    width = (window.innerWidth) - marginFocus.left - marginFocus.right-20, // width = 900
-    height = 602 - marginFocus.top - marginFocus.bottom, // height = 370
+    width = (window.innerWidth) - marginSignalGraph.left - marginSignalGraph.right-20, // width = 900
+    height = 602 - marginSignalGraph.top - marginSignalGraph.bottom, // height = 370
 
-    height2 = 602 - marginContext.top - marginContext.bottom; // height2 = 40
+    heightminiSignalGraph = 602 - marginMiniSignalGraph.top - marginMiniSignalGraph.bottom; // heightminiSignalGraph = 40
 
-// The svg contians everthing inside the graph.
+
+// The svg enclosing signal graph, mini signal graph and the read align. viewer.
 var svg = d3.select(".app").append("svg")
-    .attr("width", width + marginFocus.left + marginFocus.right)
-    .attr("height", height + marginFocus.top + marginFocus.bottom + 100 + 500);
+    .attr("width", width + marginSignalGraph.left + marginSignalGraph.right)
+    .attr("height", height + marginSignalGraph.top + marginSignalGraph.bottom + 100 + 500);
 
 
 // Creating scales for the graph.
-var x = d3.scaleLinear().range([0 , width]),
-    x2 = d3.scaleLinear().range([0, width]),
-    y = d3.scaleLinear().range([height, 0]),
-    y2 = d3.scaleLinear().range([height2, 0]);
+var xSG = d3.scaleLinear().range([0 , width]), // the x-scale for signal graph.
+    xmSG = d3.scaleLinear().range([0, width]), // the x-scale for mini signal graph.
+    ySG = d3.scaleLinear().range([height, 0]), // the y-scale for signal graph.
+    ymSG = d3.scaleLinear().range([heightminiSignalGraph, 0]); // the y-scale for mini signal graph.
 
-    rX = d3.scaleLinear().range([0, width]); // the scales for read alignment view.
+    xR = d3.scaleLinear().range([0, width]); // the x-scale for read alignment viewer.
 
 
 
-var lineFunction = d3.line()
-    .x(function(d) { return x(d.index); })
-    .y(function(d) { return y(d.signal); });
+// Line function for the signal graph.
+var lineFunctionSG = d3.line()
+    .x(function(d) { return xSG(d.index); })
+    .y(function(d) { return ySG(d.signal); });
 
-var lineFunction2 = d3.line()
-    .x(function(d) { return x2(d.index); })
-    .y(function(d) { return y2(d.signal); });
+// Line function for mini signal graph.
+var lineFunctionmSG = d3.line()
+    .x(function(d) { return xmSG(d.index); })
+    .y(function(d) { return ymSG(d.signal); });
 
-let tuplify = obj => Object.keys(obj).reduce((m,k) => m.concat([[k, obj[k]]]), []);
 
+// colors for the read align. viewer.
 var colors = [
   "purple",
   "#DF7401",
@@ -43,6 +84,7 @@ var colors = [
   "red"
 ];
 
+// base_colors -- Represents a dictionary of base_pair (key) and the color associated with it (value)
 var base_colors = {
     "A": "orange", // A
     "T": "red", // T
@@ -50,24 +92,43 @@ var base_colors = {
     "C": "green" // C
 };
 
-function isLower(character) {
-    return (character === character.toLowerCase()) && (character !== character.toUpperCase());
-}
 
 // This represents the strip below showing the mini version of the graph.
-var context = svg.append("g")
-    .attr("class", "context")
-    .attr("transform", "translate(" + marginContext.left + "," + marginContext.top + ")");
+var mSGGraph = svg.append("g")
+    .attr("class", "mSGGraph")
+    .attr("transform", "translate(" + marginMiniSignalGraph.left + "," + marginMiniSignalGraph.top + ")");
 
+// Gets the data form the data/combined.json file
 d3.json("/data/combined.json", function(error, data) {
-    var dataset_visible = [];
+
     if (error) throw error;
 
+    // the number of reads in the jSON file
+    var numReads = data.length-1;
 
-    for (var i = 0; i < data.length - 1; i++) {
-        dataset_visible[i] = "hidden";
+    // Calculating the num of pore_models.
+    numPoreModels = 0;
+    for (var i = 0; i < numReads; i++) {
+        numPoreModels = Math.max(data[i][0].length, numPoreModels);
+    }
 
-        data[i][0].forEach(function (d) {
+
+    for (var i = 0; i < numReads; i++) {
+
+        // Represents an array of pore_models
+        // format:
+        //     {
+        //         "index": 1,
+        //         "signal": 92.2417,
+        //         "time": 368.58,
+        //         "model": "TCGGT",
+        //         "length": 0.0015,
+        //         "stdv": 1.4271
+        //     }
+        var pore_models = data[i][0];
+
+        // Convert all the integer values to integer.
+        pore_models.forEach(function (d) {
             d.index = +d.index;
             d.signal = +d.signal;
             d.model = d.model;
@@ -77,12 +138,14 @@ d3.json("/data/combined.json", function(error, data) {
         });
     }
 
+    // x domain for the signal graph is total number of pore_models.
+    xSG.domain([0, numPoreModels]);
 
-
-    x.domain([0, 1000]);
-
+    // Calculating y-min and y-max
+    //    y-max equals the max signal value from all the pore_models
+    //    y-min equals the min signal value from all the pore-models.
     var ymin = 9999, ymax = 0;
-    for (var i = 0; i < data.length - 1; i++) {
+    for (var i = 0; i < numReads; i++) {
         ymin = Math.min(d3.min(data[i][0], function (d) {
             return d.signal;
         }), ymin);
@@ -91,48 +154,50 @@ d3.json("/data/combined.json", function(error, data) {
         }), ymax);
     }
 
-    y.domain([ymin, ymax]);
+    // y-scale for the signal graph.
+    ySG.domain([ymin, ymax]);
 
-    x2.domain(x.domain());
-    y2.domain(y.domain());
+    // x domain for the mini signal graph
+    xmSG.domain(xSG.domain());
 
-    rX.domain([0, 125]);
+    // y domain for the mini signal graph
+    ymSG.domain(ySG.domain());
+
+    // x domain for the read align. viewer.
+    xR.domain([0, 125]);
 
 
+    // Creates a brush for mini signal data.
     var brush = d3.brushX()
-        .extent([[0, 0], [width, height2]])
+        .extent([[0, 0], [width, heightminiSignalGraph]])
         .on("brush end", brushed);
 
-    maxDataLength = 0;
-    for (var i = 0; i < data.length - 1; i++) {
-        maxDataLength = Math.max(data[i][0].length, maxDataLength);
-    }
-
+    // create zoom function for the signal graph.
     var zoom = d3.zoom()
-        .scaleExtent([1, maxDataLength])
+        .scaleExtent([1, numPoreModels])
         .translateExtent([[0, 0], [width, height]])
         .extent([[0, 0], [width, height]])
         .on("zoom", zoomed);
 
+    // Create zoom function for the read alignment viewer.
     var rXZoom = d3.zoom()
-        .scaleExtent([1, maxDataLength])
+        .scaleExtent([1, numPoreModels])
         .translateExtent([[0, 0], [width, height]])
         .extent([[0, 0], [width, height]])
         .on("zoom", rXZoomed);
 
 
-    var xAxis = d3.axisBottom(x).tickSize(-height),
-        xAxis2 = d3.axisBottom(x2),
-        yAxis = d3.axisLeft(y).ticks(5).tickSize(-width);
 
-    var rXAxis = d3.axisBottom(rX);
+    var xAxisSG = d3.axisBottom(xSG).tickSize(-height), // x-axis for signal grpah
+        xAxis2mSG = d3.axisBottom(xmSG), // x-axis for mini signal graph
+        yAxis = d3.axisLeft(ySG).ticks(5).tickSize(-width); // y-axis for the signal graph.
 
-    (function(){
+    // x-axis for the read alignment viewer.
+    var rXAxis = d3.axisBottom(xR);
 
+    (function(){ // Function for creating the table.
 
-
-        var sortAscending = true;
-
+        // represents the tiles for the table.
         var titles = {
             "qname": "Read Name",
             "pos": "Postition",
@@ -141,8 +206,9 @@ d3.json("/data/combined.json", function(error, data) {
         };
 
 
-        var table = d3.select('.app').append('table').attr("class","table table-hover");
+        var table = d3.select('.app').append('table').attr("class","table table-hover"); // create table element.
 
+        // add titles to the table and refer it by headers variable.
         var headers = table.append('thead')
             .append('tr')
             .selectAll('th')
@@ -153,11 +219,13 @@ d3.json("/data/combined.json", function(error, data) {
                 return d;
             });
 
+        // create rows
         var rows = table.append('tbody')
             .selectAll('tr')
             .data(data.slice(0,3))
             .enter()
             .append('tr');
+
 
         rows.selectAll('td')
             .data(function(d) {
@@ -189,11 +257,13 @@ d3.json("/data/combined.json", function(error, data) {
     }());
 
 
+    // create graphic element for the reads alignment viewer.
     var reads = svg.append("g")
         .attr("class", "reads")
-        .attr("transform", "translate(" + marginFocus.left + "," + (marginFocus.top + height + height2 + 100) + ")")
+        .attr("transform", "translate(" + marginSignalGraph.left + "," + (marginSignalGraph.top + height + heightminiSignalGraph + 100) + ")")
         .call(rXZoom);
 
+    // container to contain the read alignment viewer.
     var read_container = reads.append("g").attr("class", "container");
 
     read_container.append("g")
@@ -202,16 +272,10 @@ d3.json("/data/combined.json", function(error, data) {
         .call(rXAxis);
 
 
-    // reads.append("text")
-    //     .style("text-anchor", "middle")
-    //     .style("font-size", "15px")
-    //     .attr("transform", "rotate(-90) translate(" + -height / 2 + ",-30)")
-    //     .text("# Reads");
-
     // This is the main graph.
-    var focus = svg.append("g")
-        .attr("class", "focus")
-        .attr("transform", "translate(" + marginFocus.left + "," + marginFocus.top + ")")
+    var SGGraph = svg.append("g")
+        .attr("class", "SGGraph")
+        .attr("transform", "translate(" + marginSignalGraph.left + "," + marginSignalGraph.top + ")")
         .call(zoom);
 
     // comment this line to get the popup appear.
@@ -222,29 +286,35 @@ d3.json("/data/combined.json", function(error, data) {
     //     .style("fill", "none")
     //     .style("pointer-events", "all").call(zoom);
 
-    var container = focus.append("g").attr("class", "container");
+    // container for the graph.
+    var container = SGGraph.append("g").attr("class", "container");
 
+    // add signal graph x-axis to the container.
     container.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .call(xAxisSG);
 
+    // add signal grpah y-axis to the container
     container.append("g")
         .attr("class", "axis axis--y")
         .call(yAxis);
 
-    focus.append("text")
+    // append text for the y-axis label.
+    SGGraph.append("text")
         .style("text-anchor", "middle")
         .style("font-size", "15px")
         .attr("transform", "rotate(-90) translate(" + -height / 2 + ",-30)")
         .text("Signal Value (pA)");
 
+    // div for the information for each event point.
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-    for (var i = 0; i < data.length - 1; i++) {
-        focus.append("svg").attr("width", width).attr("height", height).attr("class", "circ" + i).selectAll("circle")
+    // populate the signal graph with circles for event points and line function.
+    for (var i = 0; i < numReads; i++) {
+        SGGraph.append("svg").attr("width", width).attr("height", height).attr("class", "circ" + i).selectAll("circle")
             .data(data[i][0])
             .enter()
             .append("circle")
@@ -252,13 +322,12 @@ d3.json("/data/combined.json", function(error, data) {
                 console.log("Yo!");
             })
             .attr("cx", function (d) {
-                return x(d.index);
+                return xSG(d.index);
             })
             .attr("cy", function (d) {
-                return y(d.signal);
+                return ySG(d.signal);
             })
             .attr("fill", i == 0 ? "black" : "black")
-            .style("opacity", dataset_visible[i] == "hidden" ? 1 : 1)
             .attr("class", "dot")
             .attr("r", 5)
             .on("mouseover", function (d) {
@@ -284,37 +353,41 @@ d3.json("/data/combined.json", function(error, data) {
                     .style("opacity", 0);
             });
 
-        focus.append("svg").attr("width", width).attr("height", height).append("path")
+        // create a path for the signal data.
+        SGGraph.append("svg").attr("width", width).attr("height", height).append("path")
             .datum(data[i][0])
             .attr("class", "squiggle")
             .attr("id", "squigg1")
-            .attr("d", lineFunction)
+            .attr("d", lineFunctionSG)
             .attr("stroke", colors[i])
             .attr("stroke-width", 2)
             .attr("fill", "none");
 
-        context.append("path")
+        // create path for the mini signal data.
+        mSGGraph.append("path")
             .datum(data[i][0])
             .attr("class", "squiggle")
-            .attr("d", lineFunction2)
+            .attr("d", lineFunctionmSG)
             .attr("stroke", colors[i])
             .attr("stroke-width", 2)
             .attr("fill", "none");
     }
 
 
-    context.append("g")
+    // create the x-axis for the mini signal graph.
+    mSGGraph.append("g")
         .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height2 + ")")
-        .call(xAxis2);
+        .attr("transform", "translate(0," + heightminiSignalGraph + ")")
+        .call(xAxis2mSG);
 
-    context.append("g")
+    // append the brush function on the mini signal graph.
+    mSGGraph.append("g")
         .attr("class", "brush")
         .call(brush)
-        .call(brush.move, x.range());
+        .call(brush.move, xSG.range());
 
-    // read1
-    for (var j = 0; j < data.length-1; j++){
+    // populate read alignment view with reads.
+    for (var j = 0; j < numReads; j++){
         read_svg = reads.append("svg").attr("width", width).attr("height", height).attr("class", "read" + j);
         for (var i = 0; i < data[j][1].span; i++) {
             var query = data[j][1].query[i];
@@ -325,8 +398,8 @@ d3.json("/data/combined.json", function(error, data) {
                 //console.log("INSERTION");
 
                 read_svg.append("rect")
-                    .attr("x", rX(i) + 25)
-                    .attr("y", y(130) + (j * 50))
+                    .attr("x", xR(i) + 25)
+                    .attr("y", ySG(130) + (j * 50))
                     .attr("class", "read" + j + "_" + i)
                     .attr("width", 20)
                     .attr("height", 25)
@@ -334,8 +407,8 @@ d3.json("/data/combined.json", function(error, data) {
                     .attr('stroke', 'black');
 
                 read_svg.append("rect")
-                    .attr("x", rX(i) + 25)
-                    .attr("y", y(130) + (j * 50)  - 5)
+                    .attr("x", xR(i) + 25)
+                    .attr("y", ySG(130) + (j * 50)  - 5)
                     .attr("class", "read" + j + "_" + i)
                     .attr("width", 1)
                     .attr("height", 35)
@@ -365,16 +438,16 @@ d3.json("/data/combined.json", function(error, data) {
                 //console.log("DELETION");
 
                 read_svg.append("rect")
-                    .attr("x", rX(i) + 25)
-                    .attr("y", y(130) + (j * 50))
+                    .attr("x", xR(i) + 25)
+                    .attr("y", ySG(130) + (j * 50))
                     .attr("class", "read" + j + "_" + i)
                     .attr("width", 20)
                     .attr("height", 25)
                     .attr("fill", "white")
 
                 read_svg.append("rect")
-                    .attr("x", rX(i) + 25)
-                    .attr("y", y(130) + (j * 50) +11)
+                    .attr("x", xR(i) + 25)
+                    .attr("y", ySG(130) + (j * 50) +11)
                     .attr("class", "read" + j + "_" + i)
                     .attr("width", 35)
                     .attr("height", 1)
@@ -386,8 +459,8 @@ d3.json("/data/combined.json", function(error, data) {
             }else{ // normal case.
 
                 read_svg.append("rect")
-                    .attr("x", rX(i) + 25)
-                    .attr("y", y(130) + (j * 50))
+                    .attr("x", xR(i) + 25)
+                    .attr("y", ySG(130) + (j * 50))
                     .attr("class", "read" + j + "_" + i)
                     .attr("width", 20)
                     .attr("height", 25)
@@ -395,67 +468,15 @@ d3.json("/data/combined.json", function(error, data) {
                     .attr('stroke', 'black')
                     .attr('stroke-width',2);
                 if(isLower(query[2])){
-                    read_svg.append("text").attr("x",rX(i) +25 + 1.6).attr("y",y(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
+                    read_svg.append("text").attr("x",xR(i) +25 + 1.6).attr("y",ySG(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
                 }
             }
-
-            // if(query[0] != null) {
-            //
-            //     if(isLower(query[2])){
-            //
-            //         read_svg.append("rect")
-            //             .attr("x", rX(i) + 25)
-            //             .attr("y", y(130) + (j * 50))
-            //             .attr("class", "read" + j + "_" + i)
-            //             .attr("width", 20)
-            //             .attr("height", 25)
-            //             .attr("fill", colors[j])
-            //             .attr('stroke', 'black')
-            //
-            //         read_svg.append("text").attr("x",rX(i) +25 + 1).attr("y",y(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","10px").attr("fill","black");
-            //
-            //     }
-            //     else{ // normal case.
-            //         read_svg.append("rect")
-            //             .attr("x", rX(i) + 25)
-            //             .attr("y", y(130) + (j * 50))
-            //             .attr("class", "read" + j + "_" + i)
-            //             .attr("width", 20)
-            //             .attr("height", 25)
-            //             .attr("fill", colors[j])
-            //             .attr('stroke', 'black');
-            //     }
-            // }else{
-            //     read_svg.append("rect")
-            //         .attr("x", rX(i) + 25)
-            //         .attr("y", y(130) + (j * 50))
-            //         .attr("class", "read" + j + "_" + i)
-            //         .attr("width", 20)
-            //         .attr("height", 25)
-            //         .attr("fill", "white")
-            //         .attr('stroke', 'black');
-            //
-            //     read_svg.append("rect")
-            //         .attr("x", rX(i) + 25 + 3)
-            //         .attr("y", y(130) + (j * 50))
-            //         .attr("class", "read" + j + "_" + i)
-            //         .attr("width", 2)
-            //         .attr("height", 25)
-            //         .attr("fill", "white")
-            //         .attr('stroke', 'grey')
-            //         .attr("stroke-width",4);
-            //
-            // }
-            //
-            // if(isLower(query[2])){
-            //
-            // }
 
         }
     }
 
 
-    // add reference
+    // add the reference to the read alignment view.
     var reference = reads.append("svg").attr("width", width).attr("height", height).attr("class", "reference");
     for(var i = 0; i < data[3].ref.length; i++){
         base_color = "";
@@ -477,8 +498,8 @@ d3.json("/data/combined.json", function(error, data) {
         }
 
         reference.append("rect")
-            .attr("x", rX(i) + 25)
-            .attr("y", y(65))
+            .attr("x", xR(i) + 25)
+            .attr("y", ySG(65))
             .attr("class", "read" + j + "_" + i)
             .attr("width", 20)
             .attr("height", 25)
@@ -488,8 +509,8 @@ d3.json("/data/combined.json", function(error, data) {
 
 
         reference.append("text")
-                  .attr("x",rX(i) +25 + 2)
-                  .attr("y",y(62))
+                  .attr("x",xR(i) +25 + 2)
+                  .attr("y",ySG(62))
                   .text(data[3].ref[i])
                   .attr("font-family","sans-serif")
                   .attr("font-size","10px")
@@ -497,88 +518,23 @@ d3.json("/data/combined.json", function(error, data) {
 
     }
 
-    // reads.append("svg")
-    //     .attr("width",width)
-    //     .attr("height",height)
-    //     .selectAll("rect")
-    //     .data(data[0][0])
-    //     .enter()
-    //     .append("rect")
-    //     .attr("x",x())
-
-    // reads.append("svg")
-    //         .attr("width",width)
-    //         .attr("height",height)
-    //         .attr("class","read1")
-    //         .selectAll("rect")
-    //           .data(data[0][0])
-    //           .enter()
-    //           .append("circle")
-    //             .attr("cx",x(1000))
-    //             .attr("cy",y(100))
-    //             .attr("r",5);
-
-
-
-    // for(var i = 0; i < data.length-1; i++){
-    //   reads.append("svg")
-    //           .attr("width",width)
-    //           .attr("height",height)
-    //           .append("rect")
-    //           .attr("x",x(0))
-    //           .attr("y",100 + (i*(25*2)))
-    //           .attr("class","read1")
-    //           .attr("width",x(data[i][0].length))
-    //           .attr("height",25)
-    //           .attr("fill",colors[i]);
-    //
-    // }
-
-
-    // for(var i = 0; i < data.length-1; i++){
-    //   reads.append("svg")
-    //           .attr("width",width)
-    //           .attr("height",height)
-    //           .attr("class","read" + i)
-    //           .on("click",function(){
-    //             // var active = ("sqigg" + (i-1)).active ? false : true,
-    //             //     newOP = active ? 1 : 0;
-    //             // d3.select("#squigg" + (i-1)).style("opacity",newOP);
-    //
-    //             // console.log("dataset_visible[" + (i-1) + "]");
-    //             // console.log(dataset_visible)
-    //             // dataset_visible[i-1] = "visible";
-    //             // d3.select(".squigg" + i-1).style("opacity",1);
-    //           })
-    //           .selectAll("rect")
-    //        .data(data[i])
-    //        .enter()
-    //        .append("rect")
-    //        .attr("x", function(d){ return x(d.length); })
-    //        .attr("y", y(140 - (10*i) ) )
-    //        .attr("width", x(1000))
-    //        .attr("height",50)
-    //        .attr("class","read-rect")
-    //        .attr("fill", i==0 ? "blue" : "red" );
-    // }
-
 
     function brushed() {
 
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
-        var s = d3.event.selection || x2.range();
-        x.domain(s.map(x2.invert, x2));
-        focus.selectAll(".squiggle").attr("d", lineFunction);
-        focus.select(".axis--x").call(xAxis);
+        var s = d3.event.selection || xmSG.range();
+        xSG.domain(s.map(xmSG.invert, xmSG));
+        SGGraph.selectAll(".squiggle").attr("d", lineFunctionSG);
+        SGGraph.select(".axis--x").call(xAxisSG);
         //reads.select(".axis--x").call(rXAxis);
         svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
             .scale(width / (s[1] - s[0]))
             .translate(-s[0], 0));
 
 
-        focus.selectAll("circle")
-            .attr("cx", function(d){ return x(d.index); })
-            .attr("cy", function(d){ return y(d.signal); });
+        SGGraph.selectAll("circle")
+            .attr("cx", function(d){ return xSG(d.index); })
+            .attr("cy", function(d){ return ySG(d.signal); });
 
 
     }
@@ -586,25 +542,20 @@ d3.json("/data/combined.json", function(error, data) {
     function zoomed() {
         if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
         var t = d3.event.transform;
-        x.domain(t.rescaleX(x2).domain());
-        focus.selectAll(".squiggle").attr("d", lineFunction);
-        focus.select(".axis--x").call(xAxis);
-        reads.select(".rXaxis").call(xAxis);
-        context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+        xSG.domain(t.rescaleX(xmSG).domain());
+        SGGraph.selectAll(".squiggle").attr("d", lineFunctionSG);
+        SGGraph.select(".axis--x").call(xAxisSG);
+        reads.select(".rXaxis").call(xAxisSG);
+        mSGGraph.select(".brush").call(brush.move, xSG.range().map(t.invertX, t));
 
         svg.selectAll(".dot")
-            .attr("cx", function(d){ return x(d.index); })
-            .attr("cy", function(d){ return y(d.signal); });
+            .attr("cx", function(d){ return xSG(d.index); })
+            .attr("cy", function(d){ return ySG(d.signal); });
 
         for(var i = 0; i < data[0][1].span; i++){
             svg.selectAll(".read1")
-                .attr("x",x(i));
+                .attr("x",xSG(i));
         }
-
-        // svg.selectAll(".read-rect")
-        //     .attr("x", function(d){ return x(d.index); })
-        //     .attr("width",function(d){ return x(d.index + 100) > 0 ? x(d.index + 100) : 0; });
-
 
     }
 
@@ -613,12 +564,3 @@ d3.json("/data/combined.json", function(error, data) {
     }
 
 });
-
-// function type(d) {
-//     d.index = d.index;
-//     d.signal = +d.signal;
-//     d.time = +d.time;
-//     d.length = +d.length;
-//     d.stdv = +d.stdv;
-//     return d;
-// }
