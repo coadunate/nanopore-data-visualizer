@@ -17,76 +17,34 @@ define(function (require) {
 
 
     // Importing dependant libraries.
-    var messages = require('./messages');
     var utils = require('./utils');
+    var scales = require('./scales');
 
 
-    // Initializing variables for the graph.
-    // utils.marginSignalGraph -- Represents the main graph of signal traces.
-    // marginMiniSignalGraph -- Represents the graph underneath the signal graph showing signal data in minified form.
-    // width -- Represents the width for the signal and the mini signal graph.
-    // height -- Represents the height of the svg enclosing signal graph, mini signal graph and the read align. viewer.
-    // heightMiniSignalGraph -- Represents the height of the mini signal graph.
-    var
-        marginSignalGraph = {top: 30, right: 50, bottom: 90, left: 50},
-        marginMiniSignalGraph = {top: 530, right: 20, bottom: 40, left: 40},
-
-        width = (window.innerWidth) - utils.marginSignalGraph.left - utils.marginSignalGraph.right-20, // width = 900
-        height = 602 - utils.marginSignalGraph.top - utils.marginSignalGraph.bottom, // height = 370
-
-        heightminiSignalGraph = 602 - marginMiniSignalGraph.top - marginMiniSignalGraph.bottom; // heightminiSignalGraph = 40
 
 
     // The svg enclosing signal graph, mini signal graph and the read align. viewer.
     var svg = d3.select(".app").append("svg")
-        .attr("width", width + utils.marginSignalGraph.left + utils.marginSignalGraph.right)
-        .attr("height", height + utils.marginSignalGraph.top + utils.marginSignalGraph.bottom + 100 + 500);
-
-
-    // Creating scales for the graph.
-    var xSG = d3.scaleLinear().range([0 , width]), // the x-scale for signal graph.
-        xmSG = d3.scaleLinear().range([0, width]), // the x-scale for mini signal graph.
-        ySG = d3.scaleLinear().range([height, 0]), // the y-scale for signal graph.
-        ymSG = d3.scaleLinear().range([heightminiSignalGraph, 0]); // the y-scale for mini signal graph.
-
-    xR = d3.scaleLinear().range([0, width]); // the x-scale for read alignment viewer.
+        .attr("width", utils.width + utils.marginSignalGraph.left + utils.marginSignalGraph.right)
+        .attr("height", utils.height + utils.marginSignalGraph.top + utils.marginSignalGraph.bottom + 100 + 500);
 
 
 
     // Line function for the signal graph.
     var lineFunctionSG = d3.line()
-        .x(function(d) { return xSG(d.index); })
-        .y(function(d) { return ySG(d.signal); });
+        .x(function(d) { return scales.xSG(d.index); })
+        .y(function(d) { return scales.ySG(d.signal); });
 
     // Line function for mini signal graph.
     var lineFunctionmSG = d3.line()
-        .x(function(d) { return xmSG(d.index); })
-        .y(function(d) { return ymSG(d.signal); });
-
-
-    // colors for the read align. viewer.
-    var colors = [
-        "purple",
-        "#DF7401",
-        "teal",
-        "yellow",
-        "pink",
-        "red"
-    ];
-
-    // base_colors -- Represents a dictionary of base_pair (key) and the color associated with it (value)
-    var base_colors = {
-        "A": "orange", // A
-        "T": "red", // T
-        "G": "blue", // G
-        "C": "green" // C
-    };
+        .x(function(d) { return scales.xmSG(d.index); })
+        .y(function(d) { return scales.ymSG(d.signal); });
 
 
     // This represents the strip below showing the mini version of the graph.
     var mSGGraph = svg.append("g")
         .attr("class", "mSGGraph")
-        .attr("transform", "translate(" + marginMiniSignalGraph.left + "," + marginMiniSignalGraph.top + ")");
+        .attr("transform", "translate(" + utils.marginMiniSignalGraph.left + "," + utils.marginMiniSignalGraph.top + ")");
 
     // Gets the data form the data/combined.json file
     d3.json("/data/combined.json", function(error, data) {
@@ -95,6 +53,15 @@ define(function (require) {
 
         // the number of reads in the jSON file
         var numReads = data.length-1;
+
+
+        var reads_visible = [];
+        for(var i=0; i < numReads; i++) reads_visible[i] = "visible";
+
+        var indSGGraph = [];  // array of all the graphs in SG
+        var indSGCricle = []; // array of all the circles in SG
+        var indmSGGraph = []; // array for all the graphs in mSG
+        var indReads = []; // array for all the reads in read align. viewer.
 
         // Calculating the num of pore_models.
         numPoreModels = 0;
@@ -129,7 +96,7 @@ define(function (require) {
         }
 
         // x domain for the signal graph is total number of pore_models.
-        xSG.domain([0, numPoreModels]);
+        scales.xSG.domain([0, numPoreModels]);
 
         // Calculating y-min and y-max
         //    y-max equals the max signal value from all the pore_models
@@ -145,112 +112,134 @@ define(function (require) {
         }
 
         // y-scale for the signal graph.
-        ySG.domain([ymin, ymax]);
+        scales.ySG.domain([ymin, ymax]);
 
         // x domain for the mini signal graph
-        xmSG.domain(xSG.domain());
+        scales.xmSG.domain(scales.xSG.domain());
 
         // y domain for the mini signal graph
-        ymSG.domain(ySG.domain());
+        scales.ymSG.domain(scales.ySG.domain());
 
         // x domain for the read align. viewer.
-        xR.domain([0, 125]);
+        scales.xR.domain([0, 125]);
 
 
         // Creates a brush for mini signal data.
         var brush = d3.brushX()
-            .extent([[0, 0], [width, heightminiSignalGraph]])
+            .extent([[0, 0], [utils.width, utils.heightminiSignalGraph]])
             .on("brush end", brushed);
 
         // create zoom function for the signal graph.
         var zoom = d3.zoom()
             .scaleExtent([1, numPoreModels])
-            .translateExtent([[0, 0], [width, height]])
-            .extent([[0, 0], [width, height]])
+            .translateExtent([[0, 0], [utils.width, utils.height]])
+            .extent([[0, 0], [utils.width, utils.height]])
             .on("zoom", zoomed);
 
         // Create zoom function for the read alignment viewer.
         var rXZoom = d3.zoom()
             .scaleExtent([1, numPoreModels])
-            .translateExtent([[0, 0], [width, height]])
-            .extent([[0, 0], [width, height]])
+            .translateExtent([[0, 0], [utils.width, utils.height]])
+            .extent([[0, 0], [utils.width, utils.height]])
             .on("zoom", rXZoomed);
 
 
 
-        var xAxisSG = d3.axisBottom(xSG).tickSize(-height), // x-axis for signal grpah
-            xAxis2mSG = d3.axisBottom(xmSG), // x-axis for mini signal graph
-            yAxis = d3.axisLeft(ySG).ticks(5).tickSize(-width); // y-axis for the signal graph.
+        var xAxisSG = d3.axisBottom(scales.xSG).tickSize(-utils.height), // x-axis for signal grpah
+            xAxis2mSG = d3.axisBottom(scales.xmSG), // x-axis for mini signal graph
+            yAxis = d3.axisLeft(scales.ySG).ticks(5).tickSize(-utils.width); // y-axis for the signal graph.
 
         // x-axis for the read alignment viewer.
-        var rXAxis = d3.axisBottom(xR);
-
-        (function(){ // Function for creating the table.
-
-            // represents the tiles for the table.
-            var titles = {
-                "qname": "Read Name",
-                "pos": "Postition",
-                "length": "Nanopore Events",
-                "span": "Reference Span (bp)"
-            };
+        var rXAxis = d3.axisBottom(scales.xR);
 
 
-            var table = d3.select('.app').append('table').attr("class","table table-hover"); // create table element.
+        // represents the tiles for the table.
+        var titles = {
+            "qname": "Read Name",
+            "pos": "Postition",
+            "length": "Nanopore Events",
+            "span": "Reference Span (bp)"
+        };
 
-            // add titles to the table and refer it by headers variable.
-            var headers = table.append('thead')
-                .append('tr')
-                .selectAll('th')
-                .data(d3.values(titles))
-                .enter()
-                .append('th')
-                .text(function(d) {
-                    return d;
+
+        var table = d3.select('.app').append('table').attr("class","table table-hover"); // create table element.
+
+        // add titles to the table and refer it by headers variable.
+        var headers = table.append('thead')
+            .append('tr')
+            .selectAll('th')
+            .data(d3.values(titles))
+            .enter()
+            .append('th')
+            .text(function(d) {
+                return d;
+            });
+
+        // create rows
+        var rows = table.append('tbody')
+            .selectAll('tr')
+            .data(data.slice(0,3))
+            .enter()
+            .append('tr');
+
+        rows.on("click", function (d,i) {
+            console.log("YOU CLICKED (" + i + ")");
+            console.log(reads_visible);
+            if(reads_visible[i] === "visible"){
+                console.log(i + " is VISIBLE");
+
+                indSGGraph[i].attr("opacity",0);
+                indSGCricle[i].attr("opacity",0);
+                indmSGGraph[i].attr("opacity",0);
+                indReads[i].style("opacity",0);
+
+                reads_visible[i] = "invisible";
+
+            } else{
+                console.log(i + " is NOT VISIBLE");
+
+                indSGGraph[i].attr("opacity",1);
+                indSGCricle[i].attr("opacity",1);
+                indmSGGraph[i].attr("opacity",1);
+                indReads[i].style("opacity",1);
+
+                reads_visible[i] = "visible";
+            }
+
+
+        });
+
+        rows.selectAll('td')
+            .data(function(d) {
+                return utils.tuplify(titles).map(function(k) {
+
+                    // defines the position at which each field in the data is found.
+                    field_number = { };
+                    field_number["qname"] = 6;
+                    field_number["pos"] = 5;
+                    field_number["length"] = 0;
+                    field_number["span"] = 3;
+
+                    d_tup = utils.tuplify(d[1]);
+                    return {
+                        'value': "this",
+                        'name': d_tup[ field_number[ k[0] ] ] [1]
+                    };
                 });
-
-            // create rows
-            var rows = table.append('tbody')
-                .selectAll('tr')
-                .data(data.slice(0,3))
-                .enter()
-                .append('tr');
-
-
-            rows.selectAll('td')
-                .data(function(d) {
-
-                    return utils.tuplify(titles).map(function(k) {
-                        k_ty = { };
-                        k_ty["qname"] = 6;
-                        k_ty["pos"] = 5;
-                        k_ty["length"] = 0;
-                        k_ty["span"] = 3;
-
-                        d_tup = utils.tuplify(d[1]);
-                        console.log("K : " + d_tup[k_ty[k[0]]][1]);
-                        return {
-                            'value': "this",
-                            'name': d_tup[k_ty[k[0]]][1]
-                        };
-                    });
-                })
-                .enter()
-                .append('td')
-                .attr('data-th', function(d) {
-                    return d.value;
-                })
-                .text(function(d) {
-                    return d.name;
-                });
-
-        }());
-
+            })
+            .enter()
+            .append('td')
+            .attr('data-th', function(d) {
+                return d.value;
+            })
+            .text(function(d) {
+                return d.name;
+            });
 
         // create graphic element for the reads alignment viewer.
         var reads = svg.append("g")
             .attr("class", "reads")
-            .attr("transform", "translate(" + utils.marginSignalGraph.left + "," + (utils.marginSignalGraph.top + height + heightminiSignalGraph + 100) + ")")
+            .attr("transform", "translate(" + utils.marginSignalGraph.left + "," + (utils.marginSignalGraph.top + utils.height + utils.heightminiSignalGraph + 100) + ")")
             .call(rXZoom);
 
         // container to contain the read alignment viewer.
@@ -258,7 +247,7 @@ define(function (require) {
 
         read_container.append("g")
             .attr("class", "axis rXaxis")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(0," + utils.height + ")")
             .call(rXAxis);
 
 
@@ -270,9 +259,9 @@ define(function (require) {
 
         // comment this line to get the popup appear.
         // var rect = svg.append("rect")
-        //     .attr("width", width)
+        //     .attr("width", utils.width)
         //     .attr("transform", "translate(50,0)")
-        //     .attr("height", height)
+        //     .attr("height", utils.height)
         //     .style("fill", "none")
         //     .style("pointer-events", "all").call(zoom);
 
@@ -282,7 +271,7 @@ define(function (require) {
         // add signal graph x-axis to the container.
         container.append("g")
             .attr("class", "axis axis--x")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(0," + utils.height + ")")
             .call(xAxisSG);
 
         // add signal grpah y-axis to the container
@@ -294,7 +283,7 @@ define(function (require) {
         SGGraph.append("text")
             .style("text-anchor", "middle")
             .style("font-size", "15px")
-            .attr("transform", "rotate(-90) translate(" + -height / 2 + ",-30)")
+            .attr("transform", "rotate(-90) translate(" + -utils.height / 2 + ",-30)")
             .text("Signal Value (pA)");
 
         // div for the information for each event point.
@@ -304,7 +293,8 @@ define(function (require) {
 
         // populate the signal graph with circles for event points and line function.
         for (var i = 0; i < numReads; i++) {
-            SGGraph.append("svg").attr("width", width).attr("height", height).attr("class", "circ" + i).selectAll("circle")
+
+            var circle = SGGraph.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "circ" + i).selectAll("circle")
                 .data(data[i][0])
                 .enter()
                 .append("circle")
@@ -312,10 +302,10 @@ define(function (require) {
                     console.log("Yo!");
                 })
                 .attr("cx", function (d) {
-                    return xSG(d.index);
+                    return scales.xSG(d.index);
                 })
                 .attr("cy", function (d) {
-                    return ySG(d.signal);
+                    return scales.ySG(d.signal);
                 })
                 .attr("fill", i == 0 ? "black" : "black")
                 .attr("class", "dot")
@@ -343,42 +333,48 @@ define(function (require) {
                         .style("opacity", 0);
                 });
 
+            indSGCricle.push(circle); // add the created sequence of circles to indSGCircle for later modification
+
             // create a path for the signal data.
-            SGGraph.append("svg").attr("width", width).attr("height", height).append("path")
+            var graph = SGGraph.append("svg").attr("width", utils.width).attr("height", utils.height).append("path")
                 .datum(data[i][0])
                 .attr("class", "squiggle")
                 .attr("id", "squigg1")
                 .attr("d", lineFunctionSG)
-                .attr("stroke", colors[i])
+                .attr("stroke", utils.colors[i])
                 .attr("stroke-width", 2)
                 .attr("fill", "none");
 
+            indSGGraph.push(graph); // add the created signal trace to the indSGGraph for later modification
+
             // create path for the mini signal data.
-            mSGGraph.append("path")
+            var mGraph = mSGGraph.append("path")
                 .datum(data[i][0])
                 .attr("class", "squiggle")
                 .attr("d", lineFunctionmSG)
-                .attr("stroke", colors[i])
+                .attr("stroke", utils.colors[i])
                 .attr("stroke-width", 2)
                 .attr("fill", "none");
+
+            indmSGGraph.push(mGraph); // add the created mini signal trace to indmSGGraph for later modification.
         }
 
 
         // create the x-axis for the mini signal graph.
         mSGGraph.append("g")
             .attr("class", "axis axis--x")
-            .attr("transform", "translate(0," + heightminiSignalGraph + ")")
+            .attr("transform", "translate(0," + utils.heightminiSignalGraph + ")")
             .call(xAxis2mSG);
 
         // append the brush function on the mini signal graph.
         mSGGraph.append("g")
             .attr("class", "brush")
             .call(brush)
-            .call(brush.move, xSG.range());
+            .call(brush.move, scales.xSG.range());
 
         // populate read alignment view with reads.
         for (var j = 0; j < numReads; j++){
-            read_svg = reads.append("svg").attr("width", width).attr("height", height).attr("class", "read" + j);
+            read_svg = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "read" + j);
             for (var i = 0; i < data[j][1].span; i++) {
                 var query = data[j][1].query[i];
 
@@ -388,17 +384,17 @@ define(function (require) {
                     //console.log("INSERTION");
 
                     read_svg.append("rect")
-                        .attr("x", xR(i) + 25)
-                        .attr("y", ySG(130) + (j * 50))
+                        .attr("x", scales.xR(i) + 25)
+                        .attr("y", scales.ySG(130) + (j * 50))
                         .attr("class", "read" + j + "_" + i)
-                        .attr("width", 20)
+                        .attr("utils.width", 20)
                         .attr("height", 25)
-                        .attr("fill", colors[j])
+                        .attr("fill", utils.colors[j])
                         .attr('stroke', 'black');
 
                     read_svg.append("rect")
-                        .attr("x", xR(i) + 25)
-                        .attr("y", ySG(130) + (j * 50)  - 5)
+                        .attr("x", scales.xR(i) + 25)
+                        .attr("y", scales.ySG(130) + (j * 50)  - 5)
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 1)
                         .attr("height", 35)
@@ -428,16 +424,16 @@ define(function (require) {
                     //console.log("DELETION");
 
                     read_svg.append("rect")
-                        .attr("x", xR(i) + 25)
-                        .attr("y", ySG(130) + (j * 50))
+                        .attr("x", scales.xR(i) + 25)
+                        .attr("y", scales.ySG(130) + (j * 50))
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 20)
                         .attr("height", 25)
                         .attr("fill", "white")
 
                     read_svg.append("rect")
-                        .attr("x", xR(i) + 25)
-                        .attr("y", ySG(130) + (j * 50) +11)
+                        .attr("x", scales.xR(i) + 25)
+                        .attr("y", scales.ySG(130) + (j * 50) +11)
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 35)
                         .attr("height", 1)
@@ -449,47 +445,47 @@ define(function (require) {
                 }else{ // normal case.
 
                     read_svg.append("rect")
-                        .attr("x", xR(i) + 25)
-                        .attr("y", ySG(130) + (j * 50))
+                        .attr("x", scales.xR(i) + 25)
+                        .attr("y", scales.ySG(130) + (j * 50))
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 20)
                         .attr("height", 25)
-                        .attr("fill", colors[j])
+                        .attr("fill", utils.colors[j])
                         .attr('stroke', 'black')
                         .attr('stroke-width',2);
                     if(utils.isLower(query[2])){
-                        read_svg.append("text").attr("x",xR(i) +25 + 1.6).attr("y",ySG(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
+                        read_svg.append("text").attr("x",scales.xR(i) +25 + 1.6).attr("y",scales.ySG(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
                     }
                 }
-
             }
+            indReads.push(read_svg);
         }
 
 
         // add the reference to the read alignment view.
-        var reference = reads.append("svg").attr("width", width).attr("height", height).attr("class", "reference");
+        var reference = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "reference");
         for(var i = 0; i < data[3].ref.length; i++){
             base_color = "";
             switch(data[3].ref[i]){
                 case "A":
-                    base_color = base_colors.A;
+                    base_color = utils.base_colors.A;
                     break;
                 case "T":
-                    base_color = base_colors.T;
+                    base_color = utils.base_colors.T;
                     break;
                 case "G":
-                    base_color = base_colors.G;
+                    base_color = utils.base_colors.G;
                     break;
                 case "C":
-                    base_color = base_colors.C;
+                    base_color = utils.base_colors.C;
                     break;
                 default:
                     base_color = "black";
             }
 
             reference.append("rect")
-                .attr("x", xR(i) + 25)
-                .attr("y", ySG(65))
+                .attr("x", scales.xR(i) + 25)
+                .attr("y", scales.ySG(65))
                 .attr("class", "read" + j + "_" + i)
                 .attr("width", 20)
                 .attr("height", 25)
@@ -499,8 +495,8 @@ define(function (require) {
 
 
             reference.append("text")
-                .attr("x",xR(i) +25 + 2)
-                .attr("y",ySG(62))
+                .attr("x",scales.xR(i) +25 + 2)
+                .attr("y",scales.ySG(62))
                 .text(data[3].ref[i])
                 .attr("font-family","sans-serif")
                 .attr("font-size","10px")
@@ -512,19 +508,19 @@ define(function (require) {
         function brushed() {
 
             if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
-            var s = d3.event.selection || xmSG.range();
-            xSG.domain(s.map(xmSG.invert, xmSG));
+            var s = d3.event.selection || scales.xmSG.range();
+            scales.xSG.domain(s.map(scales.xmSG.invert, scales.xmSG));
             SGGraph.selectAll(".squiggle").attr("d", lineFunctionSG);
             SGGraph.select(".axis--x").call(xAxisSG);
             //reads.select(".axis--x").call(rXAxis);
             svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
-                .scale(width / (s[1] - s[0]))
+                .scale(utils.width / (s[1] - s[0]))
                 .translate(-s[0], 0));
 
 
             SGGraph.selectAll("circle")
-                .attr("cx", function(d){ return xSG(d.index); })
-                .attr("cy", function(d){ return ySG(d.signal); });
+                .attr("cx", function(d){ return scales.xSG(d.index); })
+                .attr("cy", function(d){ return scales.ySG(d.signal); });
 
 
         }
@@ -532,19 +528,19 @@ define(function (require) {
         function zoomed() {
             if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
             var t = d3.event.transform;
-            xSG.domain(t.rescaleX(xmSG).domain());
+            scales.xSG.domain(t.rescaleX(scales.xmSG).domain());
             SGGraph.selectAll(".squiggle").attr("d", lineFunctionSG);
             SGGraph.select(".axis--x").call(xAxisSG);
             reads.select(".rXaxis").call(xAxisSG);
-            mSGGraph.select(".brush").call(brush.move, xSG.range().map(t.invertX, t));
+            mSGGraph.select(".brush").call(brush.move, scales.xSG.range().map(t.invertX, t));
 
             svg.selectAll(".dot")
-                .attr("cx", function(d){ return xSG(d.index); })
-                .attr("cy", function(d){ return ySG(d.signal); });
+                .attr("cx", function(d){ return scales.xSG(d.index); })
+                .attr("cy", function(d){ return scales.ySG(d.signal); });
 
             for(var i = 0; i < data[0][1].span; i++){
                 svg.selectAll(".read1")
-                    .attr("x",xSG(i));
+                    .attr("x",scales.xSG(i));
             }
 
         }
