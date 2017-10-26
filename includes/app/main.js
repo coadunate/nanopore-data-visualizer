@@ -180,34 +180,8 @@ define(function (require) {
             .selectAll('tr')
             .data(data.slice(0,3))
             .enter()
-            .append('tr');
+            .append('tr').style("background-color",'#bcf5a6').attr("class",function(d,i){ return "row" + i; });
 
-        rows.on("click", function (d,i) {
-            console.log("YOU CLICKED (" + i + ")");
-            console.log(reads_visible);
-            if(reads_visible[i] === "visible"){
-                console.log(i + " is VISIBLE");
-
-                indSGGraph[i].attr("opacity",0);
-                indSGCricle[i].attr("opacity",0);
-                indmSGGraph[i].attr("opacity",0);
-                indReads[i].style("opacity",0);
-
-                reads_visible[i] = "invisible";
-
-            } else{
-                console.log(i + " is NOT VISIBLE");
-
-                indSGGraph[i].attr("opacity",1);
-                indSGCricle[i].attr("opacity",1);
-                indmSGGraph[i].attr("opacity",1);
-                indReads[i].style("opacity",1);
-
-                reads_visible[i] = "visible";
-            }
-
-
-        });
 
         rows.selectAll('td')
             .data(function(d) {
@@ -235,6 +209,37 @@ define(function (require) {
             .text(function(d) {
                 return d.name;
             });
+
+
+        rows.on("click", function (d,i) {
+            console.log("YOU CLICKED (" + i + ")");
+            console.log(reads_visible);
+            if(reads_visible[i] === "visible"){
+
+                indSGGraph[i].attr("opacity",0);
+                indSGCricle[i].attr("opacity",0);
+                indmSGGraph[i].attr("opacity",0);
+                indReads[i].style("opacity",0);
+
+
+                d3.select(".row" + i).style("background",'none');
+
+                reads_visible[i] = "invisible";
+
+            } else{
+
+                indSGGraph[i].attr("opacity",1);
+                indSGCricle[i].attr("opacity",1);
+                indmSGGraph[i].attr("opacity",1);
+                indReads[i].style("opacity",1);
+
+                d3.select(".row" + i).style("background-color",'#bcf5a6');
+
+                reads_visible[i] = "visible";
+            }
+
+
+        });
 
         // create graphic element for the reads alignment viewer.
         var reads = svg.append("g")
