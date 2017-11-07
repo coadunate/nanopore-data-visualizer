@@ -388,22 +388,22 @@ define(function (require) {
 
                     read_svg.append("rect")
                         .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 35))
+                        .attr("y", scales.ySG(130) + (j * 25))
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 25.2)
-                        .attr("height", 25)
+                        .attr("height", 15)
                         .attr("fill", utils.colors[j])
                         .attr('stroke', 'black');
 
                     read_svg.append("rect")
                         .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 35)  - 5)
+                        .attr("y", scales.ySG(130) + (j * 25)  - 3)
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 1)
-                        .attr("height", 30)
+                        .attr("height", 20)
                         .attr("fill", "white")
                         .attr('stroke', 'black')
-                        .attr("stroke-width",2)
+                        .attr("stroke-width",1)
                         .on("mouseover", function (d) {
                             div.transition()
                                 .duration(200)
@@ -427,16 +427,16 @@ define(function (require) {
                     //console.log("DELETION");
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 35))
+                        .attr("x", scales.xR(i)+2)
+                        .attr("y", scales.ySG(130) + (j * 25))
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 25.2)
-                        .attr("height", 25)
+                        .attr("height", 15)
                         .attr("fill", "white");
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 35) +11)
+                        .attr("x", scales.xR(i)+2)
+                        .attr("y", scales.ySG(130) + (j * 25) +7)
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 35)
                         .attr("height", 1)
@@ -449,15 +449,15 @@ define(function (require) {
 
                     read_svg.append("rect")
                         .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 35))
+                        .attr("y", scales.ySG(130) + (j * 25))
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 25.2)
-                        .attr("height", 25)
+                        .attr("height", 15)
                         .attr("fill", utils.colors[j])
                         .attr('stroke', 'black')
                         .attr('stroke-width',1);
                     if(utils.isLower(query[2])){
-                        read_svg.append("text").attr("x",scales.xR(i) + 4).attr("y",scales.ySG(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
+                        read_svg.append("text").attr("x",scales.xR(i) + 4).attr("y",scales.ySG(130) + (j * 50) +12).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
                     }
                 }
             }
@@ -490,14 +490,16 @@ define(function (require) {
                 .attr("x", scales.xR(i))
                 .attr("y", scales.ySG(65))
                 .attr("width", 25.2)
-                .attr("height", 25)
-                .attr("fill", base_color);
+                .attr("height", 15)
+                .attr("fill", base_color)
+                .attr("stroke","black")
+                .attr("stroke-width",1);
 
 
 
             reference.append("text")
                 .attr("x",scales.xR(i) +12.5)
-                .attr("y",scales.ySG(62))
+                .attr("y",scales.ySG(62) - 7)
                 .text(data[3].ref[i])
                 .attr("font-family","sans-serif")
                 .attr("font-size","10px")
