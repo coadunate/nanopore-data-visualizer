@@ -121,7 +121,7 @@ define(function (require) {
         scales.ymSG.domain(scales.ySG.domain());
 
         // x domain for the read align. viewer.
-        scales.xR.domain([0, 125]);
+        scales.xR.domain([0, 50]);
 
 
         // Creates a brush for mini signal data.
@@ -136,16 +136,14 @@ define(function (require) {
             .extent([[0, 0], [utils.width, utils.height]])
             .on("zoom", zoomed);
 
-        // Create zoom function for the read alignment viewer.
+        // // Create zoom function for the read alignment viewer.
         var rXZoom = d3.zoom()
-            .scaleExtent([1, numPoreModels])
-            .translateExtent([[0, 0], [utils.width, utils.height]])
-            .extent([[0, 0], [utils.width, utils.height]])
+            .scaleExtent([1,1])
             .on("zoom", rXZoomed);
 
 
 
-        var xAxisSG = d3.axisBottom(scales.xSG).tickSize(-utils.height), // x-axis for signal grpah
+        var xAxisSG = d3.axisBottom(scales.xSG).tickSize(-utils.height), // x-axis for signal graph
             xAxis2mSG = d3.axisBottom(scales.xmSG), // x-axis for mini signal graph
             yAxis = d3.axisLeft(scales.ySG).ticks(5).tickSize(-utils.width); // y-axis for the signal graph.
 
@@ -263,12 +261,12 @@ define(function (require) {
             .call(zoom);
 
         // comment this line to get the popup appear.
-        // var rect = svg.append("rect")
-        //     .attr("width", utils.width)
-        //     .attr("transform", "translate(50,0)")
-        //     .attr("height", utils.height)
-        //     .style("fill", "none")
-        //     .style("pointer-events", "all").call(zoom);
+        var rect = svg.append("rect")
+            .attr("width", utils.width)
+            .attr("transform", "translate(50,0)")
+            .attr("height", utils.height)
+            .style("fill", "none")
+            .style("pointer-events", "all").call(zoom);
 
         // container for the graph.
         var container = SGGraph.append("g").attr("class", "container");
@@ -379,7 +377,7 @@ define(function (require) {
 
         // populate read alignment view with reads.
         for (var j = 0; j < numReads; j++){
-            read_svg = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "read" + j);
+            read_svg = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "read-align");
             for (var i = 0; i < data[j][1].span; i++) {
                 var query = data[j][1].query[i];
 
@@ -389,20 +387,20 @@ define(function (require) {
                     //console.log("INSERTION");
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i) + 25)
-                        .attr("y", scales.ySG(130) + (j * 50))
+                        .attr("x", scales.xR(i))
+                        .attr("y", scales.ySG(130) + (j * 35))
                         .attr("class", "read" + j + "_" + i)
-                        .attr("utils.width", 20)
+                        .attr("width", 25.2)
                         .attr("height", 25)
                         .attr("fill", utils.colors[j])
                         .attr('stroke', 'black');
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i) + 25)
-                        .attr("y", scales.ySG(130) + (j * 50)  - 5)
+                        .attr("x", scales.xR(i))
+                        .attr("y", scales.ySG(130) + (j * 35)  - 5)
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 1)
-                        .attr("height", 35)
+                        .attr("height", 30)
                         .attr("fill", "white")
                         .attr('stroke', 'black')
                         .attr("stroke-width",2)
@@ -429,37 +427,37 @@ define(function (require) {
                     //console.log("DELETION");
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i) + 25)
-                        .attr("y", scales.ySG(130) + (j * 50))
+                        .attr("x", scales.xR(i))
+                        .attr("y", scales.ySG(130) + (j * 35))
                         .attr("class", "read" + j + "_" + i)
-                        .attr("width", 20)
+                        .attr("width", 25.2)
                         .attr("height", 25)
-                        .attr("fill", "white")
+                        .attr("fill", "white");
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i) + 25)
-                        .attr("y", scales.ySG(130) + (j * 50) +11)
+                        .attr("x", scales.xR(i))
+                        .attr("y", scales.ySG(130) + (j * 35) +11)
                         .attr("class", "read" + j + "_" + i)
                         .attr("width", 35)
                         .attr("height", 1)
                         .attr("fill", "white")
                         .attr('stroke', 'black')
-                        .attr("stroke-width",2);
+                        .attr("stroke-width",1);
 
 
                 }else{ // normal case.
 
                     read_svg.append("rect")
-                        .attr("x", scales.xR(i) + 25)
-                        .attr("y", scales.ySG(130) + (j * 50))
+                        .attr("x", scales.xR(i))
+                        .attr("y", scales.ySG(130) + (j * 35))
                         .attr("class", "read" + j + "_" + i)
-                        .attr("width", 20)
+                        .attr("width", 25.2)
                         .attr("height", 25)
                         .attr("fill", utils.colors[j])
                         .attr('stroke', 'black')
-                        .attr('stroke-width',2);
+                        .attr('stroke-width',1);
                     if(utils.isLower(query[2])){
-                        read_svg.append("text").attr("x",scales.xR(i) +25 + 1.6).attr("y",scales.ySG(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
+                        read_svg.append("text").attr("x",scales.xR(i) + 4).attr("y",scales.ySG(130) + (j * 50) +15).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
                     }
                 }
             }
@@ -489,24 +487,21 @@ define(function (require) {
             }
 
             reference.append("rect")
-                .attr("x", scales.xR(i) + 25)
+                .attr("x", scales.xR(i))
                 .attr("y", scales.ySG(65))
-                .attr("class", "read" + j + "_" + i)
-                .attr("width", 20)
+                .attr("width", 25.2)
                 .attr("height", 25)
-                .attr("fill", base_color)
-                .attr('stroke', 'black');
+                .attr("fill", base_color);
 
 
 
             reference.append("text")
-                .attr("x",scales.xR(i) +25 + 2)
+                .attr("x",scales.xR(i) +12.5)
                 .attr("y",scales.ySG(62))
                 .text(data[3].ref[i])
                 .attr("font-family","sans-serif")
                 .attr("font-size","10px")
                 .attr("fill", "white");
-
         }
 
 
@@ -514,15 +509,16 @@ define(function (require) {
 
             if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
             var s = d3.event.selection || scales.xmSG.range();
+
             scales.xSG.domain(s.map(scales.xmSG.invert, scales.xmSG));
             SGGraph.selectAll(".squiggle").attr("d", lineFunctionSG);
             SGGraph.select(".axis--x").call(xAxisSG);
-            //reads.select(".axis--x").call(rXAxis);
+            // reads.select(".axis--x").call(rXAxis);
             svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
                 .scale(utils.width / (s[1] - s[0]))
                 .translate(-s[0], 0));
 
-
+            // Make all the circles move when brushing the SG graph.
             SGGraph.selectAll("circle")
                 .attr("cx", function(d){ return scales.xSG(d.index); })
                 .attr("cy", function(d){ return scales.ySG(d.signal); });
@@ -533,25 +529,52 @@ define(function (require) {
         function zoomed() {
             if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
             var t = d3.event.transform;
+
             scales.xSG.domain(t.rescaleX(scales.xmSG).domain());
             SGGraph.selectAll(".squiggle").attr("d", lineFunctionSG);
             SGGraph.select(".axis--x").call(xAxisSG);
-            reads.select(".rXaxis").call(xAxisSG);
             mSGGraph.select(".brush").call(brush.move, scales.xSG.range().map(t.invertX, t));
 
+            // Make all the circles move when brushing the SG graph.
             svg.selectAll(".dot")
                 .attr("cx", function(d){ return scales.xSG(d.index); })
                 .attr("cy", function(d){ return scales.ySG(d.signal); });
 
-            for(var i = 0; i < data[0][1].span; i++){
-                svg.selectAll(".read1")
-                    .attr("x",scales.xSG(i));
-            }
+            // for(var i = 0; i < data[0][1].span; i++){
+            //     svg.selectAll(".read1")
+            //         .attr("x",scales.xSG(i));
+            // }
 
         }
 
         function rXZoomed(){
+            if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+            var t = d3.event.transform;
 
+            reads.select(".rXaxis").call(rXAxis.scale( t.rescaleX(scales.xR)));
+
+            // for(var j = 0; j < numReads; j++){
+            //     for(var i = 0; i < data[j][1].span; i++){
+            //         reads.select(".read" + j + "_" + i)
+            //             .attr("x",scales.xR(i));
+            //     }
+            // }
+
+            reads.selectAll("svg").selectAll("rect")
+                .attr("transform","translate(" + t.x + ",0)");
+
+            reads.selectAll("svg").selectAll("text")
+                .attr("transform","translate(" + t.x + ",0)");
+
+            // reads.select(".read-align").selectAll("rect")
+            //     .attr("transform","translate(" + t.x + ",0)");
+            //
+            //
+            // reads.select(".reference").selectAll("rect")
+            //     .attr("transform","translate(" + t.x + ",0)");
+            //
+            // reads.select(".reference").selectAll("text")
+            //     .attr("transform","translate(" + t.x + ",0)");
         }
 
     });
