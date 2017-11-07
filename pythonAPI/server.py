@@ -12,6 +12,7 @@ incomes = [
 @app.route('/alndata')
 def get_alndata():
     aln = sam.Samfile("/Volumes/SonOfSata/lambda_data/samtools_stuff/working.sam", "rb")
+    counter = 0
     query_name = []
     start_pos = []
     end_pos = []
@@ -23,7 +24,7 @@ def get_alndata():
     record = {}
 
     for read in aln:
-
+        counter = counter + 1
         if (read.reference_start == -1):
             continue
         if (read.reference_name == -1):
@@ -42,18 +43,17 @@ def get_alndata():
                 tmp_seq.append(t)
             seq.append(tmp_seq)
 
-    with open('obj.json', 'w') as outfile:
-        for n in range(len(start_pos)):
-            record = {"qname": query_name[n],
-                      "pos": start_pos[n],
-                      "end": end_pos[n],
-                      "len": read_len[n],
-                      "span": ref_span[n],
-                      "seq": seq[n],
-                      "query": query[n]}
-            json.dump(dict(record), outfile)
+    for n in range(len(start_pos)):
+        record = {"number": counter,
+                  "qname": query_name[n],
+                  "pos": start_pos[n],
+                  "end": end_pos[n],
+                  "len": read_len[n],
+                  "span": ref_span[n],
+                  "seq": seq[n],
+                  "query": query[n]}
+        json.dumps(dict(record))
 
-    outfile.close()
     return jsonify(record)
 
 

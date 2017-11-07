@@ -12,6 +12,9 @@ name = "pypi"
 [packages]
 
 flask = "*"
+sqlalchemy = "*"
+flask-restful = "*"
+flask-sqlalchemy = "*"
 pysam = "*"
 
 
