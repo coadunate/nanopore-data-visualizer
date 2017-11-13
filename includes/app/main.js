@@ -378,6 +378,31 @@ define(function (require) {
         // populate read alignment view with reads.
         for (var j = 0; j < numReads; j++){
             read_svg = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "read-align");
+            read_svg
+                .on("mouseover", function (d) {
+                    div.transition()
+                        .duration(200)
+                        .style("opacity", 0.9)
+                        .style("text-align", "left");
+                    //index,signal,time,model,length,stdv
+                    div.html(
+                        "Read1"
+                    )
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 8) + "px");
+                })
+                .on("mouseout", function (d) {
+                    div.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+            read_svg.append("text")
+                .attr("x",5)
+                .attr("y",scales.ySG(130) + (j * 25) + 135)
+                .attr("font-size","12px")
+                .attr("fill","black")
+                .attr("transform","rotate(-45)");
+
             for (var i = 0; i < data[j][1].span; i++) {
                 var query = data[j][1].query[i];
 
@@ -486,14 +511,14 @@ define(function (require) {
                     base_color = "black";
             }
 
-            reference.append("rect")
-                .attr("x", scales.xR(i))
-                .attr("y", scales.ySG(65))
-                .attr("width", 25.2)
-                .attr("height", 15)
-                .attr("fill", base_color)
-                .attr("stroke","black")
-                .attr("stroke-width",1);
+            // reference.append("rect")
+            //     .attr("x", scales.xR(i))
+            //     .attr("y", scales.ySG(65))
+            //     .attr("width", 25.2)
+            //     .attr("height", 15)
+            //     .attr("fill", base_color)
+            //     .attr("stroke","black")
+            //     .attr("stroke-width",1);
 
 
 
@@ -503,7 +528,8 @@ define(function (require) {
                 .text(data[3].ref[i])
                 .attr("font-family","sans-serif")
                 .attr("font-size","10px")
-                .attr("fill", "white");
+                .attr("stroke-width",3)
+                .attr("fill", base_color);
         }
 
 
