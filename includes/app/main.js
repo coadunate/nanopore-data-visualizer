@@ -46,112 +46,13 @@ define(function (require) {
         .attr("class", "mSGGraph")
         .attr("transform", "translate(" + utils.marginMiniSignalGraph.left + "," + utils.marginMiniSignalGraph.top + ")");
 
-    // Gets the data form the data/combined.json file
-    d3.json("/data/combined.json", function(error, data) {
-
-        if (error) throw error;
-
-        // the number of reads in the jSON file
-        var numReads = data.length-1;
 
 
-        var reads_visible = [];
-        for(var i=0; i < numReads; i++) reads_visible[i] = "visible";
-
-        var indSGGraph = [];  // array of all the graphs in SG
-        var indSGCricle = []; // array of all the circles in SG
-        var indmSGGraph = []; // array for all the graphs in mSG
-        var indReads = []; // array for all the reads in read align. viewer.
-
-        // Calculating the num of pore_models.
-        numPoreModels = 0;
-        for (var i = 0; i < numReads; i++) {
-            numPoreModels = Math.max(data[i][0].length, numPoreModels);
-        }
-
-
-        for (var i = 0; i < numReads; i++) {
-
-            // Represents an array of pore_models
-            // format:
-            //     {
-            //         "index": 1,
-            //         "signal": 92.2417,
-            //         "time": 368.58,
-            //         "model": "TCGGT",
-            //         "length": 0.0015,
-            //         "stdv": 1.4271
-            //     }
-            var pore_models = data[i][0];
-
-            // Convert all the integer values to integer.
-            pore_models.forEach(function (d) {
-                d.index = +d.index;
-                d.signal = +d.signal;
-                d.model = d.model;
-                d.time = +d.time;
-                d.length = +d.length;
-                d.stdv = +d.stdv;
-            });
-        }
-
-        // x domain for the signal graph is total number of pore_models.
-        scales.xSG.domain([0, numPoreModels]);
-
-        // Calculating y-min and y-max
-        //    y-max equals the max signal value from all the pore_models
-        //    y-min equals the min signal value from all the pore-models.
-        var ymin = 9999, ymax = 0;
-        for (var i = 0; i < numReads; i++) {
-            ymin = Math.min(d3.min(data[i][0], function (d) {
-                return d.signal;
-            }), ymin);
-            ymax = Math.max(d3.max(data[i][0], function (d) {
-                return d.signal;
-            }), ymax);
-        }
-
-        // y-scale for the signal graph.
-        scales.ySG.domain([ymin, ymax]);
-
-        // x domain for the mini signal graph
-        scales.xmSG.domain(scales.xSG.domain());
-
-        // y domain for the mini signal graph
-        scales.ymSG.domain(scales.ySG.domain());
-
-        // x domain for the read align. viewer.
-        scales.xR.domain([0, 50]);
-
-
-        // Creates a brush for mini signal data.
-        var brush = d3.brushX()
-            .extent([[0, 0], [utils.width, utils.heightminiSignalGraph]])
-            .on("brush end", brushed);
-
-        // create zoom function for the signal graph.
-        var zoom = d3.zoom()
-            .scaleExtent([1, numPoreModels])
-            .translateExtent([[0, 0], [utils.width, utils.height]])
-            .extent([[0, 0], [utils.width, utils.height]])
-            .on("zoom", zoomed);
-
-        // // Create zoom function for the read alignment viewer.
-        var rXZoom = d3.zoom()
-            .scaleExtent([1,1])
-            .on("zoom", rXZoomed);
-
-
-
-        var xAxisSG = d3.axisBottom(scales.xSG).tickSize(-utils.height), // x-axis for signal graph
-            xAxis2mSG = d3.axisBottom(scales.xmSG), // x-axis for mini signal graph
-            yAxis = d3.axisLeft(scales.ySG).ticks(5).tickSize(-utils.width); // y-axis for the signal graph.
-
-        // x-axis for the read alignment viewer.
-        var rXAxis = d3.axisBottom(scales.xR);
-
+    d3.json("http://localhost:5000/tabledata",function (error,data) {
 
         // represents the tiles for the table.
+
+
         var titles = {
             "qname": "Read Name",
             "pos": "Postition",
@@ -159,8 +60,11 @@ define(function (require) {
             "span": "Reference Span (bp)"
         };
 
+        data_arr = [];
+        data_arr.push(data);
 
-        var table = d3.select('.app').append('table').attr("class","table table-hover"); // create table element.
+
+        var table = d3.select('.app').append('table').attr("class", "table table-hover"); // create table element.
 
         // add titles to the table and refer it by headers variable.
         var headers = table.append('thead')
@@ -169,30 +73,36 @@ define(function (require) {
             .data(d3.values(titles))
             .enter()
             .append('th')
-            .text(function(d) {
+            .text(function (d) {
                 return d;
             });
+
 
         // create rows
         var rows = table.append('tbody')
             .selectAll('tr')
-            .data(data.slice(0,3))
+            .data(data_arr.slice(0,2))
             .enter()
-            .append('tr').style("background-color",'#bcf5a6').attr("class",function(d,i){ return "row" + i; });
+            .append('tr').style("background-color",'#bcf5a6');
 
 
         rows.selectAll('td')
             .data(function(d) {
+
+
                 return utils.tuplify(titles).map(function(k) {
 
                     // defines the position at which each field in the data is found.
                     field_number = { };
-                    field_number["qname"] = 6;
-                    field_number["pos"] = 5;
-                    field_number["length"] = 0;
-                    field_number["span"] = 3;
+                    field_number["qname"] = 4;
+                    field_number["pos"] = 3;
+                    field_number["length"] = 1;
+                    field_number["span"] = 7;
 
-                    d_tup = utils.tuplify(d[1]);
+                    console.log(d);
+
+
+                    d_tup = utils.tuplify(d);
                     return {
                         'value': "this",
                         'name': d_tup[ field_number[ k[0] ] ] [1]
@@ -238,6 +148,109 @@ define(function (require) {
 
 
         });
+    }).header("Content-Type", "application/json");
+
+    // Gets the data form the data/combined.json file
+    d3.json("/data/combined.json", function(error, data) {
+
+        if (error) throw error;
+
+
+        var numReads = data.length - 1; // the number of reads in the jSON file
+
+
+        var indSGGraph = [];  // array of all the graphs in SG
+        var indSGCricle = []; // array of all the circles in SG
+        var indmSGGraph = []; // array for all the graphs in mSG
+        var indReads = []; // array for all the reads in read align. viewer.
+
+
+        numEvents = 0;  // Calculating the num of event_objects.
+
+        var reads_visible = [];
+
+
+        var ymin = 9999, ymax = 0; //    y-max equals the max signal value from all the event_objects
+        //  y-min equals the min signal value from all the pore-models.
+
+        for (var i = 0; i < numReads; i++) {
+
+            reads_visible[i] = "visible"; // make every read visible.
+            numEvents = Math.max(data[i][0].length, numEvents);
+
+            // Represents an array of event_object
+            // format:
+            //     {
+            //         "index": 1,
+            //         "signal": 92.2417,
+            //         "time": 368.58,
+            //         "model": "TCGGT",
+            //         "length": 0.0015,
+            //         "stdv": 1.4271
+            //     }
+            var event_objects = data[i][0];
+
+            // Convert all the integer values to integer.
+            event_objects.forEach(function (d) {
+                d.index = +d.index;
+                d.signal = +d.signal;
+                d.model = d.model;
+                d.time = +d.time;
+                d.length = +d.length;
+                d.stdv = +d.stdv;
+            });
+
+            // Calculating y-min and y-max
+            ymin = Math.min(d3.min(data[i][0], function (d) {
+                return d.signal;
+            }), ymin);
+            ymax = Math.max(d3.max(data[i][0], function (d) {
+                return d.signal;
+            }), ymax);
+        }
+
+        // x domain for the signal graph is total number of event_objects.
+        scales.xSG.domain([0, numEvents]);
+
+
+        // y-scale for the signal graph.
+        scales.ySG.domain([ymin, ymax]);
+
+        // x domain for the mini signal graph
+        scales.xmSG.domain(scales.xSG.domain());
+
+        // y domain for the mini signal graph
+        scales.ymSG.domain(scales.ySG.domain());
+
+        // x domain for the read align. viewer.
+        scales.xR.domain([0, 50]);
+
+
+        // Creates a brush for mini signal data.
+        var brush = d3.brushX()
+            .extent([[0, 0], [utils.width, utils.heightminiSignalGraph]])
+            .on("brush end", brushed);
+
+        // create zoom function for the signal graph.
+        var zoom = d3.zoom()
+            .scaleExtent([1, numEvents])
+            .translateExtent([[0, 0], [utils.width, utils.height]])
+            .extent([[0, 0], [utils.width, utils.height]])
+            .on("zoom", zoomed);
+
+        // // Create zoom function for the read alignment viewer.
+        var rXZoom = d3.zoom()
+            .scaleExtent([1, 1])
+            .on("zoom", rXZoomed);
+
+
+        var xAxisSG = d3.axisBottom(scales.xSG).tickSize(-utils.height), // x-axis for signal graph
+            xAxis2mSG = d3.axisBottom(scales.xmSG), // x-axis for mini signal graph
+            yAxis = d3.axisLeft(scales.ySG).ticks(5).tickSize(-utils.width); // y-axis for the signal graph.
+
+        // x-axis for the read alignment viewer.
+        var rXAxis = d3.axisBottom(scales.xR);
+
 
         // create graphic element for the reads alignment viewer.
         var reads = svg.append("g")
@@ -293,6 +306,8 @@ define(function (require) {
         var div = d3.select("body").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
+
+        //read_svg = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "read-align");
 
         // populate the signal graph with circles for event points and line function.
         for (var i = 0; i < numReads; i++) {
@@ -360,6 +375,19 @@ define(function (require) {
                 .attr("fill", "none");
 
             indmSGGraph.push(mGraph); // add the created mini signal trace to indmSGGraph for later modification.
+
+            // populate read alignment view with reads.
+            var currentRead = reads.append("rect")
+                .attr("x", scales.xR(0))
+                .attr("y", scales.ySG(130) + (i * 25))
+                .attr("class", "read" + i + "_" + i)
+                .attr("width", scales.xR(data[i][1].span))
+                .attr("height", 15)
+                .attr("fill", utils.colors[i])
+                .attr('stroke', 'black');
+
+            indReads.push(currentRead);
+
         }
 
 
@@ -375,119 +403,6 @@ define(function (require) {
             .call(brush)
             .call(brush.move, scales.xSG.range());
 
-        // populate read alignment view with reads.
-        for (var j = 0; j < numReads; j++){
-            read_svg = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "read-align");
-            read_svg
-                .on("mouseover", function (d) {
-                    div.transition()
-                        .duration(200)
-                        .style("opacity", 0.9)
-                        .style("text-align", "left");
-                    //index,signal,time,model,length,stdv
-                    div.html(
-                        "Read1"
-                    )
-                        .style("left", (d3.event.pageX) + "px")
-                        .style("top", (d3.event.pageY - 8) + "px");
-                })
-                .on("mouseout", function (d) {
-                    div.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-                });
-            read_svg.append("text")
-                .attr("x",5)
-                .attr("y",scales.ySG(130) + (j * 25) + 135)
-                .attr("font-size","12px")
-                .attr("fill","black")
-                .attr("transform","rotate(-45)");
-
-            for (var i = 0; i < data[j][1].span; i++) {
-                var query = data[j][1].query[i];
-
-                //console.log((i+1) + ". QUERY: " + data[j][1].query[i]);
-
-                if(query[0] === null){ // insertion
-                    //console.log("INSERTION");
-
-                    read_svg.append("rect")
-                        .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 25))
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 25.2)
-                        .attr("height", 15)
-                        .attr("fill", utils.colors[j])
-                        .attr('stroke', 'black');
-
-                    read_svg.append("rect")
-                        .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 25)  - 3)
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 1)
-                        .attr("height", 20)
-                        .attr("fill", "white")
-                        .attr('stroke', 'black')
-                        .attr("stroke-width",1)
-                        .on("mouseover", function (d) {
-                            div.transition()
-                                .duration(200)
-                                .style("opacity", 0.9)
-                                .style("text-align", "left");
-                            //index,signal,time,model,length,stdv
-                            div.html(
-                                "<b>Inserted Bases:- <u>AT</u></u></b><br />" +
-                                "<b>Quality:- : ;</b><br />" +
-                                "<b>Reference Position: <u>24</u></b>"
-                            )
-                                .style("left", (d3.event.pageX) + "px")
-                                .style("top", (d3.event.pageY - 8) + "px");
-                        })
-                        .on("mouseout", function (d) {
-                            div.transition()
-                                .duration(500)
-                                .style("opacity", 0);
-                        });
-                } else if(query[1] === null){ // deletion
-                    //console.log("DELETION");
-
-                    read_svg.append("rect")
-                        .attr("x", scales.xR(i)+2)
-                        .attr("y", scales.ySG(130) + (j * 25))
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 25.2)
-                        .attr("height", 15)
-                        .attr("fill", "white");
-
-                    read_svg.append("rect")
-                        .attr("x", scales.xR(i)+2)
-                        .attr("y", scales.ySG(130) + (j * 25) +7)
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 35)
-                        .attr("height", 1)
-                        .attr("fill", "white")
-                        .attr('stroke', 'black')
-                        .attr("stroke-width",1);
-
-
-                }else{ // normal case.
-
-                    read_svg.append("rect")
-                        .attr("x", scales.xR(i))
-                        .attr("y", scales.ySG(130) + (j * 25))
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 25.2)
-                        .attr("height", 15)
-                        .attr("fill", utils.colors[j])
-                        .attr('stroke', 'black')
-                        .attr('stroke-width',1);
-                    if(utils.isLower(query[2])){
-                        read_svg.append("text").attr("x",scales.xR(i) + 4).attr("y",scales.ySG(130) + (j * 50) +12).text(data[j][1].seq[i]).attr("font-family","sans-serif").attr("font-size","12px").attr("fill","white");
-                    }
-                }
-            }
-            indReads.push(read_svg);
-        }
 
 
         // add the reference to the read alignment view.
@@ -510,16 +425,6 @@ define(function (require) {
                 default:
                     base_color = "black";
             }
-
-            // reference.append("rect")
-            //     .attr("x", scales.xR(i))
-            //     .attr("y", scales.ySG(65))
-            //     .attr("width", 25.2)
-            //     .attr("height", 15)
-            //     .attr("fill", base_color)
-            //     .attr("stroke","black")
-            //     .attr("stroke-width",1);
-
 
 
             reference.append("text")

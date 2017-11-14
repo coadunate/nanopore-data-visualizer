@@ -11,7 +11,7 @@ incomes = [
 
 @app.route('/alndata')
 def get_alndata():
-    aln = sam.Samfile("/Volumes/SonOfSata/lambda_data/samtools_stuff/working.sam", "rb")
+    aln = sam.Samfile("/Volumes/Coruscant/nanopore-data-visualization/working.sam", "rb")
     counter = 0
     query_name = []
     start_pos = []
