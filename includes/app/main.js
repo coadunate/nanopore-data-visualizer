@@ -53,8 +53,92 @@ define(function (require) {
         .attr("transform", "translate(" + utils.marginMiniSignalGraph.left + "," + utils.marginMiniSignalGraph.top + ")");
 
 
+    // x domain for the read align. viewer.
+    scales.xR.domain([0, 50]);
+
+    // // Create zoom function for the read alignment viewer.
+    var rXZoom = d3.zoom()
+        .scaleExtent([1, 1])
+        .on("zoom", rXZoomed);
+
+    // x-axis for the read alignment viewer.
+    var rXAxis = d3.axisBottom(scales.xR);
+
+
+    // create graphic element for the reads alignment viewer.
+    var reads = svg.append("g")
+        .attr("class", "reads")
+        .attr("transform", "translate(" + utils.marginSignalGraph.left + "," + (utils.marginSignalGraph.top + utils.height + utils.heightminiSignalGraph + 100) + ")")
+        .call(rXZoom);
+
+    scales.yR.domain([0,100]);
+
+    // container to contain the read alignment viewer.
+    var read_container = reads.append("g").attr("class", "container");
+
+    read_container.append("g")
+        .attr("class", "axis rXaxis")
+        .attr("transform", "translate(0," + utils.height + ")")
+        .call(rXAxis);
+
+
+    function rXZoomed(){
+        if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+        var t = d3.event.transform;
+
+        reads.select(".rXaxis").call(rXAxis.scale( t.rescaleX(scales.xR)));
+
+        reads.selectAll("svg").selectAll("rect")
+            .attr("transform","translate(" + t.x + ",0)");
+
+        reads.selectAll("svg").selectAll("text")
+            .attr("transform","translate(" + t.x + ",0)");
+    }
+
+    // Populate the reference
+    d3.json("/data/reference.json",function(error,data){
+        if (error) throw error;
+
+
+        // add the reference to the read alignment view.
+        var reference = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "reference");
+        for(var i = 0; i < data.ref.length; i++){
+            base_color = "";
+            switch(data.ref[i]){
+                case "A":
+                    base_color = utils.base_colors.A;
+                    break;
+                case "T":
+                    base_color = utils.base_colors.T;
+                    break;
+                case "G":
+                    base_color = utils.base_colors.G;
+                    break;
+                case "C":
+                    base_color = utils.base_colors.C;
+                    break;
+                default:
+                    base_color = "black";
+            }
+
+
+            reference.append("text")
+                .attr("x",scales.xR(i) + 12.5)
+                .attr("y",scales.yR(4) - 7)
+                .text(data.ref[i])
+                .attr("font-family","sans-serif")
+                .attr("font-size","10px")
+                .attr("stroke-width",3)
+                .attr("fill", base_color);
+        }
+
+    });
+
+
     // Function responsible for rendering the table onto the app.
     d3.json("http://localhost:5000/tabledata",function (error,data) {
+
+        if (error) throw error;
 
         // represents the tiles for the table.
 
@@ -220,9 +304,6 @@ define(function (require) {
         // y domain for the mini signal graph
         scales.ymSG.domain(scales.ySG.domain());
 
-        // x domain for the read align. viewer.
-        scales.xR.domain([0, 50]);
-
 
         // Creates a brush for mini signal data.
         var brush = d3.brushX()
@@ -236,33 +317,12 @@ define(function (require) {
             .extent([[0, 0], [utils.width, utils.height]])
             .on("zoom", zoomed);
 
-        // // Create zoom function for the read alignment viewer.
-        var rXZoom = d3.zoom()
-            .scaleExtent([1, 1])
-            .on("zoom", rXZoomed);
-
 
         var xAxisSG = d3.axisBottom(scales.xSG).tickSize(-utils.height), // x-axis for signal graph
             xAxis2mSG = d3.axisBottom(scales.xmSG), // x-axis for mini signal graph
             yAxis = d3.axisLeft(scales.ySG).ticks(5).tickSize(-utils.width); // y-axis for the signal graph.
 
-        // x-axis for the read alignment viewer.
-        var rXAxis = d3.axisBottom(scales.xR);
 
-
-        // create graphic element for the reads alignment viewer.
-        var reads = svg.append("g")
-            .attr("class", "reads")
-            .attr("transform", "translate(" + utils.marginSignalGraph.left + "," + (utils.marginSignalGraph.top + utils.height + utils.heightminiSignalGraph + 100) + ")")
-            .call(rXZoom);
-
-        // container to contain the read alignment viewer.
-        var read_container = reads.append("g").attr("class", "container");
-
-        read_container.append("g")
-            .attr("class", "axis rXaxis")
-            .attr("transform", "translate(0," + utils.height + ")")
-            .call(rXAxis);
 
 
         // This is the main graph.
@@ -402,40 +462,6 @@ define(function (require) {
             .call(brush.move, scales.xSG.range());
 
 
-
-        // add the reference to the read alignment view.
-        var reference = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "reference");
-        for(var i = 0; i < data[3].ref.length; i++){
-            base_color = "";
-            switch(data[3].ref[i]){
-                case "A":
-                    base_color = utils.base_colors.A;
-                    break;
-                case "T":
-                    base_color = utils.base_colors.T;
-                    break;
-                case "G":
-                    base_color = utils.base_colors.G;
-                    break;
-                case "C":
-                    base_color = utils.base_colors.C;
-                    break;
-                default:
-                    base_color = "black";
-            }
-
-
-            reference.append("text")
-                .attr("x",scales.xR(i) +12.5)
-                .attr("y",scales.ySG(62) - 7)
-                .text(data[3].ref[i])
-                .attr("font-family","sans-serif")
-                .attr("font-size","10px")
-                .attr("stroke-width",3)
-                .attr("fill", base_color);
-        }
-
-
         function brushed() {
 
             if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
@@ -471,42 +497,9 @@ define(function (require) {
                 .attr("cx", function(d){ return scales.xSG(d.index); })
                 .attr("cy", function(d){ return scales.ySG(d.signal); });
 
-            // for(var i = 0; i < data[0][1].span; i++){
-            //     svg.selectAll(".read1")
-            //         .attr("x",scales.xSG(i));
-            // }
 
         }
 
-        function rXZoomed(){
-            if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
-            var t = d3.event.transform;
-
-            reads.select(".rXaxis").call(rXAxis.scale( t.rescaleX(scales.xR)));
-
-            // for(var j = 0; j < numReads; j++){
-            //     for(var i = 0; i < data[j][1].span; i++){
-            //         reads.select(".read" + j + "_" + i)
-            //             .attr("x",scales.xR(i));
-            //     }
-            // }
-
-            reads.selectAll("svg").selectAll("rect")
-                .attr("transform","translate(" + t.x + ",0)");
-
-            reads.selectAll("svg").selectAll("text")
-                .attr("transform","translate(" + t.x + ",0)");
-
-            // reads.select(".read-align").selectAll("rect")
-            //     .attr("transform","translate(" + t.x + ",0)");
-            //
-            //
-            // reads.select(".reference").selectAll("rect")
-            //     .attr("transform","translate(" + t.x + ",0)");
-            //
-            // reads.select(".reference").selectAll("text")
-            //     .attr("transform","translate(" + t.x + ",0)");
-        }
 
     });
 
