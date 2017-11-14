@@ -20,6 +20,12 @@ define(function (require) {
     var utils = require('./utils');
     var scales = require('./scales');
 
+    var indSGGraph = [];  // array of all the graphs in SG
+    var indSGCricle = []; // array of all the circles in SG
+    var indmSGGraph = []; // array for all the graphs in mSG
+    var indReads = []; // array for all the reads in read align. viewer.
+    var reads_visible = [];
+
 
 
 
@@ -47,7 +53,7 @@ define(function (require) {
         .attr("transform", "translate(" + utils.marginMiniSignalGraph.left + "," + utils.marginMiniSignalGraph.top + ")");
 
 
-
+    // Function responsible for rendering the table onto the app.
     d3.json("http://localhost:5000/tabledata",function (error,data) {
 
         // represents the tiles for the table.
@@ -83,7 +89,7 @@ define(function (require) {
             .selectAll('tr')
             .data(data_arr.slice(0,2))
             .enter()
-            .append('tr').style("background-color",'#bcf5a6');
+            .append('tr').style("background-color",'#bcf5a6').attr("class",function(d,i){ return "row" + i; });
 
 
         rows.selectAll('td')
@@ -99,7 +105,6 @@ define(function (require) {
                     field_number["length"] = 1;
                     field_number["span"] = 7;
 
-                    console.log(d);
 
 
                     d_tup = utils.tuplify(d);
@@ -121,7 +126,6 @@ define(function (require) {
 
         rows.on("click", function (d,i) {
             console.log("YOU CLICKED (" + i + ")");
-            console.log(reads_visible);
             if(reads_visible[i] === "visible"){
 
                 indSGGraph[i].attr("opacity",0);
@@ -150,7 +154,7 @@ define(function (require) {
         });
     }).header("Content-Type", "application/json");
 
-    // Gets the data form the data/combined.json file
+
     d3.json("/data/combined.json", function(error, data) {
 
         if (error) throw error;
@@ -159,15 +163,9 @@ define(function (require) {
         var numReads = data.length - 1; // the number of reads in the jSON file
 
 
-        var indSGGraph = [];  // array of all the graphs in SG
-        var indSGCricle = []; // array of all the circles in SG
-        var indmSGGraph = []; // array for all the graphs in mSG
-        var indReads = []; // array for all the reads in read align. viewer.
-
-
         numEvents = 0;  // Calculating the num of event_objects.
 
-        var reads_visible = [];
+
 
 
         var ymin = 9999, ymax = 0; //    y-max equals the max signal value from all the event_objects
