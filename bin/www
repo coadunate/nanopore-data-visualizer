@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../includes/init');
 var debug = require('debug')('nanopore-data-visualizer:server');
 var http = require('http');
 

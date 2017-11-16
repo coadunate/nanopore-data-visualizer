@@ -17,8 +17,8 @@ define(function (require) {
 
 
     // Importing dependant libraries.
-    var utils = require('./utils');
-    var scales = require('./scales');
+    var utils = require('modules/utils');
+    var scales = require('modules/scales');
 
     var indSGGraph = [];  // array of all the graphs in SG
     var indSGCricle = []; // array of all the circles in SG
@@ -54,6 +54,7 @@ define(function (require) {
 
 
     // x domain for the read align. viewer.
+
     scales.xR.domain([0, 50]);
 
     // // Create zoom function for the read alignment viewer.
@@ -95,8 +96,8 @@ define(function (require) {
             .attr("transform","translate(" + t.x + ",0)");
     }
 
-    // Populate the reference
-    d3.json("/data/reference.json",function(error,data){
+    // // Populate the reference
+    d3.json("http://homepage.usask.ca/~mts066/reference.json",function(error,data){
         if (error) throw error;
 
 
@@ -139,6 +140,23 @@ define(function (require) {
     d3.json("http://localhost:5000/tabledata",function (error,data) {
 
         if (error) throw error;
+
+        console.log(scales.xR.range());
+
+
+
+        // // populate read alignment view with reads
+        var readsSVG = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "readSVG");
+        var currentRead = readsSVG.append("rect")
+            .attr("x", scales.xR(0))
+            .attr("y", scales.yR(50) - 100)
+            .attr("class", "read" + 0 + "_" + 0)
+            .attr("width", scales.xR(data.span))
+            .attr("height", 15)
+            .attr("fill", utils.colors[0])
+            .attr('stroke', 'black');
+
+        indReads.push(currentRead);
 
         // represents the tiles for the table.
 
@@ -239,17 +257,15 @@ define(function (require) {
     }).header("Content-Type", "application/json");
 
 
-    d3.json("/data/combined.json", function(error, data) {
+    d3.json("http://homepage.usask.ca/~mts066/combined.json", function(error, data) {
 
         if (error) throw error;
 
 
-        var numReads = data.length - 1; // the number of reads in the jSON file
+        var numReads = data.length; // the number of reads in the jSON file
 
 
         numEvents = 0;  // Calculating the num of event_objects.
-
-
 
 
         var ymin = 9999, ymax = 0; //    y-max equals the max signal value from all the event_objects
@@ -258,7 +274,7 @@ define(function (require) {
         for (var i = 0; i < numReads; i++) {
 
             reads_visible[i] = "visible"; // make every read visible.
-            numEvents = Math.max(data[i][0].length, numEvents);
+            numEvents = Math.max(data[i].length, numEvents);
 
             // Represents an array of event_object
             // format:
@@ -270,7 +286,7 @@ define(function (require) {
             //         "length": 0.0015,
             //         "stdv": 1.4271
             //     }
-            var event_objects = data[i][0];
+            var event_objects = data[i];
 
             // Convert all the integer values to integer.
             event_objects.forEach(function (d) {
@@ -283,10 +299,10 @@ define(function (require) {
             });
 
             // Calculating y-min and y-max
-            ymin = Math.min(d3.min(data[i][0], function (d) {
+            ymin = Math.min(d3.min(data[i], function (d) {
                 return d.signal;
             }), ymin);
-            ymax = Math.max(d3.max(data[i][0], function (d) {
+            ymax = Math.max(d3.max(data[i], function (d) {
                 return d.signal;
             }), ymax);
         }
@@ -371,7 +387,7 @@ define(function (require) {
         for (var i = 0; i < numReads; i++) {
 
             var circle = SGGraph.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "circ" + i).selectAll("circle")
-                .data(data[i][0])
+                .data(data[i])
                 .enter()
                 .append("circle")
                 .on("click", function (d) {
@@ -413,7 +429,7 @@ define(function (require) {
 
             // create a path for the signal data.
             var graph = SGGraph.append("svg").attr("width", utils.width).attr("height", utils.height).append("path")
-                .datum(data[i][0])
+                .datum(data[i])
                 .attr("class", "squiggle")
                 .attr("id", "squigg1")
                 .attr("d", lineFunctionSG)
@@ -425,7 +441,7 @@ define(function (require) {
 
             // create path for the mini signal data.
             var mGraph = mSGGraph.append("path")
-                .datum(data[i][0])
+                .datum(data[i])
                 .attr("class", "squiggle")
                 .attr("d", lineFunctionmSG)
                 .attr("stroke", utils.colors[i])
@@ -434,17 +450,6 @@ define(function (require) {
 
             indmSGGraph.push(mGraph); // add the created mini signal trace to indmSGGraph for later modification.
 
-            // populate read alignment view with reads.
-            var currentRead = reads.append("rect")
-                .attr("x", scales.xR(0))
-                .attr("y", scales.ySG(130) + (i * 25))
-                .attr("class", "read" + i + "_" + i)
-                .attr("width", scales.xR(data[i][1].span))
-                .attr("height", 15)
-                .attr("fill", utils.colors[i])
-                .attr('stroke', 'black');
-
-            indReads.push(currentRead);
 
         }
 
