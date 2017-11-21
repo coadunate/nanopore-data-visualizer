@@ -24,6 +24,8 @@ define(function (require) {
     var indSGCricle = []; // array of all the circles in SG
     var indmSGGraph = []; // array for all the graphs in mSG
     var indReads = []; // array for all the reads in read align. viewer.
+    var readInsertions = []; // array for all insertions of reads in read align. viewer.
+    var readDeletions = []; // array for all deletions of reads in read align. viewer.
     var reads_visible = [];
 
 
@@ -168,19 +170,22 @@ define(function (require) {
                 .attr("fill", utils.colors[j])
                 .attr('stroke', 'black');
 
+            // Make the reads invisible at first.
+            currentRead.attr("opacity",0);
+
             indReads.push(currentRead);
 
-
+            var insertions = [];
+            var deletions = [];
             for(var i = 0; i < data_arr[j].span; i++){
                 var query_record = data_arr[j].query[i];
-
 
 
                 if(query_record[0] === null && data_arr[j].query[i-1][0] != null){ // INSERTION
 
                     console.log(query_record);
 
-                    readsSVG.append("rect")
+                    var insert = readsSVG.append("rect")
                         .attr("x", scales.xR(i))
                         .attr("y", scales.yR(j) - 400 + (j*25) - 5)
                         .attr("class", "read" + j + "_" + i)
@@ -208,9 +213,16 @@ define(function (require) {
                                 .duration(500)
                                 .style("opacity", 0);
                         });
+
+                    // Make the insertion invisible first.
+                    insert.attr("opacity",0);
+
+                    insertions.push(insert);
                 }
                 else if(query_record[1] === null) { // DELETION
-                    readsSVG.append("rect")
+
+
+                    var del1 = readsSVG.append("rect")
                         .attr("x", scales.xR(i)+2)
                         .attr("y", scales.yR(j) - 400 + (j*25) -1)
                         .attr("class", "read" + j + "_" + i)
@@ -218,7 +230,12 @@ define(function (require) {
                         .attr("height", 17)
                         .attr("fill", "white");
 
-                    readsSVG.append("rect")
+                    // Make del1 invisible at first.
+                    del1.attr("opacity",0);
+
+                    deletions.push(del1);
+
+                    var del2 = readsSVG.append("rect")
                         .attr("x", scales.xR(i)+2)
                         .attr("y", scales.yR(j) - 400 + (j*25) + 7)
                         .attr("class", "read" + j + "_" + i)
@@ -227,8 +244,17 @@ define(function (require) {
                         .attr("fill", "white")
                         .attr('stroke', 'black')
                         .attr("stroke-width",1);
+
+
+                    // Make del2 invisible at first.
+                    del2.attr("opacity",0);
+
+                    deletions.push(del2);
+
                 }
             }
+            readInsertions.push(insertions);
+            readDeletions.push(deletions);
 
         }
 
@@ -300,30 +326,46 @@ define(function (require) {
         rows.on("click", function (d,i) {
 
 
-            // console.log("YOU CLICKED (" + i + ")");
-            // if(reads_visible[i] === "visible"){
-            //
-            //     indSGGraph[i].attr("opacity",0);
-            //     indSGCricle[i].attr("opacity",0);
-            //     indmSGGraph[i].attr("opacity",0);
-            //     indReads[i].style("opacity",0);
-            //
-            //
-            //     d3.select(".row" + i).style("background",'none');
-            //
-            //     reads_visible[i] = "invisible";
-            //
-            // } else{
-            //
-            //     indSGGraph[i].attr("opacity",1);
-            //     indSGCricle[i].attr("opacity",1);
-            //     indmSGGraph[i].attr("opacity",1);
-            //     indReads[i].style("opacity",1);
-            //
-            //     d3.select(".row" + i).style("background-color",'#bcf5a6');
-            //
-            //     reads_visible[i] = "visible";
-            // }
+            console.log("YOU CLICKED (" + i + ")");
+            if(reads_visible[i] === "visible"){
+
+                indSGGraph[i].attr("opacity",0);
+                indSGCricle[i].attr("opacity",0);
+                indmSGGraph[i].attr("opacity",0);
+                indReads[i].style("opacity",0);
+                readInsertions[i].forEach(function(e){
+                    e.style("opacity",0);
+                });
+
+                readDeletions[i].forEach(function(e){
+                    e.style("opacity",0);
+                });
+
+
+
+                d3.select(".row" + i).style("background",'none');
+
+                reads_visible[i] = "invisible";
+
+            } else{
+
+                indSGGraph[i].attr("opacity",1);
+                indSGCricle[i].attr("opacity",1);
+                indmSGGraph[i].attr("opacity",1);
+                indReads[i].style("opacity",1);
+                readInsertions[i].forEach(function(e){
+                    e.style("opacity",1);
+                });
+
+                readDeletions[i].forEach(function(e){
+                    e.style("opacity",1);
+                });
+
+
+                d3.select(".row" + i).style("background-color",'#bcf5a6');
+
+                reads_visible[i] = "visible";
+            }
 
 
         });
@@ -346,7 +388,7 @@ define(function (require) {
 
         for (var i = 0; i < numReads; i++) {
 
-            reads_visible[i] = "visible"; // make every read visible.
+            reads_visible[i] = "invisible"; // make every read visible.
             numEvents = Math.max(data[i].length, numEvents);
 
             // Represents an array of event_object
@@ -512,6 +554,9 @@ define(function (require) {
                 .attr("fill", "black")
                 .attr("style","display:none;");
 
+            // Make all the circles invisible at first.
+            circle.attr("opacity",0);
+
             indSGCricle.push(circle); // add the created sequence of circles to indSGCircle for later modification
 
             // create a path for the signal data.
@@ -524,6 +569,9 @@ define(function (require) {
                 .attr("stroke-width", 2)
                 .attr("fill", "none");
 
+            // make all the SGGraph invisible at first.
+            graph.attr("opacity",0);
+
             indSGGraph.push(graph); // add the created signal trace to the indSGGraph for later modification
 
             // create path for the mini signal data.
@@ -534,6 +582,9 @@ define(function (require) {
                 .attr("stroke", utils.colors[i])
                 .attr("stroke-width", 2)
                 .attr("fill", "none");
+
+            // make all the mGraph invisible at first.
+            mGraph.attr("opacity",0);
 
             indmSGGraph.push(mGraph); // add the created mini signal trace to indmSGGraph for later modification.
 
