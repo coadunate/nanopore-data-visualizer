@@ -86,7 +86,7 @@ class ReadTableResource(Resource):
     # @marshal_with(read_fields)
     def get(self):
         # reads = session.query(ReadData).all()
-        aln = sam.Samfile("/Volumes/Coruscant/nanopore-data-visualization/conference.sam", "rb")
+        aln = sam.Samfile("/Volumes/SonOfSata/lambda_data/samtools_stuff/conference.sam", "rb")
         counter = 0
         query_name = []
         start_pos = []
@@ -118,6 +118,8 @@ class ReadTableResource(Resource):
                     tmp_seq.append(t)
                 seq.append(tmp_seq)
 
+        final_record = []
+
         for n in range(len(start_pos)):
             record = {"number": counter,
                       "qname": query_name[n],
@@ -127,6 +129,6 @@ class ReadTableResource(Resource):
                       "span": ref_span[n],
                       "seq": seq[n],
                       "query": query[n]}
-            json.dumps(dict(record))
-        return jsonify(record)
+            final_record.append(dict(record))
+        return jsonify(final_record)
 
