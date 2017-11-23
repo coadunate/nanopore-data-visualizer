@@ -86,7 +86,7 @@ class ReadTableResource(Resource):
     # @marshal_with(read_fields)
     def get(self):
         # reads = session.query(ReadData).all()
-        aln = sam.Samfile("/Volumes/Coruscant/nanopore-data-visualization/working.sam", "rb")
+        aln = sam.Samfile("/Volumes/Coruscant/nanopore-data-visualization/conference.sam", "rb")
         counter = 0
         query_name = []
         start_pos = []
