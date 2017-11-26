@@ -27,6 +27,7 @@ define(function (require) {
     var readInsertions = []; // array for all insertions of reads in read align. viewer.
     var readDeletions = []; // array for all deletions of reads in read align. viewer.
     var reads_visible = [];
+    var signal_visible = [];
 
 
 
@@ -85,6 +86,7 @@ define(function (require) {
         .call(rXAxis);
 
 
+
     // div for the information for each event point.
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -104,159 +106,166 @@ define(function (require) {
             .attr("transform","translate(" + t.x + ",0)");
     }
 
-    // // // Populate the reference
-    // d3.json("http://homepage.usask.ca/~mts066/reference.json",function(error,data){
-    //     if (error) throw error;
-    //
-    //
-    //     // add the reference to the read alignment view.
-    //     var reference = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "reference");
-    //     for(var i = 0; i < data.ref.length; i++){
-    //         base_color = "";
-    //         switch(data.ref[i]){
-    //             case "A":
-    //                 base_color = utils.base_colors.A;
-    //                 break;
-    //             case "T":
-    //                 base_color = utils.base_colors.T;
-    //                 break;
-    //             case "G":
-    //                 base_color = utils.base_colors.G;
-    //                 break;
-    //             case "C":
-    //                 base_color = utils.base_colors.C;
-    //                 break;
-    //             default:
-    //                 base_color = "black";
-    //         }
-    //
-    //
-    //         reference.append("text")
-    //             .attr("x",scales.xR(i) + 12.5)
-    //             .attr("y",scales.yR(4) - 7)
-    //             .text(data.ref[i])
-    //             .attr("font-family","sans-serif")
-    //             .attr("font-size","10px")
-    //             .attr("stroke-width",3)
-    //             .attr("fill", base_color);
-    //     }
-    //
-    // });
-
 
     // Function responsible for rendering the table onto the app.
-    d3.json("http://localhost:5000/tabledata",function (error,data) {
+    d3.json("http://206.167.182.155/tabledata",function (error,data) {
 
         if (error) throw error;
 
-        // patching for until we get more than one read.
-        data_arr = [];
-        data_arr.push(data);
-
-
-        var divForReads = [];
-
-
-        for(var j = 0; j < data_arr.length; j++){
 
             // populate read alignment view with reads
             var readsSVG = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "readSVG");
-            var currentRead = readsSVG.append("rect")
-                .attr("x", scales.xR(j) + (j*25))
-                .attr("y", scales.yR(j) - 400 + (j*25))
-                .attr("class", "read" + 0 + "_" + 0)
-                .attr("width", scales.xR(data.span))
+            var readBlocks = readsSVG.selectAll("rect").data(data).enter();
+            var block  = readBlocks.append("rect")
+                .attr("x", function(d){ return scales.xR(d.pos); })
+                .attr("y", function(d,i){ return scales.yR(i) - 400 + (i*25); })
+                .attr("class", function(d,i){ return "read_" + i; })
+                .attr("width", function(d,i){ return scales.xR(data[i].span); })
                 .attr("height", 15)
-                .attr("fill", utils.colors[j])
-                .attr('stroke', 'black');
+                .attr("fill", "gray")
+                .attr('stroke', 'black')
+                .style("opacity",0)
+                .on("click",function(d,i){
+                console.log("Read: " + i);
+                if(signal_visible[i] === "visible"){
+                    indSGCricle[i].style("opacity",0);
+                    indmSGGraph[i].style("opacity",0);
+                    indSGGraph[i].style("opacity",0);
 
-            // Make the reads invisible at first.
-            currentRead.attr("opacity",0);
+                    d3.select(".read_" + i).attr("fill","gray");
 
-            indReads.push(currentRead);
+                    signal_visible[i] = "invisible"
+                } else{
+                    indSGCricle[i].style("opacity",1);
+                    indmSGGraph[i].style("opacity",1);
+                    indSGGraph[i].style("opacity",1);
 
-            var insertions = [];
-            var deletions = [];
-            for(var i = 0; i < data_arr[j].span; i++){
-                var query_record = data_arr[j].query[i];
+                    d3.select(".read_" + i).attr("fill",utils.colors[i]);
 
-
-                if(query_record[0] === null && data_arr[j].query[i-1][0] != null){ // INSERTION
-
-                    console.log(query_record);
-
-                    var insert = readsSVG.append("rect")
-                        .attr("x", scales.xR(i))
-                        .attr("y", scales.yR(j) - 400 + (j*25) - 5)
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 1)
-                        .attr("height", 25)
-                        .attr("fill", "white")
-                        .attr('stroke', 'black')
-                        .attr("stroke-width", 1)
-                        .on("mouseover", function (d) {
-                            div.transition()
-                                .duration(200)
-                                .style("opacity", 0.9)
-                                .style("text-align", "left");
-                            //index,signal,time,model,length,stdv
-                            div.html(
-                                "<b>Inserted Bases:- <u>" + query_record[2] + "</u></u></b><br />" +
-                                "<b>Quality:- : ;</b><br />" +
-                                "<b>Reference Position: <u>" + (i + 1) + "</u></b>"
-                            )
-                                .style("left", (d3.event.pageX) + "px")
-                                .style("top", (d3.event.pageY - 8) + "px");
-                        })
-                        .on("mouseout", function (d) {
-                            div.transition()
-                                .duration(500)
-                                .style("opacity", 0);
-                        });
-
-                    // Make the insertion invisible first.
-                    insert.attr("opacity",0);
-
-                    insertions.push(insert);
+                    signal_visible[i] = "visible"
                 }
-                else if(query_record[1] === null) { // DELETION
+                });
+
+            for(var j = 0; j < data.length; j++){
+                for(var i = 0; i < data[j].span; i++){
+                        var query_record = data[j].query[i];
 
 
-                    var del1 = readsSVG.append("rect")
-                        .attr("x", scales.xR(i)+2)
-                        .attr("y", scales.yR(j) - 400 + (j*25) -1)
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 25.2)
-                        .attr("height", 17)
-                        .attr("fill", "white");
-
-                    // Make del1 invisible at first.
-                    del1.attr("opacity",0);
-
-                    deletions.push(del1);
-
-                    var del2 = readsSVG.append("rect")
-                        .attr("x", scales.xR(i)+2)
-                        .attr("y", scales.yR(j) - 400 + (j*25) + 7)
-                        .attr("class", "read" + j + "_" + i)
-                        .attr("width", 25)
-                        .attr("height", 1)
-                        .attr("fill", "white")
-                        .attr('stroke', 'black')
-                        .attr("stroke-width",1);
+                        if(query_record[0] === null && data[j].query[i-1][0] != null){ // INSERTION
 
 
-                    // Make del2 invisible at first.
-                    del2.attr("opacity",0);
+                            var insert = readsSVG.append("rect")
+                                .attr("x", scales.xR(i))
+                                .attr("y", scales.yR(j) - 400 + (j*25) - 5)
+                                .attr("class", "read" + j + "_" + i)
+                                .attr("width", 1)
+                                .attr("height", 25)
+                                .attr("fill", "white")
+                                .attr('stroke', 'black')
+                                .attr("stroke-width", 1)
+                                .on("mouseover", function (d) {
+                                    div.transition()
+                                        .duration(200)
+                                        .style("opacity", 0.9)
+                                        .style("text-align", "left");
+                                    //index,signal,time,model,length,stdv
+                                    div.html(
+                                        "<b>Inserted Bases:- <u>" + query_record[2] + "AT" + "</u></u></b><br />" +
+                                        "<b>Quality:- : ;</b><br />" +
+                                        "<b>Reference Position: <u>" + 127 + "</u></b>"
+                                    )
+                                        .style("left", (d3.event.pageX) + "px")
+                                        .style("top", (d3.event.pageY - 8) + "px");
+                                })
+                                .on("mouseout", function (d) {
+                                    div.transition()
+                                        .duration(500)
+                                        .style("opacity", 0);
+                                });
 
-                    deletions.push(del2);
+                            // Make the insertion invisible first.
+                            //insert.attr("opacity",0);
 
-                }
+                            //insertions.push(insert);
+                        }
+                        else if(query_record[1] === null) { // DELETION
+
+
+                            var del1 = readsSVG.append("rect")
+                                .attr("x", scales.xR(i)+2)
+                                .attr("y", scales.yR(j) - 400 + (j*25) -1)
+                                .attr("class", "read" + j + "_" + i)
+                                .attr("width", 25.2)
+                                .attr("height", 17)
+                                .attr("fill", "white");
+
+                            // Make del1 invisible at first.
+                            //del1.attr("opacity",0);
+
+                            //deletions.push(del1);
+
+                            var del2 = readsSVG.append("rect")
+                                .attr("x", scales.xR(i)+2)
+                                .attr("y", scales.yR(j) - 400 + (j*25) + 7)
+                                .attr("class", "read" + j + "_" + i)
+                                .attr("width", 25)
+                                .attr("height", 1)
+                                .attr("fill", "white")
+                                .attr('stroke', 'black')
+                                .attr("stroke-width",1);
+
+
+                            // Make del2 invisible at first.
+                            //del2.attr("opacity",0);
+
+                            //deletions.push(del2);
+
+                        }
+                    }
             }
-            readInsertions.push(insertions);
-            readDeletions.push(deletions);
 
-        }
+            // var insertions = [];
+            // var deletions = [];
+            // fx
+            // readInsertions.push(insertions);
+            // readDeletions.push(deletions);
+
+
+        // Populate the reference
+        d3.json("http://homepage.usask.ca/~mts066/reference.json",function(error,data){
+            if (error) throw error;
+
+            // add the reference to the read alignment view.
+            var reference = reads.append("svg").attr("width", utils.width).attr("height", utils.height).attr("class", "reference");
+            for(var i = 0; i < data.ref.length; i++){
+                base_color = "";
+                switch(data.ref[i]){
+                    case "A":
+                        base_color = utils.base_colors.A;
+                        break;
+                    case "T":
+                        base_color = utils.base_colors.T;
+                        break;
+                    case "G":
+                        base_color = utils.base_colors.G;
+                        break;
+                    case "C":
+                        base_color = utils.base_colors.C;
+                        break;
+                    default:
+                        base_color = "black";
+                }
+                reference.append("text")
+                    .attr("x",scales.xR(i) + 12.5)
+                    .attr("y",scales.yR(4) - 7)
+                    .text(data.ref[i])
+                    .attr("font-family","sans-serif")
+                    .attr("font-size","10px")
+                    .attr("stroke-width",3)
+                    .attr("fill", base_color);
+            }
+
+        });
 
 
         // represents the tiles for the table.
@@ -286,9 +295,9 @@ define(function (require) {
         // create rows
         var rows = table.append('tbody')
             .selectAll('tr')
-            .data(data_arr.slice(0,2))
+            .data(data.slice(0,data.length+1))
             .enter()
-            .append('tr').style("background-color",'#bcf5a6').attr("class",function(d,i){ return "row" + i; });
+            .append('tr').style("background-color",'none').attr("class",function(d,i){ return "row" + i; });
 
 
         rows.selectAll('td')
@@ -325,42 +334,36 @@ define(function (require) {
 
         rows.on("click", function (d,i) {
 
+            console.log("ROW: " + i);
 
-            console.log("YOU CLICKED (" + i + ")");
             if(reads_visible[i] === "visible"){
 
-                indSGGraph[i].attr("opacity",0);
-                indSGCricle[i].attr("opacity",0);
-                indmSGGraph[i].attr("opacity",0);
-                indReads[i].style("opacity",0);
-                readInsertions[i].forEach(function(e){
-                    e.style("opacity",0);
-                });
+                //indReads[i].style("opacity",0);
+                // readInsertions[i].forEach(function(e){
+                //     e.style("opacity",0);
+                // });
+                //
+                // readDeletions[i].forEach(function(e){
+                //     e.style("opacity",0);
+                // });
 
-                readDeletions[i].forEach(function(e){
-                    e.style("opacity",0);
-                });
-
-
+                d3.select(".read_" + i).style("opacity",0);
 
                 d3.select(".row" + i).style("background",'none');
 
                 reads_visible[i] = "invisible";
 
             } else{
+                //indReads[i].style("opacity",1);
+                // readInsertions[i].forEach(function(e){
+                //     e.style("opacity",1);
+                // });
+                //
+                // readDeletions[i].forEach(function(e){
+                //     e.style("opacity",1);
+                // });
 
-                indSGGraph[i].attr("opacity",1);
-                indSGCricle[i].attr("opacity",1);
-                indmSGGraph[i].attr("opacity",1);
-                indReads[i].style("opacity",1);
-                readInsertions[i].forEach(function(e){
-                    e.style("opacity",1);
-                });
-
-                readDeletions[i].forEach(function(e){
-                    e.style("opacity",1);
-                });
-
+                d3.select(".read_" + i).style("opacity",1);
 
                 d3.select(".row" + i).style("background-color",'#bcf5a6');
 
@@ -372,12 +375,13 @@ define(function (require) {
     }).header("Content-Type", "application/json");
 
 
-    d3.json("http://homepage.usask.ca/~mts066/combined.json", function(error, data) {
+    d3.json("../includes/app/data/events.json", function(error, data) {
 
         if (error) throw error;
 
 
         var numReads = data.length; // the number of reads in the jSON file
+
 
 
         numEvents = 0;  // Calculating the num of event_objects.
@@ -388,7 +392,8 @@ define(function (require) {
 
         for (var i = 0; i < numReads; i++) {
 
-            reads_visible[i] = "invisible"; // make every read visible.
+            reads_visible[i] = "invisible"; // make every read invisible.
+            signal_visible[i] = "invisible"; // many every signal invisible.
             numEvents = Math.max(data[i].length, numEvents);
 
             // Represents an array of event_object
@@ -499,16 +504,19 @@ define(function (require) {
                 .data(data[i])
                 .enter()
                 .append("circle")
-                .on("click", function (d) {
-                    console.log("Yo!");
-                })
                 .attr("cx", function (d) {
                     return scales.xSG(d.index);
                 })
                 .attr("cy", function (d) {
                     return scales.ySG(d.signal);
                 })
-                .attr("fill", i == 0 ? "black" : "black")
+                .attr("fill", function(d){
+                    if(d.move === 0){
+                        return "black";
+                    }else{
+                        return utils.colors[i];
+                    }
+                })
                 .attr("class", "dot")
                 .attr("r", 5)
                 .on("mouseover", function (d) {
@@ -649,13 +657,6 @@ define(function (require) {
                 .attr("x", function(d){ return scales.xSG(d.index); })
                 .attr("y", function(d){ return scales.ySG(d.signal) -10; });
 
-
-            currentDomain = scales.xSG.domain();
-            if( (currentDomain[1] - currentDomain[0]) < 13 ){
-
-                basepairs.attr("style","display:block");
-
-            }
 
         }
 
