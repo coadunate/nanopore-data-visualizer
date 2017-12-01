@@ -1,6 +1,7 @@
 # Nanopore Data Visualizer
+Work In Progress.
 
-{ one paragraph of project description goes here }
+Live Demo at: http://206.167.181.87/
 
 ## Getting Started
 
